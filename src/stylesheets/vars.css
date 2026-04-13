@@ -1,0 +1,8 @@
+:root {
+  /* Tokens */
+  --text: 18, 18, 18;
+  /* Text-coolors */
+  --text-primary: rgba(var(--text), 1);
+  --text-secondary: rgba(var(--text), 0.64);
+  --text-minor: rgba(var(--text), 0.3);
+}
