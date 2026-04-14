@@ -13,13 +13,32 @@ h1 {
 
 h3 {
   font-size: 1.25rem;
+  line-height: 140%;
   font-weight: 500;
   color: var(--text-primary);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 p {
   font-size: 17px;
   line-height: 140%;
+  color: var(--text-secondary);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+b {
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--text-primary);
+}
+
+.secondary {
   color: var(--text-secondary);
 }
 
@@ -56,9 +75,9 @@ p {
   flex-direction: row;
   height: 40px;
   gap: 6px;
-  padding: 0 0.75rem 0 0.5rem;
+  padding: 0 0.75rem 0;
   border-radius: 12px;
-  border: 1px solid #fffafa;
+  /* border: 1px solid #fffafa; */
   background: linear-gradient(180deg, #000 0%, #666 100%);
   box-shadow: 1px 2px 3.6px 0 rgba(0, 0, 0, 0.25);
   color: white;
@@ -68,14 +87,17 @@ p {
 
 .A_Tag {
   height: 32px;
+  width: fit-content;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   padding: 0 12px;
   background: #6bb5ff;
   color: white;
-  font-family: 15px;
+  font-size: 15px;
   font-weight: 500;
-  border-radius: 50%;
+  border-radius: 1rem;
   box-shadow: 3px 4px 4px 0 rgba(255, 255, 255, 0.35) inset;
 }
 
@@ -98,8 +120,25 @@ p {
 .M_AboutProject {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.5rem;
   margin-top: 1rem;
+}
+
+.M_TitleYear {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  b:nth-child(2) {
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+}
+
+.M_Message {
+  background-color: var(--background-minor);
+  padding: 1rem;
+  border-radius: 12px;
 }
 
 /* Organisms */
@@ -138,6 +177,14 @@ header.O_Header {
   text-decoration: none;
 }
 
+.O_ListText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--stroke);
+}
+
 .C_Projects {
   display: flex;
   flex-direction: column;
@@ -146,7 +193,7 @@ header.O_Header {
 
 /* Superoganisms */
 
-.S_Projects {
+section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -156,5 +203,9 @@ header.O_Header {
 .L_Home {
   display: flex;
   flex-direction: column;
-  gap: 128px;
+  gap: 80px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
 }

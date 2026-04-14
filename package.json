@@ -36,6 +36,8 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rough-notation": "^0.5.1",
+    "roughjs": "^4.6.6",
     "yarn": "^1.22.22"
   }
 }
