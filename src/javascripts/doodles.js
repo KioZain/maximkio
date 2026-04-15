@@ -3,6 +3,7 @@ import { annotate } from "rough-notation";
 const underline = annotate(document.getElementById("underline"), {
   type: "underline",
   color: "pink",
+  padding: 3,
   //   animate: false,
 });
 

@@ -181,14 +181,14 @@ header.O_Header {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
   border-bottom: 1px solid var(--stroke);
 }
 
 .C_Projects {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 /* Superoganisms */
@@ -196,7 +196,7 @@ header.O_Header {
 section {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Layout */
