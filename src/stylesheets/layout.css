@@ -1,5 +1,6 @@
 body {
   font-family: "Aeonik Pro";
+  background-color: #f9f9fa;
 }
 * {
   /* outline: 1px solid red; */
@@ -99,6 +100,13 @@ b {
   font-weight: 500;
   border-radius: 1rem;
   box-shadow: 3px 4px 4px 0 rgba(255, 255, 255, 0.35) inset;
+}
+
+.A_Name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-primary);
 }
 
 .A_IconTextButton {

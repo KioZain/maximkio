@@ -26,6 +26,10 @@ const htmlPages = [
   createPages("./src/pages/tests/test1.html", "./pages/tests/test1.html", [
     "index",
   ]),
+  createPages("./src/pages/cases/artovoe.html", "./pages/cases/artovoe.html", [
+    "index",
+    // "rough",
+  ]),
 ];
 
 module.exports = htmlPages;
