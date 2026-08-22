@@ -1,32 +1,31 @@
 body {
   font-family: "Aeonik Pro";
-  background-color: #f9f9fa;
+  background-color: var(--background-body);
 }
 * {
   /* outline: 1px solid red; */
 }
 
 h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 125%;
+}
+h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 125%;
+}
+h3 {
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--text-primary);
-}
-
-h3 {
-  font-size: 1.25rem;
-  line-height: 140%;
-  font-weight: 500;
-  color: var(--text-primary);
-
-  @media screen and (max-width: 768px) {
-    font-size: 1rem;
-  }
+  line-height: 135%;
 }
 
 p {
-  font-size: 17px;
+  font-size: 1.25rem;
   line-height: 140%;
-  color: var(--text-secondary);
+  color: var(--colors-gray-light-1000);
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
@@ -49,171 +48,8 @@ b {
   margin: 0 auto;
 }
 
-/* Quarks */
-.Q_ProjectCover {
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 16/9;
-  border-radius: 16px;
-  box-shadow: 0 1px 5.4px 0 rgba(0, 0, 0, 0.15);
-}
-
-/* Atoms */
-.A_Link {
-  text-decoration: none;
-  color: var(--text-primary);
-  font-weight: 500;
-  font-size: 17px;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-
-.A_Button {
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  gap: 6px;
-  padding: 0 0.75rem 0;
-  border-radius: 12px;
-  /* border: 1px solid #fffafa; */
-  background: linear-gradient(180deg, #000 0%, #666 100%);
-  box-shadow: 1px 2px 3.6px 0 rgba(0, 0, 0, 0.25);
-  color: white;
-  text-decoration: none;
-  align-items: center;
-}
-
-.A_Tag {
-  height: 32px;
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0 12px;
-  background: #6bb5ff;
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 1rem;
-  box-shadow: 3px 4px 4px 0 rgba(255, 255, 255, 0.35) inset;
-}
-
-.A_Name {
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--text-primary);
-}
-
-.A_IconTextButton {
-  display: flex;
-  flex-direction: row;
-  gap: 4px;
-  font-weight: 500;
-  color: var(--text-primary);
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-  align-items: center;
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-/* Molecules */
-.M_AboutProject {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.M_TitleYear {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  b:nth-child(2) {
-    color: var(--text-secondary);
-    font-weight: 300;
-  }
-}
-
-.M_Message {
-  background-color: var(--background-minor);
-  padding: 1rem;
-  border-radius: 12px;
-}
-
-/* Organisms */
-header.O_Header {
-  display: flex;
-  flex-direction: 100%;
-  justify-content: space-between;
-  padding: 1.5rem 0;
-  align-items: center;
-
-  .C_Links {
-    display: flex;
-    flex-direction: row;
-    gap: 1.25rem;
-  }
-
-  .M_Buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 1.25rem;
-    align-items: center;
-  }
-}
-.O_Head {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-}
-.O_ProjectCard {
-  text-decoration: none;
-}
-
-.O_ListText {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--stroke);
-}
-
-.C_Projects {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-/* Superoganisms */
-
 section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-/* Layout */
-.L_Home {
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-
-  @media screen and (max-width: 768px) {
-    padding: 0 1rem;
-  }
 }

@@ -9,4 +9,75 @@
   --background-minor: rgba(var(--black), 0.03);
 
   --stroke: rgba(var(--black), 0.1);
+
+  /* -------------Tokens------------- */
+  --colors-black-1000: #161616ff;
+  --colors-black-500: #16161680;
+  --colors-black-300: #1616164d;
+  --colors-black-200: #16161633;
+  --colors-black-100: #1616161a;
+  /* White */
+  --colors-white-1000: #ffffffff;
+  --colors-white-500: #ffffff80;
+  --colors-white-300: #ffffff4d;
+  --colors-white-200: #ffffff33;
+  --colors-white-100: #ffffff1a;
+  /* Gray */
+
+  --colors-gray-1000: #676767ff;
+  --colors-gray-500: #67676780;
+  --colors-gray-300: #6767674d;
+  --colors-gray-200: #67676733;
+  --colors-gray-100: #6767671a;
+  /* Gray Light */
+  --colors-gray-light-1000: rgba(242, 242, 242, 100%);
+  --colors-gray-light-500: rgba(242, 242, 242, 50%);
+  --colors-gray-light-300: rgba(242, 242, 242, 30%);
+  --colors-gray-light-200: rgba(242, 242, 242, 20%);
+  --colors-gray-light-100: rgba(242, 242, 242, 10%);
+  /* Blue */
+  --colors-blue-1000: rgba(107, 181, 255, 100%);
+  --colors-blue-500: rgba(107, 181, 255, 50%);
+  --colors-blue-300: rgba(107, 181, 255, 30%);
+  --colors-blue-200: rgba(107, 181, 255, 20%);
+  --colors-blue-100: rgba(107, 181, 255, 10%);
+
+  /* --------------------------Usage-------------------------- */
+  /* Text-icon-black */
+  --text-icon-black-primary: var(--colors-black-1000);
+  --text-icon-black-secondary: var(--colors-black-500);
+  --text-icon-black-tetriary: var(--colors-black-300);
+
+  /* Text-icon-gray */
+  --text-icon-gray-primary: var(--colors-gray-1000);
+  --text-icon-gray-secondary: var(--colors-gray-500);
+  --text-icon-gray-tetriary: var(--colors-gray-300);
+
+  /* Text-icon-inverse */
+  --text-icon-Inverse: var(--colors-white-1000);
+  --text-icon-inverse-primary: var(--colors-white-500);
+  --text-icon-inverse-tetriary: var(--colors-white-300);
+
+  /* Blue */
+  --text-icon-blue-primary: var(--colors-blue-1000);
+
+  /*Button */
+  --background-button: var(--colors-gray-light-1000);
+
+  /* Background */
+  --background-body: var(--colors-white-1000);
+
+  /* Gradients */
+  --gradient-gray-gradient: var(--colors-white-1000);
+  --gradient-black-gradient: var(--colors-black-1000);
+
+  /* Borders */
+  --border-opacity: var(--colors-black-100);
+
+  /* ------Border-radius------ */
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-24: 24px;
 }

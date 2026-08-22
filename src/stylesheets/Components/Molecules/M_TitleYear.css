@@ -1,0 +1,10 @@
+.M_TitleYear {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  b:nth-child(2) {
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+}

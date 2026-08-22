@@ -1,0 +1,7 @@
+.Q_ProjectCover {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  box-shadow: 0 1px 5.4px 0 rgba(0, 0, 0, 0.15);
+}

@@ -56,6 +56,11 @@ module.exports = {
   optimization: {
     minimizer: [new CssMinimizerPlugin()],
   },
+  ignoreWarnings: [
+    // Пустая папка Components/* (ещё нет ни одного файла) — не ошибка,
+    // "postcss-import-ext-glob" просто ничего не находит по маске.
+    /No file found for @import-glob/,
+  ],
   resolve: {
     fallback: {
       stream: require.resolve("stream-browserify"),

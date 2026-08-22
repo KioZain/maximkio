@@ -1,0 +1,6 @@
+.M_Buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: center;
+}

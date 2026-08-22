@@ -1,0 +1,5 @@
+.M_Message {
+  background-color: var(--background-minor);
+  padding: 1rem;
+  border-radius: 12px;
+}

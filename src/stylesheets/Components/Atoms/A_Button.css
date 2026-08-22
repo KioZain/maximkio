@@ -1,0 +1,25 @@
+.A_Button {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  gap: 4px;
+  padding: 0 0.75rem 0;
+  border-radius: var(--radius-12);
+  text-decoration: none;
+  align-items: center;
+  background: var(--background-button);
+  color: var(--text-icon-gray-primary);
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--text-icon-blue-primary);
+
+    .Q_Icon {
+      stroke: currentColor;
+    }
+  }
+}

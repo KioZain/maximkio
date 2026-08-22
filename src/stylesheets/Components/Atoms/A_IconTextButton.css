@@ -1,0 +1,15 @@
+.A_IconTextButton {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  align-items: center;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

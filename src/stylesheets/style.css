@@ -2,3 +2,12 @@
 @import "fonts.css";
 @import "vars.css";
 @import "layout.css";
+
+@import-glob "Components/Quarks/**/*.css";
+@import-glob "Components/Atoms/**/*.css";
+@import-glob "Components/Molecules/**/*.css";
+@import-glob "Components/Organisms/**/*.css";
+@import-glob "Components/Superorganisms/**/*.css";
+@import-glob "Components/Collections/**/*.css";
+@import-glob "Components/Layout/**/*.css";
+@import-glob "Components/Wrappers/**/*.css";
