@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     index: "./src/javascripts/index.js",
     rough: "./src/javascripts/doodles.js",
+    marquee: "./src/javascripts/marquee.js",
   },
   output: {
     filename: "[name].js",
@@ -54,7 +55,9 @@ module.exports = {
   },
   plugins: [new MiniCssExtractPlugin(), ...htmlPages],
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    // "..." keeps webpack's default JS minifier (Terser) — without it a bare
+    // `minimizer` array replaces it and production JS ships unminified.
+    minimizer: ["...", new CssMinimizerPlugin()],
   },
   ignoreWarnings: [
     // Пустая папка Components/* (ещё нет ни одного файла) — не ошибка,

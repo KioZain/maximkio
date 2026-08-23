@@ -10,6 +10,11 @@ h1 {
   font-size: 2rem;
   font-weight: 500;
   line-height: 125%;
+
+  &.hero {
+    font-family: "Caveat";
+    font-size: 3.5rem;
+  }
 }
 h2 {
   font-size: 1.75rem;
@@ -25,10 +30,19 @@ h3 {
 p {
   font-size: 1.25rem;
   line-height: 140%;
-  color: var(--colors-gray-light-1000);
+  color: var(--text-icon-gray-primary);
 
   @media screen and (max-width: 768px) {
     font-size: 1rem;
+  }
+
+  &.caption {
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 500;
+    color: var(--text-icon-black-secondary);
+    text-transform: uppercase;
+    letter-spacing: 5%;
   }
 }
 
@@ -44,7 +58,7 @@ b {
 
 .margin-container {
   width: 100%;
-  max-width: 724px;
+  max-width: 850px;
   margin: 0 auto;
 }
 

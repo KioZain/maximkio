@@ -1,0 +1,44 @@
+.C_RunningImages {
+  display: flex;
+  gap: 1rem;
+  height: fit-content;
+
+  /* The strip is deliberately wider than the viewport: the parent
+     (.O_OtherProjectsMarque) clips it, and min-width keeps the flex item
+     itself from being stretched by its own content. */
+  min-width: 0;
+  width: 100%;
+
+  /* Dragging: no text/image selection, no native image ghost. */
+  user-select: none;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .A_MaqueItem {
+    /* Items must never shrink — the loop measures their real widths. */
+    flex: 0 0 auto;
+    /* No will-change here: promoting every cloned image to its own
+       compositor layer costs a visible hitch on load, and GSAP already
+       promotes what it animates. */
+  }
+
+  img {
+    border-radius: var(--radius-24);
+    height: 280px;
+    /* Images must not swallow the drag: pointer-events makes them invisible
+       to hit-testing (drop this line if the items ever become links) and
+       user-drag kills the native "ghost image" drag. */
+    pointer-events: none;
+    -webkit-user-drag: none;
+
+    &.square {
+      aspect-ratio: 1/1;
+    }
+    &.landscape {
+      aspect-ratio: 16/9;
+    }
+  }
+}

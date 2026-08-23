@@ -52,18 +52,23 @@
       </header>
       <div class="L_Home">
         <div class="O_Head">
-          <img class="Q_ProfileImage" src="./images/me.png" alt="" />
-          <h1>Максим Кириллов</h1>
-          <p>
-            <span id="underline"
-              >UX/UI дизайнер с 3+ годами опыта в дизайне.</span
-            >
-            Участвую во всех этапах создания продукта: от discovery этапа
-            и тестирования прототипов до review разработки. Выпускник HSE Art &
-            Design School по направлению «Дизайн и программирование»
-          </p>
-          <div class="M_Message">
-            <p>Открыт к любому взаимодействию и любому сотрудничеству</p>
+          <div class="M_ProfileBanner">
+            <img class="Q_ProfileImage" src="./images/me.png" alt="" />
+            <canvas class="A_CanvasBeautiful"></canvas>
+          </div>
+
+          <div class="M_TextAbout">
+            <h2>
+              Максим Кириллов <span class="A_StatusBadge">Ищет работу</span>
+            </h2>
+            <p>
+              <span id="underline"
+                >UX/UI дизайнер с 3+ годами опыта в дизайне.</span
+              >
+              Участвую во всех этапах создания продукта: от discovery этапа
+              и тестирования прототипов до review разработки. Выпускник HSE Art
+              & Design School по направлению «Дизайн и программирование»
+            </p>
           </div>
         </div>
 
@@ -71,12 +76,15 @@
         <section class="S_Projects">
           <div class="C_Projects">
             <a href="" class="O_ProjectCard">
-              <img class="Q_ProjectCover" src="./images/webposter.png" alt="" />
+              <div class="Q_ProjectCover">
+                <img src="./images/webposter.png" alt="" />
+              </div>
               <div class="M_AboutProject">
                 <div class="C_Tags">
                   <div class="A_Tag">WEB</div>
                 </div>
-                <h3>Цифровой медиакаталог современного искусства</h3>
+
+                <h3>Интерактивный учебник по веб-плакату</h3>
                 <p>
                   ARTOVOE — это медиакаталог работ современного искусства, где
                   арт становится видимым.
@@ -84,11 +92,14 @@
               </div>
             </a>
             <a href="./pages/cases/artovoe.html" class="O_ProjectCard">
-              <img
-                class="Q_ProjectCover"
-                src="./images/coverPreview.png"
-                alt=""
-              />
+              <div class="Q_ProjectCover">
+                <img
+                  class="Q_ProjectCover"
+                  src="./images/coverPreview.png"
+                  alt=""
+                />
+              </div>
+
               <div class="M_AboutProject">
                 <h3>Цифровой медиакаталог современного искусства</h3>
                 <p>
@@ -100,10 +111,7 @@
             <a href="" class="O_ProjectCard">
               <img class="Q_ProjectCover" src="./images/veranda.png" alt="" />
               <div class="M_AboutProject">
-                <h3>
-                  Многостраничный сайт-медиа о современной загородной жизни
-                  verānda
-                </h3>
+                <h3>Cайт-медиа о современной загородной жизни</h3>
                 <p>
                   ARTOVOE — это медиакаталог работ современного искусства, где
                   арт становится видимым.
@@ -114,17 +122,118 @@
         </section>
         <!-- OtherProjects -->
         <section class="S_OtherProjects">
-          <h1>Другие штуки</h1>
+          <div class="O_OtherProjectsMarque">
+            <div
+              class="C_RunningImages"
+              data-marquee
+              data-marquee-direction="left"
+              data-marquee-speed="60"
+            >
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-1-1.png"
+                  alt=""
+                  class="square"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-16-9.png"
+                  alt=""
+                  class="landscape"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-1-1.png"
+                  alt=""
+                  class="square"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-16-9.png"
+                  alt=""
+                  class="landscape"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-1-1.png"
+                  alt=""
+                  class="square"
+                />
+              </div>
+            </div>
+            <div
+              class="C_RunningImages"
+              data-marquee
+              data-marquee-direction="right"
+              data-marquee-speed="60"
+            >
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-16-9.png"
+                  alt=""
+                  class="landscape"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-1-1.png"
+                  alt=""
+                  class="square"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-16-9.png"
+                  alt=""
+                  class="landscape"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-1-1.png"
+                  alt=""
+                  class="square"
+                />
+              </div>
+              <div class="A_MaqueItem">
+                <img
+                  src="images/placeholders/placeholder-16-9.png"
+                  alt=""
+                  class="landscape"
+                />
+              </div>
+            </div>
+          </div>
         </section>
         <!-- About -->
         <section class="S_About">
-          <h1>Обо мне</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa
-            deleniti eveniet repellat delectus ratione ipsa quas modi quaerat
-            alias sit commodi temporibus explicabo, sapiente harum, labore
-            cupiditate perferendis libero.
-          </p>
+          <div class="M_AccentText">
+            <h1 class="hero">Живу свою жизнь</h1>
+            <p>Ну пытаюсь</p>
+          </div>
+
+          <div class="O_ImagesAbout">
+            <div class="C_ImagesAbout">
+              <img src="images/me-about-1.png" alt="" /><img
+                src="images/me-about-2.png"
+                alt=""
+              /><img src="images/me-about-3.png" alt="" />
+            </div>
+          </div>
+
+          <div class="M_TitleCaption">
+            <p class="caption">Обо мне</p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+              culpa deleniti eveniet repellat delectus ratione ipsa quas modi
+              quaerat alias sit commodi temporibus explicabo, sapiente harum,
+              labore cupiditate perferendis libero.
+            </p>
+          </div>
         </section>
         <!-- Work -->
         <section class="S_Work">

@@ -1,0 +1,11 @@
+.A_StatusBadge {
+  display: inline-flex;
+  font-size: 1.125rem;
+  color: var(--text-icon-gray-primary);
+  padding: 0 0.75rem;
+  height: 2rem;
+  border-radius: var(--radius-12);
+  border: 1px solid var(--border-opacity);
+  pointer-events: none;
+  user-select: none;
+}

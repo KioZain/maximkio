@@ -1,7 +1,6 @@
 .L_Home {
   display: flex;
   flex-direction: column;
-  gap: 80px;
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;

@@ -49,3 +49,10 @@
   font-weight: 500;
   font-style: normal;
 }
+/* Caveat */
+@font-face {
+  font-family: "Caveat";
+  src: url("../fonts/Caveat-Medium.ttf") format("true-type");
+  font-weight: 500;
+  font-style: normal;
+}

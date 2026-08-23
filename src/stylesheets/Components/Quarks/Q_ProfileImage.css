@@ -1,5 +1,8 @@
-img.Q_ProfileImage {
-  /* border-radius: 20px; */
+.Q_ProfileImage {
+  border-radius: var(--radius-24);
+  max-width: 100px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border: 1px solid rgba(0, 0, 0, 0.13);
   box-shadow:
     0 2px 4px 0 rgba(0, 0, 0, 0.27),
