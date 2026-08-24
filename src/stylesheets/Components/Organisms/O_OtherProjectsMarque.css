@@ -3,6 +3,7 @@
   gap: 1rem;
   width: 100%;
   display: flex;
+  background: red;
   flex-direction: column;
   /* Two 333px rows inside 680px — space-between gives the gap between them. */
   /* justify-content: space-between; */

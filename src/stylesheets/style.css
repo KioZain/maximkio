@@ -11,3 +11,4 @@
 @import-glob "Components/Collections/**/*.css";
 @import-glob "Components/Layout/**/*.css";
 @import-glob "Components/Wrappers/**/*.css";
+@import-glob "Components/Effects/**/*.css";

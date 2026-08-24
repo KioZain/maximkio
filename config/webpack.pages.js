@@ -9,7 +9,12 @@ function createPages(template, filename, chunks) {
 }
 
 const htmlPages = [
-  createPages("./src/index.html", "./index.html", ["index", "rough", "marquee"]),
+  createPages("./src/index.html", "./index.html", [
+    "index",
+    "rough",
+    "marquee",
+    "magnetic",
+  ]),
   createPages("./src/pages/articles.html", "./pages/articles.html", [
     "index",
     "rough",
@@ -25,6 +30,7 @@ const htmlPages = [
   ),
   createPages("./src/pages/tests/test1.html", "./pages/tests/test1.html", [
     "index",
+    "magnetic",
   ]),
   createPages("./src/pages/cases/artovoe.html", "./pages/cases/artovoe.html", [
     "index",

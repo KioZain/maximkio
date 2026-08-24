@@ -1,13 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Тест №1</title>
+    <title>Тест №1 — магнитный ховер</title>
   </head>
   <body>
-    <a href="../../index.html">На главную</a>
-    <a href="../tests.html">Обратно ко всем тестам</a>
-    <h1>Тест №1</h1>
+    <div class="margin-container">
+      <a class="A_Link" href="../../index.html">На главную</a>
+      <a class="A_Link" href="../tests.html">Обратно ко всем тестам</a>
+
+      <h1>Магнитный ховер</h1>
+      <p class="secondary">
+        Стенд для подбора значений. Дефолты живут в SETTINGS внутри
+        src/javascripts/magnetic.js, всё остальное здесь переопределено
+        data-атрибутами прямо в разметке.
+      </p>
+
+      <section>
+        <p class="caption">Дефолт</p>
+        <div class="M_Buttons">
+          <a class="A_Button E_Magnetic" href="#">Обычная кнопка</a>
+          <a class="A_Button E_Magnetic" href="#">Ещё одна</a>
+          <a class="A_Button E_Magnetic" href="#">И третья</a>
+        </div>
+      </section>
+
+      <section>
+        <p class="caption">Сила: 0.2 / 0.35 / 0.6</p>
+        <div class="M_Buttons">
+          <a class="A_Button E_Magnetic" data-magnetic-strength="0.2" href="#">Едва</a>
+          <a class="A_Button E_Magnetic" data-magnetic-strength="0.35" href="#">Норма</a>
+          <a class="A_Button E_Magnetic" data-magnetic-strength="0.6" href="#">Сильно</a>
+        </div>
+      </section>
+
+      <section>
+        <p class="caption">Радиус поля: 1 / 1.6 / 2.5</p>
+        <div class="M_Buttons">
+          <a class="A_Button E_Magnetic" data-magnetic-radius="1" href="#">Впритык</a>
+          <a class="A_Button E_Magnetic" data-magnetic-radius="1.6" href="#">Норма</a>
+          <a class="A_Button E_Magnetic" data-magnetic-radius="2.5" href="#">Издалека</a>
+        </div>
+      </section>
+
+      <section>
+        <p class="caption">Характер: lerp против пружины</p>
+        <div class="M_Buttons">
+          <a class="A_Button E_Magnetic" data-magnetic-mode="lerp" href="#">lerp</a>
+          <a
+            class="A_Button E_Magnetic"
+            data-magnetic-mode="spring"
+            data-magnetic-strength="0.5"
+            href="#"
+            >spring</a
+          >
+        </div>
+      </section>
+
+      <section>
+        <p class="caption">Только по горизонтали</p>
+        <div class="M_Buttons">
+          <a class="A_Button E_Magnetic" data-magnetic-axis="x" href="#">axis = x</a>
+        </div>
+      </section>
+
+      <section>
+        <p class="caption">Инлайновая ссылка: transform не действует</p>
+        <p>
+          Обычный текст, внутри которого стоит
+          <a class="A_Link E_Magnetic" href="#">магнитная ссылка</a> — она не
+          двигается, пока ей не задан display: inline-block.
+        </p>
+      </section>
+
+      <section>
+        <p class="caption">Крупный блок: max держит смещение в рамках</p>
+        <div
+          class="M_Message E_Magnetic"
+          data-magnetic-radius="1.2"
+          data-magnetic-max="20"
+        >
+          <p>Блок целиком тоже может быть магнитным.</p>
+        </div>
+      </section>
+    </div>
   </body>
 </html>

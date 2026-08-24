@@ -11,6 +11,7 @@ module.exports = {
     index: "./src/javascripts/index.js",
     rough: "./src/javascripts/doodles.js",
     marquee: "./src/javascripts/marquee.js",
+    magnetic: "./src/javascripts/magnetic.js",
   },
   output: {
     filename: "[name].js",
