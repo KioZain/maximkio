@@ -14,6 +14,7 @@ h1 {
   &.hero {
     font-family: "Caveat";
     font-size: 3.5rem;
+    line-height: 115%;
   }
 }
 h2 {
@@ -22,13 +23,13 @@ h2 {
   line-height: 125%;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 135%;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 140%;
   color: var(--text-icon-gray-primary);
 
@@ -45,6 +46,15 @@ p {
     letter-spacing: 5%;
   }
 }
+a {
+  font-size: 1.125rem;
+  line-height: 140%;
+  color: var(--text-icon-gray-primary);
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
 
 b {
   font-weight: 500;
@@ -58,7 +68,7 @@ b {
 
 .margin-container {
   width: 100%;
-  max-width: 850px;
+  max-width: 756px;
   margin: 0 auto;
 }
 

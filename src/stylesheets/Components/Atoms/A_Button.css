@@ -13,7 +13,8 @@
   color: var(--text-icon-gray-primary);
   transition:
     color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out;
+    background-color 0.3s ease-in-out,
+    var(--transition-press);
 
   &:hover {
     color: var(--text-icon-blue-primary);

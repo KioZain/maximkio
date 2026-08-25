@@ -1,6 +1,8 @@
 .A_CanvasBeautiful {
   border-radius: var(--radius-24);
-  border: 1px solid var(--border-opacity);
+  /* border: 1px solid var(--border-opacity); */
   width: 100%;
   max-height: 100px;
+  overflow: hidden;
+  background-color: var(--colors-gray-200);
 }

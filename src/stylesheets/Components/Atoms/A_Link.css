@@ -3,7 +3,9 @@
   color: var(--text-primary);
   font-weight: 500;
   font-size: 17px;
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    var(--transition-press);
 
   &:hover {
     opacity: 0.6;

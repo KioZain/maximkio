@@ -2,6 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--stroke);
+  padding: 1rem;
+  border-radius: var(--radius-16);
+  /* border-bottom: 1px solid var(--stroke); */
+
+  p {
+    font-size: 1.125rem;
+  }
+
+  &:hover {
+    background: var(--colors-gray-light-1000);
+  }
+  /* outline: 1px red solid; */
 }

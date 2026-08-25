@@ -54,8 +54,8 @@
   --text-icon-gray-tetriary: var(--colors-gray-300);
 
   /* Text-icon-inverse */
-  --text-icon-Inverse: var(--colors-white-1000);
-  --text-icon-inverse-primary: var(--colors-white-500);
+  --text-icon-inverse-primary: var(--colors-white-1000);
+  --text-icon-inverse-secondary: var(--colors-white-500);
   --text-icon-inverse-tetriary: var(--colors-white-300);
 
   /* Blue */
@@ -79,5 +79,26 @@
   --radius-4: 4px;
   --radius-8: 8px;
   --radius-12: 12px;
+  --radius-16: 16px;
   --radius-24: 24px;
+
+  /* ------Motion------ */
+  /* Одна семья кривых на весь сайт: и нажатие, и появление проходят почти
+     весь путь в первые миллисекунды и мягко доезжают. Отличаются только
+     длительностью, поэтому движения ощущаются как один почерк. */
+  --ease-press: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --duration-press: 140ms;
+  /* Появление длиннее интерфейсного предела в 300 мс намеренно: это не отклик
+     на действие, а въезд декоративного блока — его читают, а не ждут. */
+  --duration-enter: 500ms;
+
+  /* Шаг задержки между соседями в группе. Ниже 30 мс группа читается как один
+     элемент, выше 80 мс — как отдельные, не связанные друг с другом. */
+  --stagger-step: 60ms;
+
+  /* Готовая строка для transition. Нужна компонентам, у которых есть свой
+     transition: без неё эффект E_Click на них не анимируется, см. E_Click.css. */
+  --transition-press: scale var(--duration-press) var(--ease-press);
 }

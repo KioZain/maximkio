@@ -1,0 +1,25 @@
+{
+  "pages": {
+    "index": {
+      "title": "Maxim Kirillov",
+      "description": "UX/UI designer portfolio: interfaces, product and web design."
+    }
+  },
+
+  "langSwitch": {
+    "title": "Interface language"
+  },
+
+  "header": {
+    "cv": "CV",
+    "telegram": "Telegram",
+    "email": "Email"
+  },
+
+  "hero": {
+    "name": "Maxim Kirillov",
+    "status": "Open to work",
+    "leadIn": "UX/UI designer with 3+ years of experience.",
+    "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
+  }
+}

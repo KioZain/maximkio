@@ -1,0 +1,18 @@
+.Q_SpriteMan {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/sprites/man.png");
+
+  &.animated {
+    animation: change 0.7s steps(3) infinite alternate;
+  }
+}
+
+@keyframes change {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -72px;
+  }
+}

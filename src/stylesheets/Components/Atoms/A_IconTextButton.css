@@ -6,7 +6,9 @@
   color: var(--text-primary);
   text-decoration: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    var(--transition-press);
   align-items: center;
 
   &:hover {

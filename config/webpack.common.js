@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const htmlPages = require("./webpack.pages.js");
@@ -12,6 +13,10 @@ module.exports = {
     rough: "./src/javascripts/doodles.js",
     marquee: "./src/javascripts/marquee.js",
     magnetic: "./src/javascripts/magnetic.js",
+    click: "./src/javascripts/click.js",
+    langSwitch: "./src/javascripts/langSwitch.js",
+    homeCanvas: "./src/javascripts/homeCanvas.js",
+    reveal: "./src/javascripts/reveal.js",
   },
   output: {
     filename: "[name].js",
@@ -36,7 +41,13 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        // Порядок важен: загрузчики отрабатывают справа налево, поэтому
+        // i18n подставляет тексты в шаблон, а html-loader уже разбирает
+        // готовую разметку и подхватывает картинки.
+        use: [
+          "html-loader",
+          path.resolve(__dirname, "i18n/loader.js"),
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
@@ -54,17 +65,26 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MiniCssExtractPlugin(), ...htmlPages],
+  plugins: [
+    new MiniCssExtractPlugin(),
+
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, "../src/partials/footerbar.html"),
+        location: "footerbar",
+        template_filename: "*",
+        priority: "replace",
+      },
+    ]),
+
+    ...htmlPages,
+  ],
+
   optimization: {
-    // "..." keeps webpack's default JS minifier (Terser) — without it a bare
-    // `minimizer` array replaces it and production JS ships unminified.
     minimizer: ["...", new CssMinimizerPlugin()],
   },
-  ignoreWarnings: [
-    // Пустая папка Components/* (ещё нет ни одного файла) — не ошибка,
-    // "postcss-import-ext-glob" просто ничего не находит по маске.
-    /No file found for @import-glob/,
-  ],
+
+  ignoreWarnings: [/No file found for @import-glob/],
   resolve: {
     fallback: {
       stream: require.resolve("stream-browserify"),

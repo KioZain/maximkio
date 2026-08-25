@@ -1,0 +1,28 @@
+.O_Contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: 400px;
+
+  h1.hero {
+    max-width: 480px;
+    text-align: center;
+  }
+
+  .M_Buttons {
+    .A_Button {
+      height: 56px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      gap: 6px;
+
+      &:first-child {
+        border: 1px solid #fffafa;
+        background: linear-gradient(180deg, #161616 0%, #666 100%);
+        color: var(--text-icon-inverse-primary);
+      }
+    }
+  }
+}

@@ -1,3 +1,6 @@
 .O_ProjectCard {
+  /* Карточка большая: те же 5%, что у кнопки, на ней выглядят провалом. */
+  --press-scale: 0.98;
+
   text-decoration: none;
 }

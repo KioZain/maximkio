@@ -1,41 +1,27 @@
+/* ==========================================================================
+ * Список HtmlWebpackPlugin: страница × язык.
+ *
+ * Сами страницы и языки описаны в i18n/config.js — здесь только сборка
+ * плагинов по этому списку.
+ *
+ * Запрос "?lang=…&page=…" в пути шаблона делает две вещи сразу: сообщает
+ * i18n-загрузчику, какой словарь подставить, и разводит русскую и английскую
+ * версию по разным модулям webpack (иначе вторая пришла бы из кэша первой).
+ * ========================================================================== */
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-function createPages(template, filename, chunks) {
-  return new HtmlWebpackPlugin({
-    template: template,
-    filename: filename,
-    chunks: chunks,
-  });
-}
+const { PAGES, languagesFor, outputPath } = require("./i18n/config.js");
 
-const htmlPages = [
-  createPages("./src/index.html", "./index.html", [
-    "index",
-    "rough",
-    "marquee",
-    "magnetic",
-  ]),
-  createPages("./src/pages/articles.html", "./pages/articles.html", [
-    "index",
-    "rough",
-  ]),
-  createPages("./src/pages/tests.html", "./pages/tests.html", ["index"]),
-  createPages("./src/pages/dictionary.html", "./pages/dictionary.html", [
-    "index",
-  ]),
-  createPages(
-    "./src/pages/articles/plants.html",
-    "./pages/articles/plants.html",
-    ["index"],
+const htmlPages = PAGES.flatMap((page) =>
+  languagesFor(page).map(
+    (language) =>
+      new HtmlWebpackPlugin({
+        template: `${page.template}?lang=${language.code}&page=${page.id}`,
+        filename: outputPath(page, language),
+        chunks: page.chunks,
+      }),
   ),
-  createPages("./src/pages/tests/test1.html", "./pages/tests/test1.html", [
-    "index",
-    "magnetic",
-  ]),
-  createPages("./src/pages/cases/artovoe.html", "./pages/cases/artovoe.html", [
-    "index",
-    // "rough",
-  ]),
-];
+);
 
 module.exports = htmlPages;
