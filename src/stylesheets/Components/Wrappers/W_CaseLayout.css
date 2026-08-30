@@ -1,0 +1,18 @@
+.W_CaseLayout {
+  min-width: 100%;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr minmax(0, 756px) 1fr;
+  align-items: center;
+  position: relative;
+  padding: 0 80px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .body {
+    grid-column: 2;
+  }
+}

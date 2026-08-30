@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const htmlPages = require("./webpack.pages.js");
@@ -44,10 +43,7 @@ module.exports = {
         // Порядок важен: загрузчики отрабатывают справа налево, поэтому
         // i18n подставляет тексты в шаблон, а html-loader уже разбирает
         // готовую разметку и подхватывает картинки.
-        use: [
-          "html-loader",
-          path.resolve(__dirname, "i18n/loader.js"),
-        ],
+        use: ["html-loader", path.resolve(__dirname, "i18n/loader.js")],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
@@ -67,15 +63,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
-
-    new HtmlWebpackPartialsPlugin([
-      {
-        path: path.join(__dirname, "../src/partials/footerbar.html"),
-        location: "footerbar",
-        template_filename: "*",
-        priority: "replace",
-      },
-    ]),
 
     ...htmlPages,
   ],

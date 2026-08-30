@@ -148,4 +148,4 @@ function render(source, scopes, context) {
   return renderValues(head, scopes, context) + repeated + render(tail, scopes, context);
 }
 
-module.exports = { render, escapeHtml };
+module.exports = { render, escapeHtml, fail };

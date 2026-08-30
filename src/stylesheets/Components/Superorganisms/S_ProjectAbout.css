@@ -1,0 +1,5 @@
+.S_ProjectAbout {
+  width: 100%;
+  max-width: var(--article-text-width);
+  margin: 0 auto;
+}

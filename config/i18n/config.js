@@ -96,7 +96,7 @@ const PAGES = [
     id: "cases/artovoe",
     template: "./src/pages/cases/artovoe.html",
     out: "pages/cases/artovoe.html",
-    chunks: ["index", "click"],
+    chunks: ["index", "click", "magnetic", "langSwitch"],
   },
 ];
 

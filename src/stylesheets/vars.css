@@ -11,6 +11,9 @@
   --stroke: rgba(var(--black), 0.1);
 
   /* -------------Tokens------------- */
+  --article-text-width: 636px;
+
+  /* -------------Tokens------------- */
   --colors-black-1000: #161616ff;
   --colors-black-500: #16161680;
   --colors-black-300: #1616164d;

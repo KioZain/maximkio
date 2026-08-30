@@ -1,0 +1,27 @@
+.O_Table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+
+  td {
+    font-size: 1.125rem;
+    line-height: 140%;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--stroke);
+    white-space: nowrap;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  td:first-child {
+    color: var(--text-icon-gray-primary);
+    text-align: left;
+  }
+
+  td:last-child {
+    color: var(--text-icon-black-primary);
+    text-align: right;
+  }
+}

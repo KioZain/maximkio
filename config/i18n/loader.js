@@ -14,6 +14,14 @@
  *
  * Без параметров загрузчик отдаёт файл как есть: непереведённые страницы
  * проходят через сборку нетронутыми.
+ *
+ * Здесь же вклеиваются куски разметки:
+ *
+ *     {{> headerbar }}   вместо тега подставляется src/partials/headerbar.html
+ *
+ * Вклейка идёт ДО подстановки словаря — иначе {{ header.cv }} внутри куска
+ * никто бы не перевёл (именно так ломался header, когда куски вставлял
+ * html-webpack-partials-plugin: он работает после загрузчиков).
  * ========================================================================== */
 
 const fs = require("fs");
@@ -28,7 +36,7 @@ const {
   dictionaryPath,
 } = require("./config.js");
 
-const { render } = require("./render.js");
+const { render, fail } = require("./render.js");
 
 // Имена, которые движок подставляет сам. В словаре их быть не должно, иначе
 // непонятно, чей {{ site.lang }} выиграл.
@@ -66,6 +74,35 @@ function buildSite(page, language) {
     other: languages.find((item) => !item.isCurrent) || current,
     default: languages.find((item) => item.code === DEFAULT_LANGUAGE.code),
   };
+}
+
+// Куски разметки лежат в одной папке и зовутся по имени файла без расширения.
+const PARTIALS_DIR = path.resolve(__dirname, "../../src/partials");
+const PARTIAL = /\{\{>\s*([\w./-]+)\s*\}\}/g;
+
+/* Рекурсивная вклейка кусков: кусок сам может звать другой кусок.
+   stack — путь вызовов, по нему ловится кольцо (a → b → a). */
+function inlinePartials(source, loaderContext, context, stack = []) {
+  return source.replace(PARTIAL, (_, name) => {
+    const file = path.join(PARTIALS_DIR, `${name}.html`);
+
+    if (stack.includes(file)) {
+      fail(context, `кусок "${name}" вставляет сам себя: ${stack.concat([file]).map((item) => path.basename(item)).join(" → ")}`);
+    }
+
+    // Без этого dev-server не пересоберёт страницу после правки куска.
+    loaderContext.addDependency(file);
+
+    let content;
+
+    try {
+      content = fs.readFileSync(file, "utf8");
+    } catch (error) {
+      fail(context, `не читается кусок ${file}\n  ${error.message}`);
+    }
+
+    return inlinePartials(content, loaderContext, context, stack.concat([file]));
+  });
 }
 
 function loadDictionary(loaderContext, language, template) {
@@ -106,6 +143,9 @@ module.exports = function i18nLoader(source) {
   if (!language) throw new Error(`[i18n] неизвестный язык "${languageCode}"`);
   if (!page) throw new Error(`[i18n] страница "${pageId}" не описана в config.js`);
 
+  const context = { template: page.template, language: language.code };
+  const template = inlinePartials(source, this, context);
+
   const dictionary = loadDictionary(this, language, page.template);
   const pageMeta = (dictionary.pages && dictionary.pages[page.id]) || {};
 
@@ -115,8 +155,5 @@ module.exports = function i18nLoader(source) {
     page: { id: page.id, ...pageMeta },
   };
 
-  return render(source, [scope], {
-    template: page.template,
-    language: language.code,
-  });
+  return render(template, [scope], context);
 };
