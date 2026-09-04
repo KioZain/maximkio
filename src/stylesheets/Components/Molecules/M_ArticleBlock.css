@@ -1,0 +1,33 @@
+.M_ArticleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: var(--article-text-width);
+  margin: 0 auto;
+
+  ol {
+    list-style: inside;
+  }
+
+  li {
+    font-size: 1.125rem;
+    line-height: 140%;
+    color: var(--text-icon-gray-primary);
+    padding-left: 20px; /* Сдвигает весь блок текста вправо */
+    text-indent: -24px;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &.quote {
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--border-opacity);
+  }
+}

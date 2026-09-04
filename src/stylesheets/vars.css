@@ -64,6 +64,8 @@
   /* Blue */
   --text-icon-blue-primary: var(--colors-blue-1000);
 
+  --link: var(--colors-blue-1000);
+
   /*Button */
   --background-button: var(--colors-gray-light-1000);
 

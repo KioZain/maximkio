@@ -1,5 +1,4 @@
 .W_CaseLayout {
-  min-width: 100%;
   display: grid;
   gap: 4rem;
   grid-template-columns: 1fr minmax(0, 756px) 1fr;

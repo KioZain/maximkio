@@ -1,0 +1,15 @@
+.A_Cite {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-icon-black-primary);
+  }
+
+  cite {
+    color: var(--text-icon-gray-primary);
+    font-weight: 400;
+  }
+}

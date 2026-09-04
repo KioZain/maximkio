@@ -1,0 +1,6 @@
+.L_Article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  outline: 1px solid red;
+}

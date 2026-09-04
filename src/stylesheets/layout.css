@@ -24,14 +24,15 @@ h2 {
   line-height: 125%;
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
   line-height: 135%;
 }
 
 p {
   font-size: 1.125rem;
-  line-height: 140%;
+  line-height: 145%;
+  font-weight: 400;
   color: var(--text-icon-gray-primary);
 
   @media screen and (max-width: 768px) {
@@ -45,6 +46,16 @@ p {
     color: var(--text-icon-black-secondary);
     text-transform: uppercase;
     letter-spacing: 5%;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--link);
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 a {
@@ -61,6 +72,12 @@ b {
   font-weight: 500;
   font-size: 17px;
   color: var(--text-primary);
+}
+
+blockquote {
+  font-family: "Caveat";
+  font-size: 3rem;
+  color: var(--text-icon-gray-primary);
 }
 
 .secondary {

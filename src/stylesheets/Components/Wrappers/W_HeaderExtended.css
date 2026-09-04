@@ -1,5 +1,4 @@
 .W_HeaderExtended {
-  min-width: 100%;
   display: grid;
   /* Средняя колонка = ширине .margin-container (756px, см. layout.css),
      а не auto/min-width — так O_Header внутри неё всегда ровно 756px,
