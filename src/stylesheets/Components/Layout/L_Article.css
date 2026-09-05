@@ -1,6 +1,12 @@
 .L_Article {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  outline: 1px solid red;
+  gap: 2rem;
+  /* outline: 1px solid red; */
+}
+
+/* Заголовки статьи — цели ссылок из меню. Без отступа прокрутки заголовок
+   встаёт вплотную к верхней кромке экрана и читается как обрезанный. */
+.L_Article h3[id] {
+  scroll-margin-top: 2rem;
 }

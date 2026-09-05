@@ -1,0 +1,33 @@
+{
+  "blocks": [
+    {
+      "type": "intro",
+      "id": "artovoe",
+      "cover": "coverPreview.png"
+    },
+    {
+      "type": "text",
+      "id": "context"
+    },
+    {
+      "type": "list",
+      "id": "somelist"
+    },
+    {
+      "type": "quote",
+      "id": "teacher",
+      "portrait": "me.png"
+    },
+    {
+      "type": "image",
+      "id": "example",
+      "image": "artovoe/image-example.png",
+      "width": 756,
+      "height": 429
+    },
+    {
+      "type": "text",
+      "id": "tasks"
+    }
+  ]
+}

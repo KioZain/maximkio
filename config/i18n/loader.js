@@ -22,6 +22,15 @@
  * Вклейка идёт ДО подстановки словаря — иначе {{ header.cv }} внутри куска
  * никто бы не перевёл (именно так ломался header, когда куски вставлял
  * html-webpack-partials-plugin: он работает после загрузчиков).
+ *
+ * Если у страницы в config.js указан файл data, он читается сюда же и кладётся
+ * в шаблон под именем data. Так собираются кейсы: порядок блоков лежит в
+ * src/content, а шаблон разворачивает его одной строкой
+ *
+ *     {{#blocks data.blocks from case}}
+ *
+ * Тексты блоков движок берёт из словаря по ключу content["<id страницы>"],
+ * см. blockTextReader ниже.
  * ========================================================================== */
 
 const fs = require("fs");
@@ -40,7 +49,11 @@ const { render, fail } = require("./render.js");
 
 // Имена, которые движок подставляет сам. В словаре их быть не должно, иначе
 // непонятно, чей {{ site.lang }} выиграл.
-const RESERVED_KEYS = ["site", "page"];
+const RESERVED_KEYS = ["site", "page", "data"];
+
+// А это, наоборот, ключ, который движок ищет в словаре: под ним лежат тексты
+// блоков всех страниц, разложенные по id страницы (см. blockTextReader).
+const CONTENT_KEY = "content";
 
 /* Всё, что шаблон знает о себе и о соседних языках. Считается из config.js,
    в словарях не хранится: это не текст, а структура сайта. */
@@ -105,6 +118,87 @@ function inlinePartials(source, loaderContext, context, stack = []) {
   });
 }
 
+/* Кусок разметки для блока: partials/<папка>/<type>.html. Внутри куска
+   работают обычные {{> }}, поэтому вставленное сразу прогоняется через
+   inlinePartials — блок может собираться из более мелких кусков. */
+function partialReader(loaderContext, context) {
+  return (folder, name) => {
+    const file = path.join(PARTIALS_DIR, folder, `${name}.html`);
+
+    loaderContext.addDependency(file);
+
+    let content;
+
+    try {
+      content = fs.readFileSync(file, "utf8");
+    } catch (error) {
+      fail(
+        context,
+        `нет куска разметки ${folder}/${name}.html — блоку с type "${name}" нечем рисоваться\n  ${error.message}`,
+      );
+    }
+
+    return inlinePartials(content, loaderContext, context);
+  };
+}
+
+/* Тексты одного блока. Лежат в словаре под content["<id страницы>"].<id блока>,
+   то есть по тому же принципу, что и meta страницы в pages.<id>.
+
+   Отсутствующая ветка — не ошибка сама по себе: блок может быть и без единой
+   строки текста. Ошибка вылезет там, где текст реально понадобился, — на
+   конкретном {{ text.caption }}, и вместе с путём, куда его класть. */
+function blockTextReader(dictionary, page, language) {
+  const all = dictionary[CONTENT_KEY] || {};
+  const own = all[page.id] || {};
+
+  return (id) => ({
+    value: own[id] || {},
+    path: `content["${page.id}"].${id} в src/locales/${language.code}.json`,
+  });
+}
+
+/* Пункты навигации по кейсу. Собираются на сборке, а не в браузере: иначе
+   меню появлялось бы рывком после загрузки чанка, а до него страница стояла
+   бы без него. Здесь же оно попадает прямо в исходник страницы.
+
+   В навигацию идут блоки, у которых в словаре есть title — то есть ровно те,
+   что рисуют <h3>. Цитаты и картинки заголовка не имеют и не попадают сюда
+   сами собой, без списка исключений. Заводя новый тип блока, помните: назвал
+   заголовок title — блок появится в меню.
+
+   Первый пункт помечен активным прямо в разметке. Так меню осмысленно и без
+   JS, и в те миллисекунды, пока чанк ещё не выполнился. */
+function collectHeadings(data, blockText) {
+  if (!data || !Array.isArray(data.blocks)) return [];
+
+  return data.blocks
+    .map((block) => ({ id: block.id, title: blockText(block.id).value.title }))
+    .filter((item) => item.title)
+    .map((item, index) => ({
+      ...item,
+      // Строками, а не булевым: значения уходят прямо в атрибуты.
+      className: index === 0 ? "active" : "",
+      ariaCurrent: index === 0 ? "true" : "false",
+    }));
+}
+
+/* Данные страницы: порядок и состав блоков. Путь к файлу указан в config.js
+   и считается от корня проекта. */
+function loadData(loaderContext, page, context) {
+  if (!page.data) return null;
+
+  const file = path.resolve(__dirname, "../..", page.data);
+
+  loaderContext.addDependency(file);
+
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch (error) {
+    return fail(context, `не читаются данные страницы ${file}\n  ${error.message}`);
+  }
+}
+
 function loadDictionary(loaderContext, language, template) {
   const file = dictionaryPath(language);
 
@@ -149,10 +243,22 @@ module.exports = function i18nLoader(source) {
   const dictionary = loadDictionary(this, language, page.template);
   const pageMeta = (dictionary.pages && dictionary.pages[page.id]) || {};
 
+  // Два крючка для движка: где брать куски разметки блоков и где их тексты.
+  // Сам render.js в файловую систему не ходит и устройства словаря не знает.
+  context.loadPartial = partialReader(this, context);
+  context.blockText = blockTextReader(dictionary, page, language);
+
+  const data = loadData(this, page, context);
+
   const scope = {
     ...dictionary,
     site: buildSite(page, language),
-    page: { id: page.id, ...pageMeta },
+    page: {
+      id: page.id,
+      ...pageMeta,
+      headings: collectHeadings(data, context.blockText),
+    },
+    data,
   };
 
   return render(template, [scope], context);

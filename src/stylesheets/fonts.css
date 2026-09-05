@@ -1,31 +1,4 @@
 @font-face {
-  font-family: "PT Root UI";
-  src:
-    url("../fonts/pt-root-ui_bold.woff"), url("../fonts/pt-root-ui_bold.woff2");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "PT Root UI";
-  src:
-    url("../fonts/pt-root-ui_medium.woff"),
-    url("../fonts/pt-root-ui_medium.woff2");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "PT Root UI";
-  src:
-    url("../fonts/pt-root-ui_regular.woff"),
-    url("../fonts/pt-root-ui_regular.woff2");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "PT Root UI";
-  src:
-    url("../fonts/pt-root-ui_light.woff"),
-    url("../fonts/pt-root-ui_light.woff2");
-  font-weight: 300;
-}
-@font-face {
   font-family: "Aeonik Pro";
   src: url("../fonts/AeonikPro-Regular.otf") format("opentype");
   font-weight: 400;
@@ -52,7 +25,7 @@
 /* Caveat */
 @font-face {
   font-family: "Caveat";
-  src: url("../fonts/Caveat-Medium.ttf") format("true-type");
+  src: url("../fonts/Caveat-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }

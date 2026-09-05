@@ -1,0 +1,12 @@
+<!-- Заголовок и нумерованный список.
+     Тексты: title, items[].line
+
+     title рисуется как <h3> и добавляет блок в оглавление кейса. -->
+<div class="M_ArticleBlock">
+  <h3 id="{{ id }}">{{ text.title }}</h3>
+  <ol type="i">
+    {{#each text.items}}
+    <li>{{ line }}</li>
+    {{/each}}
+  </ol>
+</div>

@@ -1,15 +1,11 @@
 .W_HeaderExtended {
   display: grid;
-  /* Средняя колонка = ширине .margin-container (756px, см. layout.css),
-     а не auto/min-width — так O_Header внутри неё всегда ровно 756px,
-     без подгонки под контент. */
   grid-template-columns: 1fr minmax(0, 756px) 1fr;
   align-items: center;
   position: relative;
   gap: 4rem;
-
-  /* Визуальные боковые отступы 80px на разрешении 1440px */
   padding: 0 80px;
+  z-index: 2;
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;
@@ -26,5 +22,11 @@
   .margin-container {
     grid-column: 2;
     width: 100%;
+  }
+
+  @media screen and (max-width: 786px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
   }
 }

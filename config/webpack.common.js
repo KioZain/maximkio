@@ -16,6 +16,9 @@ module.exports = {
     langSwitch: "./src/javascripts/langSwitch.js",
     homeCanvas: "./src/javascripts/homeCanvas.js",
     reveal: "./src/javascripts/reveal.js",
+    lightbox: "./src/javascripts/lightbox.js",
+    scrollUp: "./src/javascripts/scrollUp.js",
+    navSpy: "./src/javascripts/navSpy.js",
   },
   output: {
     filename: "[name].js",

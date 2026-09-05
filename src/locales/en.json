@@ -3,23 +3,102 @@
     "index": {
       "title": "Maxim Kirillov",
       "description": "UX/UI designer portfolio: interfaces, product and web design."
+    },
+    "cases/artovoe": {
+      "title": "Artovoe — Maxim Kirillov",
+      "description": "Case study: a media catalogue of contemporary art. UX/UI and development."
     }
   },
-
   "langSwitch": {
     "title": "Interface language"
   },
-
   "header": {
     "cv": "CV",
     "telegram": "Telegram",
     "email": "Email"
   },
-
   "hero": {
     "name": "Maxim Kirillov",
     "status": "Open to work",
     "leadIn": "UX/UI designer with 3+ years of experience.",
     "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
+  },
+  "contact": {
+    "title": "Let’s make something meaningful together",
+    "telegram": "Telegram",
+    "email": "Email"
+  },
+  "case": {
+    "up": "Only up"
+  },
+  "content": {
+    "cases/artovoe": {
+      "artovoe": {
+        "title": "Artovoe",
+        "lead": "A media catalogue of contemporary art that makes art visible. Artists publish their work on the platform, while viewers find inspiration and discover unique objects. It is a space for an attentive look at creative work — one that becomes accessible and lives on “outside museum walls”.",
+        "coverAlt": "",
+        "tags": [
+          {
+            "label": "WEB"
+          }
+        ],
+        "facts": [
+          {
+            "label": "Period",
+            "value": "2024-2025"
+          },
+          {
+            "label": "Project",
+            "value": "Educational"
+          },
+          {
+            "label": "My role",
+            "value": "UX-UI, Development"
+          },
+          {
+            "label": "Team",
+            "value": "2 designers"
+          }
+        ]
+      },
+      "context": {
+        "title": "Context",
+        "body": "A media catalogue of contemporary art that makes art visible. Artists publish their work on the platform, while viewers find inspiration and discover unique objects. It is a space for an attentive look at creative work — one that becomes accessible and lives on “outside museum walls”."
+      },
+      "somelist": {
+        "title": "Some list",
+        "items": [
+          {
+            "line": "Sincere (we speak honestly and directly, without needless flourish)."
+          },
+          {
+            "line": "Open (we show the process, share insights and invite dialogue)."
+          },
+          {
+            "line": "Inspiring (we support makers and give them momentum to grow)."
+          },
+          {
+            "line": "Free (we do not limit format or delivery, we leave room for self-expression)."
+          },
+          {
+            "line": "Meaningful (we believe every action and every text carries a thought, a value and an idea)."
+          }
+        ]
+      },
+      "teacher": {
+        "quote": "You are doing something genuinely important for our whole design-and-code crowd",
+        "name": "Anna Komkova",
+        "role": "Tutor at HSE ART AND DESIGN",
+        "portraitAlt": ""
+      },
+      "example": {
+        "caption": "Image caption",
+        "alt": ""
+      },
+      "tasks": {
+        "title": "Tasks",
+        "body": "Fart and eat well"
+      }
+    }
   }
 }

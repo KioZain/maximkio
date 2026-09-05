@@ -34,9 +34,13 @@ const DEFAULT_LANGUAGE = LANGUAGES[0];
  * СТРАНИЦЫ
  *
  *   id        ключ страницы; по нему же ищется meta в словаре (pages.<id>)
+ *             и тексты блоков (content.<id>)
  *   template  исходный шаблон
  *   out       путь внутри docs/ для языка по умолчанию
  *   chunks    какие бандлы подключить
+ *   data      файл со структурой страницы (порядок и состав блоков), путь от
+ *             корня проекта; нужен только страницам, которые собираются из
+ *             блоков — см. {{#blocks}} в i18n/README.md
  *   i18n      true — страница собирается на всех языках,
  *             false/нет — только на языке по умолчанию
  *
@@ -96,7 +100,17 @@ const PAGES = [
     id: "cases/artovoe",
     template: "./src/pages/cases/artovoe.html",
     out: "pages/cases/artovoe.html",
-    chunks: ["index", "click", "magnetic", "langSwitch"],
+    data: "src/content/cases/artovoe.json",
+    i18n: true,
+    chunks: [
+      "index",
+      "click",
+      "magnetic",
+      "langSwitch",
+      "lightbox",
+      "scrollUp",
+      "navSpy",
+    ],
   },
 ];
 

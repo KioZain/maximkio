@@ -1,3 +1,13 @@
+/* Плавный переход по якорям — и по клику в меню кейса, и по ссылке извне.
+   Под reduced-motion не включается вовсе: прокрутка через весь документ —
+   самое сильное движение на сайте, и человек, попросивший его убрать, просил
+   в первую очередь про него. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   font-family: "Aeonik Pro";
   position: relative;
@@ -15,7 +25,7 @@ h1 {
   &.hero {
     font-family: "Caveat";
     font-size: 3.5rem;
-    line-height: 115%;
+    line-height: 95%;
   }
 }
 h2 {

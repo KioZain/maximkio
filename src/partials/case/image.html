@@ -1,0 +1,22 @@
+<!-- Картинка с подписью. Подпись — не заголовок, в оглавление кейса
+     блок не попадает.
+ Раскрывается в лайтбокс — за это отвечает
+     data-zoomable, дальше всё делает чанк lightbox (см. A_CaseImage.css).
+     Понадобится картинка, которую раскрывать не надо, — это будет
+     отдельный type, а не условие в этом файле.
+
+     Данные:  image — файл внутри src/images/, width и height — размеры
+              исходника; без них рамка прыгает при загрузке, а лайтбокс
+              не знает пропорции
+     Тексты:  caption, alt -->
+<figure class="A_CaseImage" data-zoomable>
+  <div class="Q_CaseImageCover">
+    <img
+      src="../../images/{{ image }}"
+      width="{{ width }}"
+      height="{{ height }}"
+      alt="{{ text.alt }}"
+    />
+  </div>
+  <figcaption>{{ text.caption }}</figcaption>
+</figure>

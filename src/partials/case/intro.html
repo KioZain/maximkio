@@ -1,0 +1,33 @@
+<!-- Начало кейса: обложка, теги, название, описание и таблица фактов.
+     Структурная константа — этим блоком открывается каждый кейс.
+
+     Данные:  cover — файл обложки внутри src/images/
+     Тексты:  title, lead, coverAlt, tags[].label, facts[].label/.value -->
+<img
+  src="../../images/{{ cover }}"
+  alt="{{ text.coverAlt }}"
+  class="A_CoverProject"
+/>
+
+<div class="S_ProjectAbout">
+  <div class="M_HeadTagsAbout">
+    <div class="C_Tags">
+      {{#each text.tags}}
+      <div class="A_Tag">{{ label }}</div>
+      {{/each}}
+    </div>
+    <h3 id="{{ id }}">{{ text.title }}</h3>
+    <p>{{ text.lead }}</p>
+  </div>
+
+  <table class="O_Table">
+    <tbody>
+      {{#each text.facts}}
+      <tr>
+        <td>{{ label }}</td>
+        <td>{{ value }}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

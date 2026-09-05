@@ -6,11 +6,17 @@
   font-weight: 500;
   gap: 4px;
   padding: 0 0.75rem 0;
+  /* Атом используется и на <a>, и на <button>. У второго браузер рисует свою
+     рамку и подставляет системный шрифт — гасим и то, и другое здесь, чтобы
+     кнопка выглядела одинаково, каким бы тегом её ни поставили. */
+  border: none;
+  font-family: inherit;
   border-radius: var(--radius-12);
   text-decoration: none;
   align-items: center;
   background: var(--background-button);
   color: var(--text-icon-gray-primary);
+  cursor: pointer;
   transition:
     color 0.3s ease-in-out,
     background-color 0.3s ease-in-out,

@@ -1,41 +1,96 @@
+/* ==========================================================================
+ * O_NavMenu — оглавление кейса сбоку от статьи.
+ *
+ * Пункты собирает сборка, по одному на каждый блок с заголовком
+ * (см. collectHeadings в config/i18n/loader.js). Текущий пункт помечен
+ * классом active: первый — прямо в разметке, дальше по ходу прокрутки его
+ * переставляет чанк navSpy. Здесь решается только то, как это выглядит.
+ * ========================================================================== */
+
 nav.O_NavMenu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   align-self: flex-start;
   padding: 0 12px;
   border-left: 1px solid var(--border-opacity);
   position: sticky;
   top: 88px;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    top: 0;
+  }
 }
 
-nav.O_NavMenu > li {
+nav.O_NavMenu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+nav.O_NavMenu li {
   list-style: none;
+}
 
-  a {
-    text-decoration: none;
-    color: var(--text-icon-gray-secondary);
-    /* outline: 1px solid red; */
-    width: fit-content;
-    font-size: 15px;
-    transition: opacity 0.3s ease-in-out;
+nav.O_NavMenu a {
+  text-decoration: none;
+  color: var(--text-icon-gray-secondary);
+  font-size: 15px;
 
-    &:hover {
-      color: var(--link);
-    }
+  /* Место под кружок занято всегда, у всех пунктов сразу. Появись оно вместе
+     с самим кружком — подпись каждого пункта прыгала бы вбок на 16px в момент
+     перехода. Отметка обязана приезжать поверх макета, а не двигать его. */
+  position: relative;
+  display: block;
+  padding-left: 16px;
 
-    &.active {
-      color: var(--text-icon-gray-secondary);
+  transition: color var(--duration-hover) var(--ease-out);
 
-      &::before {
-        content: "";
-        display: inline-block;
-        margin-right: 8px;
-        width: 8px;
-        height: 8px;
-        border-radius: 100px;
-        background: var(--text-icon-blue-primary);
-      }
-    }
+  &:hover {
+    color: var(--link);
+  }
+
+  &.active {
+    color: var(--text-icon-gray-primary);
+  }
+}
+
+/* Кружок «вы здесь». Лежит в разметке всегда — иначе переход не из чего
+   играть: появившийся элемент анимировать нечем.
+
+   Едут только opacity и transform: оба идут мимо лейаута и отрисовки, то есть
+   переход остаётся дешёвым даже когда рядом прокручивается страница с
+   двадцатью картинками. Смещение маленькое (6px) намеренно: это отметка на
+   полях, а не приезжающий элемент интерфейса — большой путь на таком размере
+   читался бы как отдельная анимация, за которой надо следить. */
+nav.O_NavMenu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  background: var(--text-icon-blue-primary);
+
+  opacity: 0;
+  transform: translate(6px, -50%);
+
+  transition:
+    opacity var(--duration-mark) var(--ease-out),
+    transform var(--duration-mark) var(--ease-out);
+}
+
+nav.O_NavMenu a.active::before {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+/* Под reduced-motion остаётся проявление, уходит проезд: понять, какой раздел
+   сейчас читается, всё ещё нужно — а вот двигаться ради этого ничего не
+   обязано. */
+@media (prefers-reduced-motion: reduce) {
+  nav.O_NavMenu a::before {
+    transform: translate(0, -50%);
+    transition: opacity var(--duration-mark) var(--ease-out);
   }
 }

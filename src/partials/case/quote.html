@@ -1,0 +1,19 @@
+<!-- Цитата с портретом автора. Заголовка у блока нет, поэтому в
+     оглавление кейса он не попадает.
+
+     Данные:  portrait — файл портрета внутри src/images/
+     Тексты:  quote, name, role, portraitAlt -->
+<div class="M_ArticleBlock quote">
+  <blockquote>{{ text.quote }}</blockquote>
+  <div class="M_Cite">
+    <img
+      class="A_CiteImage"
+      src="../../images/{{ portrait }}"
+      alt="{{ text.portraitAlt }}"
+    />
+    <div class="A_Cite">
+      <p>{{ text.name }}</p>
+      <cite>{{ text.role }}</cite>
+    </div>
+  </div>
+</div>

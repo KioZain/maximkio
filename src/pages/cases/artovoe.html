@@ -1,9 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.lang }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>{{ page.title }}</title>
+    <meta name="description" content="{{ page.description }}" />
+    {{#each site.languages}}
+    <link rel="alternate" hreflang="{{ code }}" href="{{ url }}" />
+    {{/each}}
+    <link rel="alternate" hreflang="x-default" href="{{ site.default.url }}" />
+
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico" />
   </head>
   <body>
     <div class="W_HeaderExtended">
@@ -15,107 +22,58 @@
     </div>
 
     <div class="W_CaseLayout">
+      <!-- Пункты считает сборка: в меню попадает каждый блок с заголовком,
+           см. collectHeadings в config/i18n/loader.js. Активный пункт по ходу
+           прокрутки переставляет чанк navSpy — он ставит класс, вид решает
+           O_NavMenu.css. -->
       <nav class="O_NavMenu">
-        <li><a href="#context">Контекст</a></li>
-        <li><a href="#somelist">Какой-то список</a></li>
+        <ul>
+          {{#each page.headings}}
+          <li>
+            <a
+              class="{{ className }}"
+              href="#{{ id }}"
+              aria-current="{{ ariaCurrent }}"
+              >{{ title }}</a
+            >
+          </li>
+          {{/each}}
+        </ul>
       </nav>
 
       <div class="body">
         <div class="L_Article margin-container">
-          <img
-            src="../../images/coverPreview.png"
-            alt=""
-            class="A_CoverProject"
-          />
-
-          <div class="S_ProjectAbout">
-            <div class="M_HeadTagsAbout">
-              <div class="C_Tags">
-                <div class="A_Tag">WEB</div>
-              </div>
-              <h3>Artovoe</h3>
-              <p>
-                Медиакаталог работ современного искусства, где арт становится
-                видимым. На платформе художники публикуют произведения, тогда
-                как зрители получают вдохновение и находят уникальные объекты.
-                Это пространство для чуткого взгляда на творчество, которое
-                обретает доступность и жизнь «вне музейных стен».
-                <a href="../../index.html">random link</a>
-              </p>
-            </div>
-
-            <table class="O_Table">
-              <tbody>
-                <tr>
-                  <td>Период</td>
-                  <td>2024-2025</td>
-                </tr>
-                <tr>
-                  <td>Проект</td>
-                  <td>Учебный</td>
-                </tr>
-                <tr>
-                  <td>Моя роль</td>
-                  <td>UX-UI, Разработка</td>
-                </tr>
-                <tr>
-                  <td>Команда</td>
-                  <td>2 дизайнера</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div id="context" class="M_ArticleBlock">
-            <h3>Контекст</h3>
-            <p>
-              Медиакаталог работ современного искусства, где арт становится
-              видимым. На платформе художники публикуют произведения, тогда как
-              зрители получают вдохновение и находят уникальные объекты. Это
-              пространство для чуткого взгляда на творчество, которое обретает
-              доступность и жизнь «вне музейных стен».
-            </p>
-          </div>
-
-          <div id="somelist" class="M_ArticleBlock">
-            <h3>Какой-то список</h3>
-            <ol type="i">
-              <li>
-                Искренний (говорим честно и напрямую, без лишней вычурности).
-              </li>
-              <li>
-                Открытый (показываем процесс, делимся инсайтами и приглашаем к
-                диалогу).
-              </li>
-              <li>
-                Вдохновляющий (поддерживаем творцов, даём им импульс для
-                развития).
-              </li>
-              <li>
-                Свободный (не ограничиваем формат и подачу, даём пространство
-                для самовыражения).
-              </li>
-              <li>
-                Осмысленный (считаем, что за любым действием и текстом стоит
-                мысль, ценность и идея).
-              </li>
-            </ol>
-          </div>
-          <div class="M_ArticleBlock quote">
-            <blockquote>
-              Вы делаете правда значимую вещь для всей нашей дизпроговской
-              тусовки
-            </blockquote>
-            <div class="M_Cite">
-              <img class="A_CiteImage" src="../../images/me.png" alt="" />
-              <div class="A_Cite">
-                <p>Анна Комкова</p>
-                <cite>Преподаватель в HSE ART AND DESIGN</cite>
-              </div>
-            </div>
-          </div>
+          {{#blocks data.blocks from case}}
         </div>
       </div>
+      <button
+        id="up"
+        type="button"
+        data-magnetic-strength="0.2"
+        ata-up-show="0.8"
+        data-up-hide="0.6"
+        class="A_Button E_Click E_Magnetic"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.7972 11.4706L15.2143 11.4706L15.2143 17.8235C15.2143 18.8102 15.2143 19.3036 15.0512 19.6927C14.8337 20.2116 14.4165 20.6239 13.8915 20.8388C13.4976 21 12.9985 21 12 21C11.0015 21 10.5024 21 10.1085 20.8388C9.5835 20.6239 9.16629 20.2116 8.94879 19.6927C8.78571 19.3036 8.78571 18.8102 8.78571 17.8235L8.78571 11.4706L8.20286 11.4706C5.97128 11.4706 4.85561 11.4706 4.56193 10.835C4.26825 10.1994 5.03293 9.43945 6.56239 7.91972L10.3595 4.14649C11.1287 3.38213 11.5134 3 12 3C12.4866 3 12.8713 3.38213 13.6405 4.14649L17.4376 7.91972C18.967 9.43945 19.7317 10.1994 19.4381 10.835C19.1445 11.4706 18.0287 11.4706 15.7972 11.4706Z"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        {{ case.up }}
+      </button>
     </div>
+
+    {{> contact }} {{> footerbar }}
   </body>
 </html>
