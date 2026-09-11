@@ -14,6 +14,7 @@
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
   </head>
+
   <body>
     <div class="L_Home">
       <div class="margin-container">
@@ -28,10 +29,10 @@
           <div class="M_TextAbout">
             <h2>
               {{ hero.name }}
-              <span class="A_StatusBadge"
-                ><div class="Q_SpriteMan animated"></div>
-                {{ hero.status }}</span
-              >
+              <span class="A_StatusBadge">
+                <div class="Q_SpriteMan animated"></div>
+                {{ hero.status }}
+              </span>
             </h2>
             <p>
               <span id="underline">{{ hero.leadIn }}</span>
@@ -212,52 +213,9 @@
 
           <section class="S_Work">
             <div class="M_TitleCaption">
-              <p class="caption">Опыт работы</p>
+              <p class="caption">{{ work.title }}</p>
               <div class="C_Jobs">
-                <div class="O_ListText">
-                  <div class="M_TitleYear">
-                    <button class="A_AccordeonButton">+</button>
-                    <b>АНО Профессии Будущего</b>
-                    <b>Сентябрь - Декабрь 2025</b>
-                  </div>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quam culpa deleniti eveniet repellat delectus ratione ipsa
-                    quas modi quaerat alias sit commodi temporibus explicabo,
-                    sapiente harum, labore cupiditate perferendis libero.
-                  </p>
-                </div>
-                <div class="O_ListText">
-                  <div class="M_TitleYear">
-                    <b>Студия Артемия Лебедева</b>
-                    <b>Июнь - Август 2025</b>
-                  </div>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quam culpa deleniti eveniet repellat delectus ratione ipsa
-                    quas modi quaerat alias sit commodi temporibus explicabo,
-                    sapiente harum, labore cupiditate perferendis libero.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- Education -->
-          <section class="S_Education">
-            <p class="caption">Образование</p>
-
-            <div class="C_Eductaion">
-              <div class="O_ListText">
-                <div class="M_TitleYear">
-                  <b>НИУ ВШЭ Hse Art And Design «Дизайн и программирование»</b>
-                  <b>2022-2026</b>
-                </div>
-              </div>
-              <div class="O_ListText">
-                <div class="M_TitleYear">
-                  <b>Колледж Малого Бизнеса №4 «Графический дизайн»</b>
-                  <b>2020-2022</b>
-                </div>
+                {{#each work.items}} {{> list/job }} {{/each}}
               </div>
             </div>
           </section>

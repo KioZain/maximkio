@@ -1,17 +1,26 @@
+/* Строка списка: работа или учёба. У работы под головой раскрывается
+   описание — за раскрытие отвечает эффект E_Disclose, здесь только вид.
+
+   Отступа между головой и панелью тут нет намеренно: gap у свёрнутой панели
+   остался бы стоять пустым зазором под строкой. Его отдаёт само содержимое
+   панели (padding-top), поэтому он уезжает вместе с высотой. */
 .O_ListText {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 1rem;
   border-radius: var(--radius-16);
-  /* border-bottom: 1px solid var(--stroke); */
-
+  background: transparent;
+  padding: 1.5rem;
+  /* border-bottom: 1px solid var(--border-opacity);  */
+  /* transition: background-color var(--duration-hover) var(--ease-out); */
+  background: var(--colors-gray-light-1000);
+  /* border: 1px solid var(--border-opacity); */
   p {
     font-size: 1.125rem;
   }
+}
 
-  &:hover {
+/* @media (hover: hover) and (pointer: fine) {
+  .O_ListText:hover {
     background: var(--colors-gray-light-1000);
   }
-  /* outline: 1px red solid; */
-}
+ */

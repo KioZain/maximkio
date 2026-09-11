@@ -23,6 +23,34 @@
     "leadIn": "UX/UI дизайнер с 3+ годами опыта в дизайне.",
     "bio": "Участвую во всех этапах создания продукта: от discovery этапа и тестирования прототипов до review разработки. Выпускник HSE Art & Design School по направлению «Дизайн и программирование»"
   },
+  "work": {
+    "title": "Опыт работы",
+    "items": [
+      {
+        "company": "АНО Профессии Будущего",
+        "period": "Сентябрь — Декабрь 2025",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+      },
+      {
+        "company": "Студия Артемия Лебедева",
+        "period": "Июнь — Август 2025",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+      }
+    ]
+  },
+  "education": {
+    "title": "Образование",
+    "items": [
+      {
+        "school": "НИУ ВШЭ Hse Art And Design «Дизайн и программирование»",
+        "period": "2022—2026"
+      },
+      {
+        "school": "Колледж Малого Бизнеса №4 «Графический дизайн»",
+        "period": "2020—2022"
+      }
+    ]
+  },
   "contact": {
     "title": "Давайте сделаем что-то значимое вместе",
     "telegram": "Telegram",

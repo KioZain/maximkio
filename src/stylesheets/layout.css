@@ -12,8 +12,15 @@ body {
   font-family: "Aeonik Pro";
   position: relative;
   background-color: var(--background-body);
+
+  /* Нижняя панель навигации лежит поверх страницы — без запаса под неё
+     она закрывала бы подвал. */
+  @media screen and (max-width: 768px) {
+    padding-bottom: var(--tab-bar-offset);
+  }
 }
 * {
+  box-sizing: border-box;
   /* outline: 1px solid red; */
 }
 
@@ -32,11 +39,19 @@ h2 {
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 125%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 h3 {
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 135%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.125rem;
+  }
 }
 
 p {

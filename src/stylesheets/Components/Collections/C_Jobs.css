@@ -1,0 +1,6 @@
+.C_Jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* outline: 1px solid red; */
+}

@@ -63,6 +63,7 @@ const PAGES = [
       "homeCanvas",
       "click",
       "reveal",
+      "disclose",
     ],
     i18n: true,
   },

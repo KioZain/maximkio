@@ -4,4 +4,66 @@ header.O_Header {
   justify-content: space-between;
   padding: 1.5rem 0;
   align-items: center;
+
+  /* На мобильном ссылки уезжают в нижнюю панель под большой палец, наверху
+     остаётся только переключатель языка — прижат вправо. */
+  @media screen and (max-width: 768px) {
+    justify-content: flex-end;
+    padding: 1rem 0;
+
+    .M_Buttons:first-child {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+
+      height: var(--tab-bar-offset);
+      padding: 1rem;
+      gap: 0;
+      background: linear-gradient(
+        to top,
+        var(--background-body) 57.5%,
+        transparent
+      );
+      /* backdrop-filter: blur(1.5px); */
+
+      /* Сама пилюля. Отдельной обёртки под неё в разметке нет, поэтому она
+         нарисована псевдоэлементом: z-index: -1 кладёт её под кнопки, но над
+         градиентом полосы — fixed с z-index уже создал свой контекст. */
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 1rem;
+        z-index: -1;
+        border: 1px solid var(--border-opacity);
+        border-radius: var(--radius-pill);
+        background: var(--background-button);
+        box-shadow: 0 1px 7px rgba(var(--black), 0.15);
+      }
+    }
+
+    .M_Buttons:first-child .A_Button {
+      position: relative;
+      flex: 1;
+      justify-content: center;
+      background: none;
+
+      .Q_Icon {
+        display: none;
+      }
+    }
+
+    /* Разделитель между соседними кнопками. */
+    .M_Buttons:first-child .A_Button + .A_Button::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1px;
+      height: 12px;
+      translate: 0 -50%;
+      background: var(--border-opacity);
+    }
+  }
 }

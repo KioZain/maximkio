@@ -1,0 +1,48 @@
+<!-- Место работы: название, период и раскрывающееся описание.
+
+     Тексты приходят из словаря: партиал ставится внутрь цикла по work.items,
+     поэтому company / period / description берутся из текущего элемента
+     массива — см. work.items в src/locales/*.json.
+
+     Писать в комментариях фигурные скобки движка нельзя: он не отличает
+     их от разметки и честно попробует выполнить.
+
+     Раскрытием занимается эффект E_Disclose: класс на корне, data-атрибуты
+     на голове и панели — больше от разметки ничего не требуется, см.
+     E_Disclose.css и чанк «disclose».
+
+     Кликает вся голова целиком, а не один кружок с плюсом: попасть в строку
+     проще, чем в кнопку 32×32, а имя у такой кнопки собирается само —
+     из названия компании и периода. Кружок остаётся значком состояния. -->
+<div class="O_ListText E_Disclose">
+  <button class="M_AccordeonHead E_Click" type="button" data-disclose-head>
+    <span class="M_TitleYear">
+      <b>{{ company }}</b>
+      <b>{{ period }}</b>
+    </span>
+    <span class="A_AccordeonButton">
+      <svg
+        class="Q_Icon"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M11.9922 4V12M11.9922 12V20M11.9922 12H19.9922M11.9922 12H3.99219"
+          stroke="currentColor"
+          stroke-width="1.9"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </span>
+  </button>
+  <div class="M_AccordeonBody" data-disclose-panel>
+    <div>
+      <p>{{ description }}</p>
+    </div>
+  </div>
+</div>

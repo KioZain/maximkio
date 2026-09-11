@@ -7,9 +7,12 @@
   padding: 0 80px;
   z-index: 2;
 
+  /* На мобильном логотип и переключатель языка — в одну строку по краям. */
   @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
     padding: 0 1rem;
-    grid-template-columns: 1fr auto 1fr;
   }
 
   .A_Logo {
@@ -22,11 +25,10 @@
   .margin-container {
     grid-column: 2;
     width: 100%;
-  }
 
-  @media screen and (max-width: 786px) {
-    display: flex;
-    flex-direction: column;
-    gap: 0rem;
+    @media screen and (max-width: 768px) {
+      width: auto;
+      margin: 0;
+    }
   }
 }

@@ -40,6 +40,13 @@
     border-radius: var(--radius-12);
     background: var(--background-body);
     box-shadow: 0 12px 32px rgba(var(--black), 0.08);
+
+    /* На мобильном переключатель стоит у правого края — список, открытый
+       вправо, уехал бы за экран. */
+    @media screen and (max-width: 768px) {
+      left: auto;
+      right: 0;
+    }
   }
 
   .A_LangOption {

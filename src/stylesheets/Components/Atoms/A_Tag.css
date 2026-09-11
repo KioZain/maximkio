@@ -12,4 +12,9 @@
   font-weight: 500;
   border-radius: 1rem;
   box-shadow: 3px 4px 4px 0 rgba(255, 255, 255, 0.35) inset;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+    height: 28px;
+  }
 }

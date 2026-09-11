@@ -1,9 +1,44 @@
+/* Кружок с плюсом у раскрывающегося пункта. Это значок состояния, а не
+   отдельная кнопка: кликает вся голова, см. M_AccordeonHead.css.
+
+   Открыто — плюс поворачивается на 45° и становится крестом. Один и тот же
+   значок на оба состояния вместо двух картинок: между ними есть путь, и его
+   видно, а значит переход читается как «то же самое, но наоборот».
+
+   Поворот живёт в отдельном свойстве rotate, а не в transform: так он
+   складывается с E_Click, который пишет в scale, и с E_Magnetic, который
+   пишет в transform, — и никому из троих не нужно знать про остальных. */
 .A_AccordeonButton {
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 999px;
+  background: var(--background-button);
+  color: var(--text-icon-gray-primary);
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.A_AccordeonButton .Q_Icon {
+  rotate: 0deg;
+  transition:
+    rotate var(--duration-disclose) var(--ease-out),
+    stroke var(--duration-hover) var(--ease-out);
+}
+
+[data-disclose-open] .A_AccordeonButton .Q_Icon {
+  rotate: 45deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .A_AccordeonButton .Q_Icon {
+    transition: stroke var(--duration-hover) var(--ease-out);
+  }
 }

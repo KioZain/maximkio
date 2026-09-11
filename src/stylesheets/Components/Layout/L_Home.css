@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
+  /* Веер фотографий в «Обо мне» шире узкого экрана. Без обрезки страница
+     ездит вбок, мобильный браузер растягивает под неё layout viewport — и
+     fixed-панель навигации оказывается ниже первого экрана. clip, а не
+     hidden: не создаёт контейнер прокрутки. */
+  overflow-x: clip;
 
   @media screen and (max-width: 768px) {
     padding: 0 1rem;

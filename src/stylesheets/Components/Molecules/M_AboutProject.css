@@ -8,4 +8,9 @@
     margin-bottom: -0.25rem;
     color: var(--text-icon-black-primary);
   }
+
+  @media (max-width: 768px) {
+    /* background-color: red; */
+    padding: 1rem 0rem 0rem;
+  }
 }

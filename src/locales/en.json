@@ -23,6 +23,34 @@
     "leadIn": "UX/UI designer with 3+ years of experience.",
     "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
   },
+  "work": {
+    "title": "Experience",
+    "items": [
+      {
+        "company": "Professions of the Future",
+        "period": "September — December 2025",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+      },
+      {
+        "company": "Art. Lebedev Studio",
+        "period": "June — August 2025",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
+      {
+        "school": "HSE Art and Design School, Design and Programming",
+        "period": "2022—2026"
+      },
+      {
+        "school": "College of Small Business No. 4, Graphic Design",
+        "period": "2020—2022"
+      }
+    ]
+  },
   "contact": {
     "title": "Let’s make something meaningful together",
     "telegram": "Telegram",
