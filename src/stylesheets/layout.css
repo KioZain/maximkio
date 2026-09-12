@@ -1,7 +1,3 @@
-/* Плавный переход по якорям — и по клику в меню кейса, и по ссылке извне.
-   Под reduced-motion не включается вовсе: прокрутка через весь документ —
-   самое сильное движение на сайте, и человек, попросивший его убрать, просил
-   в первую очередь про него. */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -13,8 +9,6 @@ body {
   position: relative;
   background-color: var(--background-body);
 
-  /* Нижняя панель навигации лежит поверх страницы — без запаса под неё
-     она закрывала бы подвал. */
   @media screen and (max-width: 768px) {
     padding-bottom: var(--tab-bar-offset);
   }
@@ -33,6 +27,10 @@ h1 {
     font-family: "Caveat";
     font-size: 3.5rem;
     line-height: 95%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 3rem;
+    }
   }
 }
 h2 {
@@ -45,7 +43,7 @@ h2 {
   }
 }
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 135%;
 
@@ -103,6 +101,10 @@ blockquote {
   font-family: "Caveat";
   font-size: 3rem;
   color: var(--text-icon-gray-primary);
+
+  @media screen and (max-width: 768px) {
+    font-size: 2.25rem;
+  }
 }
 
 .secondary {
@@ -111,7 +113,7 @@ blockquote {
 
 .margin-container {
   width: 100%;
-  max-width: 756px;
+  max-width: 720px;
   margin: 0 auto;
 }
 

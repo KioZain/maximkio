@@ -2,7 +2,17 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1.25rem 1rem 1.5rem 1rem;
+  padding: 1.25rem 4px 1.25rem;
+
+  .W_TitleTags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  p#date {
+    color: var(--text-icon-gray-secondary);
+  }
 
   h3 {
     margin-bottom: -0.25rem;

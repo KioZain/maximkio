@@ -14,7 +14,7 @@
     font-size: 1.125rem;
     line-height: 140%;
     color: var(--text-icon-gray-primary);
-    padding-left: 20px; /* Сдвигает весь блок текста вправо */
+    padding-left: 20px;
     text-indent: -24px;
     margin-bottom: 0.5rem;
 

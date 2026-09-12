@@ -17,11 +17,60 @@
     "telegram": "Telegram",
     "email": "Email"
   },
+  "clock": {
+    "city": "Moscow"
+  },
   "hero": {
     "name": "Maxim Kirillov",
     "status": "Open to work",
     "leadIn": "UX/UI designer with 3+ years of experience.",
     "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
+  },
+  "projects": {
+    "items": [
+      {
+        "cover": "webposter.png",
+        "coverAlt": "",
+        "href": "",
+        "tags": [
+          {
+            "label": "WEB"
+          },
+          {
+            "label": "Diploma"
+          }
+        ],
+        "date": "окт—дек 2026",
+        "title": "An interactive textbook on creating the web posters",
+        "description": "A short and vibrant website where code becomes a expressive tool for designers."
+      },
+      {
+        "cover": "coverPreview.png",
+        "coverAlt": "",
+        "href": "pages/cases/artovoe.html",
+        "tags": [
+          {
+            "label": "WEB"
+          }
+        ],
+        "date": "окт—дек 2026",
+        "title": "A digital media catalogue of contemporary art",
+        "description": "ARTOVOE is a media catalogue of contemporary art that makes art visible."
+      },
+      {
+        "cover": "veranda.png",
+        "coverAlt": "",
+        "href": "pages/cases/artovoe.html",
+        "tags": [
+          {
+            "label": "WEB"
+          }
+        ],
+        "date": "окт—дек 2026",
+        "title": "A media site about modern country living",
+        "description": "ARTOVOE is a media catalogue of contemporary art that makes art visible."
+      }
+    ]
   },
   "work": {
     "title": "Experience",

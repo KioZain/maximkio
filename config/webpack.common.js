@@ -20,6 +20,7 @@ module.exports = {
     lightbox: "./src/javascripts/lightbox.js",
     scrollUp: "./src/javascripts/scrollUp.js",
     navSpy: "./src/javascripts/navSpy.js",
+    clock: "./src/javascripts/clock.js",
   },
   output: {
     filename: "[name].js",

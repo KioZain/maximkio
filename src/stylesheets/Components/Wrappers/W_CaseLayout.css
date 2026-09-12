@@ -1,6 +1,6 @@
 .W_CaseLayout {
   display: grid;
-  gap: 4rem;
+  /* gap: 4rem; */
   grid-template-columns: 1fr minmax(0, 756px) 1fr;
   align-items: center;
   position: relative;

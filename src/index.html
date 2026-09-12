@@ -23,7 +23,17 @@
         <div class="O_Head">
           <div class="M_ProfileBanner">
             <img class="Q_ProfileImage" src="./images/me.png" alt="" />
-            <div class="A_CanvasBeautiful" id="home-canvas"></div>
+            <!-- Контейнер под будущий холст: код подключается через чанк
+                 homeCanvas, см. src/javascripts/homeCanvas.js -->
+            <div class="A_CanvasBeautiful" id="home-canvas">
+              <!-- Часы города: время и смещение пишет чанк clock,
+                   пояс задаётся в data-timezone, см. src/javascripts/clock.js -->
+              <p id="timedate" data-clock data-timezone="Europe/Moscow">
+                <time data-clock-time>--:--</time>
+                <span>{{ clock.city }}</span>
+                <span data-clock-offset>GMT+3</span>
+              </p>
+            </div>
           </div>
 
           <div class="M_TextAbout">
@@ -43,52 +53,7 @@
         <!-- Projects -->
         <section class="S_Projects">
           <div class="C_Projects">
-            <a href="" class="O_ProjectCard E_Click">
-              <div class="Q_ProjectCover">
-                <img src="./images/webposter.png" alt="" />
-              </div>
-              <div class="M_AboutProject">
-                <div class="C_Tags">
-                  <div class="A_Tag">WEB</div>
-                </div>
-
-                <h3>Интерактивный учебник по веб-плакату</h3>
-                <p>
-                  ARTOVOE — это медиакаталог работ современного искусства, где
-                  арт становится видимым.
-                </p>
-              </div>
-            </a>
-            <a
-              href="{{ site.root }}pages/cases/artovoe.html"
-              class="O_ProjectCard E_Click"
-            >
-              <div class="Q_ProjectCover">
-                <img
-                  class="Q_ProjectCover"
-                  src="./images/coverPreview.png"
-                  alt=""
-                />
-              </div>
-
-              <div class="M_AboutProject">
-                <h3>Цифровой медиакаталог современного искусства</h3>
-                <p>
-                  ARTOVOE — это медиакаталог работ современного искусства, где
-                  арт становится видимым.
-                </p>
-              </div>
-            </a>
-            <a href="pages/cases/artovoe.html" class="O_ProjectCard E_Click">
-              <img class="Q_ProjectCover" src="./images/veranda.png" alt="" />
-              <div class="M_AboutProject">
-                <h3>Cайт-медиа о современной загородной жизни</h3>
-                <p>
-                  ARTOVOE — это медиакаталог работ современного искусства, где
-                  арт становится видимым.
-                </p>
-              </div>
-            </a>
+            {{#each projects.items}} {{> list/project }} {{/each}}
           </div>
         </section>
       </div>

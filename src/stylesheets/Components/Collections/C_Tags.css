@@ -1,0 +1,5 @@
+.C_Tags {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}

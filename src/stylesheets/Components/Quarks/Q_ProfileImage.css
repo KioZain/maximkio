@@ -3,8 +3,12 @@
   max-width: 100px;
   aspect-ratio: 1/1;
   object-fit: cover;
-  border: 1px solid rgba(0, 0, 0, 0.13);
   box-shadow:
     0 2px 4px 0 rgba(0, 0, 0, 0.27),
     2px 3px 3.3px 0 rgba(255, 255, 255, 0.46) inset;
+
+  @media screen and (max-width: 768px) {
+    max-width: 4rem;
+    border-radius: var(--radius-24);
+  }
 }

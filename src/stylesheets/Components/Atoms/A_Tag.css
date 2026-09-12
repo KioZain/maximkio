@@ -1,5 +1,5 @@
 .A_Tag {
-  height: 32px;
+  height: 28px;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -8,13 +8,12 @@
   padding: 0 12px;
   background: #6bb5ff;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  border-radius: 1rem;
+  border-radius: 10px;
   box-shadow: 3px 4px 4px 0 rgba(255, 255, 255, 0.35) inset;
 
   @media (max-width: 768px) {
     font-size: 13px;
-    height: 28px;
   }
 }

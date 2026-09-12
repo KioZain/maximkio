@@ -61,6 +61,7 @@ const PAGES = [
       "magnetic",
       "langSwitch",
       "homeCanvas",
+      "clock",
       "click",
       "reveal",
       "disclose",
