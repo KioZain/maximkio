@@ -41,6 +41,8 @@
     gap: 0;
     justify-content: center;
     font-size: 0;
+    border: 1px solid var(--border-opacity);
+    box-shadow: 0 1px 7.1px 0 rgba(0, 0, 0, 0.15);
   }
 
   opacity: 0;
