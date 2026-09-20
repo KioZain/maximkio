@@ -14,18 +14,10 @@
   </head>
   <body>
     <div class="W_HeaderExtended">
-      <a class="A_Logo" href="../../index.html">
-        <img class="E_Click" src="../../images/logo.svg" alt="" />
-      </a>
-
-      <div class="margin-container">{{> headerbar }}</div>
+      <div class="margin-container">{{> case/headerbar }}</div>
     </div>
 
     <div class="W_CaseLayout">
-      <!-- Пункты считает сборка: в меню попадает каждый блок с заголовком,
-           см. collectHeadings в config/i18n/loader.js. Активный пункт по ходу
-           прокрутки переставляет чанк navSpy — он ставит класс, вид решает
-           O_NavMenu.css. -->
       <nav class="O_NavMenu">
         <ul>
           {{#each page.headings}}
@@ -71,6 +63,37 @@
         </svg>
 
         {{ case.up }}
+      </button>
+      <button
+        class="A_Button E_Click E_Magnetic"
+        id="to-home"
+        data-magnetic-strength="0.2"
+        onclick="window.location.href = '../../index.html'"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 6H15.5C17.9853 6 20 8.01472 20 10.5C20 12.9853 17.9853 15 15.5 15H4"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M6.99998 12C6.99998 12 4.00001 14.2095 4 15C3.99999 15.7906 7 18 7 18"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+
+        {{ case.home }}
       </button>
     </div>
 

@@ -1,0 +1,254 @@
+/* Стили лаборатории. Только для дев-сервера, см. src/lab/*.js. */
+
+.lab {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  color: var(--text-primary);
+}
+
+/* Две колонки: слева превью, справа настройки. На узком экране колонки
+   схлопываются в одну, и превью прилипают к верхнему краю. */
+.lab-body {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(320px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.lab-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.lab-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lab-header__title {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+/* Превью держатся на экране, пока крутишь ползунки справа. Своя прокрутка —
+   на случай, когда баннеры выше окна. */
+.lab-stage {
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: var(--background-body);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-16);
+
+  @media (max-width: 1100px) {
+    top: 0;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 1px solid var(--stroke);
+    border-radius: 0;
+  }
+}
+
+.lab-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lab-preview__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.lab-preview__title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.lab-preview__info {
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.lab-preview__sizes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.lab-preview__range {
+  width: 110px;
+}
+
+.lab-preview__scroller {
+  overflow-x: auto;
+}
+
+/* Разметка баннера взята с главной, но время там позиционируется по id;
+   в лаборатории ids разные, поэтому стиль повторён по классу. */
+.lab-timedate {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0;
+  color: var(--text-icon-gray-secondary);
+
+  & span:nth-child(2) {
+    margin: 0 0.5rem;
+  }
+}
+
+.lab-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.lab-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1rem;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-16);
+}
+
+.lab-group__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.lab-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lab-field--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  & .lab-field__label {
+    flex: 1;
+  }
+}
+
+.lab-field__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.lab-field__label {
+  font-size: 0.875rem;
+}
+
+.lab-field__hint {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.lab-field__number {
+  width: 5.5rem;
+  padding: 0.125rem 0.375rem;
+  font: inherit;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-4);
+}
+
+.lab-field__range {
+  width: 100%;
+}
+
+.lab-field__text,
+.lab-field__select {
+  padding: 0.375rem 0.5rem;
+  font: inherit;
+  background-color: var(--background-body);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-8);
+}
+
+.lab-field__color {
+  width: 2.5rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-4);
+  background: none;
+}
+
+.lab-field__code {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.lab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lab-button {
+  padding: 0.375rem 0.75rem;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: var(--background-button);
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.lab-button--primary {
+  color: var(--text-icon-inverse-primary);
+  background-color: var(--colors-black-1000);
+}
+
+.lab-output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lab-output__status {
+  min-height: 1.25em;
+  font-size: 0.875rem;
+}
+
+.lab-output__json {
+  min-height: 18rem;
+  padding: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8125rem;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-12);
+  resize: vertical;
+}

@@ -29,13 +29,9 @@
   bottom: 24px;
   z-index: 10;
 
-  /* На мобильном внизу живёт панель навигации — встаём над ней, по краю
-     пилюли. Подпись только мешает, остаётся квадрат с иконкой. Текст гасится
-     font-size, а не display: none — так он остаётся именем кнопки для
-     скринридера. */
   @media screen and (max-width: 768px) {
     right: 1rem;
-    bottom: var(--tab-bar-offset);
+    bottom: 1.5rem;
     width: 40px;
     padding: 0;
     gap: 0;

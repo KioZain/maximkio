@@ -12,3 +12,6 @@
 @import-glob "Components/Layout/**/*.css";
 @import-glob "Components/Wrappers/**/*.css";
 @import-glob "Components/Effects/**/*.css";
+
+/* Последним: утилиты перебивают display компонентов, см. utilities.css. */
+@import "utilities.css";

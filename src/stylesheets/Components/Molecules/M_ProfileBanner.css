@@ -4,7 +4,7 @@
   gap: 1rem;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 0.5rem;
 
     .A_CanvasBeautiful {

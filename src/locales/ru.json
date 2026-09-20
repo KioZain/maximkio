@@ -106,7 +106,8 @@
     "email": "Email"
   },
   "case": {
-    "up": "Только наверх"
+    "up": "Только наверх",
+    "home": "На главную"
   },
   "content": {
     "cases/artovoe": {

@@ -12,10 +12,6 @@
 
   /* -------------Tokens------------- */
   --article-text-width: 636px;
-  /* Нижняя навигация на мобильном: высота самой пилюли и всей полосы вокруг
-     неё вместе с полями по 16px. От полосы отступают страница и кнопка «наверх». */
-  --tab-bar-height: 56px;
-  --tab-bar-offset: calc(var(--tab-bar-height) + 2rem);
 
   /* -------------Tokens------------- */
   --colors-black-1000: #161616ff;
@@ -48,6 +44,8 @@
   --colors-blue-300: rgba(107, 181, 255, 30%);
   --colors-blue-200: rgba(107, 181, 255, 20%);
   --colors-blue-100: rgba(107, 181, 255, 10%);
+  /* Светлый конец градиента акцентной кнопки. */
+  --colors-blue-light-1000: rgba(161, 207, 252, 100%);
 
   /* --------------------------Usage-------------------------- */
   /* Text-icon-black */
@@ -72,6 +70,12 @@
 
   /*Button */
   --background-button: var(--colors-gray-light-1000);
+  /* Акцентная кнопка — одна на главной, зовёт в телеграм. */
+  --background-button-accent: linear-gradient(
+    180deg,
+    var(--colors-blue-1000) 0%,
+    var(--colors-blue-light-1000) 100%
+  );
 
   /* Background */
   --background-body: var(--colors-white-1000);
@@ -90,7 +94,6 @@
   --radius-12: 12px;
   --radius-16: 16px;
   --radius-24: 24px;
-  --radius-pill: 100px;
 
   /* ------Motion------ */
   /* Одна семья кривых на весь сайт: и нажатие, и появление проходят почти

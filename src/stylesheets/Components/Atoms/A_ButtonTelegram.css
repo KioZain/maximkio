@@ -1,0 +1,25 @@
+/* ==========================================================================
+ * A_ButtonTelegram — акцентная кнопка «написать в телеграм».
+ *
+ * Ставится поверх A_Button и меняет ему только окраску и ширину:
+ *
+ *     <a class="A_Button A_ButtonTelegram E_Click only-mobile" href="…">
+ *
+ * Живёт в блоке о себе на главной и показывается только на узком экране —
+ * видимостью занимаются утилиты only-mobile / only-desktop (layout.css).
+ * На широком экране ту же роль играет обычная кнопка телеграма в шапке.
+ *
+ * Ховер у A_Button красит текст в синий — здесь он бы слился с фоном,
+ * поэтому подпись остаётся белой, а отклик на нажатие даёт E_Click.
+ * ========================================================================== */
+
+.A_ButtonTelegram {
+  width: 100%;
+  justify-content: center;
+  background: var(--background-button-accent);
+  color: var(--text-icon-inverse-primary);
+
+  &:hover {
+    color: var(--text-icon-inverse-primary);
+  }
+}

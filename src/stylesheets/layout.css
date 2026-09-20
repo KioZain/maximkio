@@ -8,10 +8,6 @@ body {
   font-family: "Aeonik Pro";
   position: relative;
   background-color: var(--background-body);
-
-  @media screen and (max-width: 768px) {
-    padding-bottom: var(--tab-bar-offset);
-  }
 }
 * {
   box-sizing: border-box;
@@ -59,7 +55,7 @@ p {
   color: var(--text-icon-gray-primary);
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 17px;
   }
 
   &.caption {
@@ -87,7 +83,7 @@ a {
   color: var(--text-icon-gray-primary);
 
   @media screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 17px;
   }
 }
 

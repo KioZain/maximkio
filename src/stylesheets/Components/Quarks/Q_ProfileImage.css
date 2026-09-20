@@ -8,7 +8,12 @@
     2px 3px 3.3px 0 rgba(255, 255, 255, 0.46) inset;
 
   @media screen and (max-width: 768px) {
-    max-width: 4rem;
-    border-radius: var(--radius-24);
+    max-width: 5.25rem;
+    box-shadow: none;
+    border-radius: var(--radius-16);
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    z-index: 2;
   }
 }

@@ -106,7 +106,8 @@
     "email": "Email"
   },
   "case": {
-    "up": "Only up"
+    "up": "Only up",
+    "home": "Index"
   },
   "content": {
     "cases/artovoe": {

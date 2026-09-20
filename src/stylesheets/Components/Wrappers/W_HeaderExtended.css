@@ -7,28 +7,16 @@
   padding: 0 80px;
   z-index: 2;
 
-  /* На мобильном логотип и переключатель языка — в одну строку по краям. */
+  /* На узком экране колоночная сетка не нужна: внутри один ребёнок, а её
+     gap в 4rem только сдвигал бы шапку от края. 1rem — как у самого кейса
+     (W_CaseLayout), чтобы логотип встал по одной линии с текстом статьи. */
   @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-    gap: 0;
+    display: block;
     padding: 0 1rem;
-  }
-
-  .A_Logo {
-    grid-column: 1;
-    justify-self: start;
-    display: flex;
-    align-items: center;
   }
 
   .margin-container {
     grid-column: 2;
     width: 100%;
-
-    @media screen and (max-width: 768px) {
-      width: auto;
-      margin: 0;
-    }
   }
 }

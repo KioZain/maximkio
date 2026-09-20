@@ -4,3 +4,5 @@
 yarn-error.log
 /dev-build
 /dev_build
+# Выгрузка настроек из лаборатории (npm start → /lab/…), см. config/webpack.dev.js
+/.lab
