@@ -47,6 +47,8 @@
  * перелёт доводится до конца досрочно — см. relayout().
  * ========================================================================== */
 
+import { lockScroll, unlockScroll } from "./scrollLock";
+
 const FRAME = "data-lightbox-frame";
 const SOURCE = "data-lightbox-source";
 const OPEN = "data-open";
@@ -95,7 +97,6 @@ export function createImageLightbox(defaults) {
   // анимации getComputedStyle вернёт уже анимированное значение.
   let radius = 0;
   let closing = false;
-  let scrollbarGap = 0;
   let resizeFrame = 0;
 
   const frames = [];
@@ -199,22 +200,6 @@ export function createImageLightbox(defaults) {
     frame.removeAttribute("tabindex");
     frame.removeAttribute("aria-label");
     frame.classList.remove("E_Click");
-  }
-
-  /* --- Прокрутка -------------------------------------------------------- */
-
-  // Полосу прокрутки надо не просто убрать, а компенсировать её ширину:
-  // без padding-right тело страницы станет шире, и вся центрированная
-  // вёрстка под блюром сдвинется вбок ровно в момент открытия.
-  function lockScroll() {
-    scrollbarGap = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.overflow = "hidden";
-    if (scrollbarGap > 0) document.body.style.paddingRight = `${scrollbarGap}px`;
-  }
-
-  function unlockScroll() {
-    document.body.style.overflow = "";
-    document.body.style.paddingRight = "";
   }
 
   /* --- Перелёт ---------------------------------------------------------- */

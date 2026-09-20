@@ -107,7 +107,9 @@
   },
   "case": {
     "up": "Only up",
-    "home": "Index"
+    "home": "Index",
+    "contents": "Contents",
+    "contentsClose": "Close"
   },
   "content": {
     "cases/artovoe": {

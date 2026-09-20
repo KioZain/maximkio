@@ -14,7 +14,7 @@
     top: 0;
   }
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -23,7 +23,7 @@
       -1px -1px 8px 0 rgba(0, 0, 0, 0.1) inset,
       1px 1px 8px 0 rgba(0, 0, 0, 0.1) inset;
     pointer-events: none;
-  }
+  } */
 
   @media (max-width: 768px) {
     border-radius: var(--radius-12);

@@ -112,6 +112,7 @@ const PAGES = [
       "lightbox",
       "scrollUp",
       "navSpy",
+      "contents",
     ],
   },
 ];

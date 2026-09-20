@@ -1,5 +1,12 @@
 .M_LangSwitch {
   position: relative;
+  /* E_Magnetic держит на элементе постоянный transform (даже в состоянии
+     покоя), а он сам по себе создаёт новый контекст наложения. Из-за этого
+     z-index у .C_LangOptions работал только внутри него — абсолютно
+     спозиционированный #timedate в A_CanvasBeautiful (без своего контекста
+     наложения) вылезал в корневой контекст и, будучи ниже по DOM, перекрывал
+     открытый список поверх. Явный z-index здесь поднимает весь компонент. */
+  z-index: 11;
 
   & > summary {
     list-style: none;
@@ -28,8 +35,7 @@
     position: absolute;
     top: calc(100% + 0.5rem);
     left: 0;
-    z-index: 10;
-
+    z-index: 11;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -52,7 +58,6 @@
   .A_LangOption {
     padding: 0.5rem 0.75rem;
     border-radius: var(--radius-8);
-
     font-size: 17px;
     font-weight: 500;
     line-height: 140%;
