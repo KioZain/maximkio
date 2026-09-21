@@ -12,7 +12,7 @@
 
   li {
     font-size: 1.125rem;
-    line-height: 140%;
+    line-height: 145%;
     color: var(--text-icon-gray-primary);
     padding-left: 20px;
     text-indent: -24px;
@@ -23,7 +23,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 17px;
     }
   }
 

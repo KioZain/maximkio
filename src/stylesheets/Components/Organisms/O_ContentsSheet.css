@@ -130,8 +130,8 @@
   opacity: 0;
   transition:
     opacity var(--duration-zoom) var(--ease-out),
-    color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
+    color var(--duration-hover) var(--ease-out),
+    background-color var(--duration-hover) var(--ease-out),
     var(--transition-press);
 }
 

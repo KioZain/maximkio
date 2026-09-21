@@ -18,8 +18,8 @@
   color: var(--text-icon-gray-primary);
   cursor: pointer;
   transition:
-    color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
+    color var(--duration-hover) var(--ease-out),
+    background-color var(--duration-hover) var(--ease-out),
     var(--transition-press);
 
   &:hover {

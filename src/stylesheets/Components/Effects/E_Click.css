@@ -29,7 +29,7 @@
  *
  *     .A_Button {
  *       transition:
- *         color 0.3s ease-in-out,
+ *         color var(--duration-hover) var(--ease-out),
  *         var(--transition-press);
  *     }
  *

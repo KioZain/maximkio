@@ -8,7 +8,4 @@
   /* transition: background-color var(--duration-hover) var(--ease-out); */
   /* background: var(--colors-gray-light-1000); */
   /* border: 1px solid var(--border-opacity); */
-  p {
-    font-size: 1.125rem;
-  }
 }

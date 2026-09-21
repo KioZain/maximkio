@@ -3,5 +3,5 @@ svg.Q_Icon {
   height: 24px;
   flex-shrink: 0;
   stroke: currentColor;
-  transition: stroke 0.3s ease-in-out;
+  transition: stroke var(--duration-hover) var(--ease-out);
 }

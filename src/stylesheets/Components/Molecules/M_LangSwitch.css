@@ -24,7 +24,7 @@
   }
 
   & > summary .Q_Icon {
-    transition: transform 0.3s ease-in-out;
+    transition: transform var(--duration-disclose) var(--ease-out);
   }
 
   &[open] > summary .Q_Icon {
@@ -66,8 +66,8 @@
     color: var(--text-icon-gray-primary);
 
     transition:
-      color 0.3s ease-in-out,
-      background-color 0.3s ease-in-out;
+      color var(--duration-hover) var(--ease-out),
+      background-color var(--duration-hover) var(--ease-out);
 
     &:hover {
       color: var(--text-icon-blue-primary);
