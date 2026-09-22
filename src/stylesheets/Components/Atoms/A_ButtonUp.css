@@ -30,8 +30,8 @@
   z-index: 10;
 
   @media screen and (max-width: 768px) {
-    right: 1rem;
-    bottom: 1.5rem;
+    right: var(--margins-side);
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
     width: 40px;
     padding: 0;
     gap: 0;

@@ -1,2 +1,6 @@
 .S_OtherProjects {
+  /* Лента уходит под край экрана, как на десктопе: поля L_Home её не режут. */
+  @media screen and (max-width: 768px) {
+    margin-inline: calc(var(--margins-side) * -1);
+  }
 }

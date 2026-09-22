@@ -4,16 +4,14 @@
  * Как пользоваться: положить в интро кейса кнопку и подключить чанк
  * «contents» (chunks страницы в config/i18n/config.js):
  *
- *     <button class="A_Button E_Click A_ButtonContents only-mobile"
+ *     <button class="A_Button E_Click A_ButtonContents"
  *             data-contents data-contents-close="Закрыть">Содержание</button>
  *
  * Дальше чанк сам находит её, собирает шторку и переносит в неё оглавление,
  * см. contentsSheet.js.
  *
- * Показом кнопки заведует утилита only-mobile, а не этот файл: кнопка —
- * вторая половина одной пары с оглавлением на полях, и правило «одно видно
- * там, где не видно другое» должно читаться в разметке, а не в двух CSS-файлах
- * с одинаковым порогом.
+ * Кнопку показывает этот файл, на том же пороге 1215px, что O_NavMenu.css
+ * и contents.js: она видна ровно тогда, когда оглавления на полях нет.
  *
  * От обычной кнопки отличается тем, что не залита: рядом с ней в интро стоят
  * теги и таблица, и сплошной серый прямоугольник во всю ширину перетянул бы
@@ -22,10 +20,17 @@
  * ========================================================================== */
 
 .A_ButtonContents {
+  display: none;
   width: 100%;
   justify-content: center;
   padding: 0.5rem;
 
   background: transparent;
   border: 2px solid var(--background-button);
+}
+
+@media screen and (max-width: 1215px) {
+  .A_ButtonContents {
+    display: flex;
+  }
 }

@@ -55,14 +55,14 @@ const SETTINGS = {
  *   data-contents         кнопка открывает шторку (без него — обычная кнопка)
  *   data-contents-close   подпись креста для скринридера
  *
- *   <button class="A_Button A_ButtonContents only-mobile"
+ *   <button class="A_Button A_ButtonContents"
  *           data-contents data-contents-close="Закрыть">Содержание</button>
  * ========================================================================== */
 
 // Шторка — мобильная замена оглавлению на полях. На широком экране меню стоит
 // рядом со статьёй и видно всегда, прятать его в шторку незачем. Порог тот же,
-// что и у самого меню, см. O_NavMenu.css.
-const mobile = window.matchMedia("(max-width: 768px)");
+// что и у самого меню, откуда и взято число 1215, см. O_NavMenu.css.
+const mobile = window.matchMedia("(max-width: 1215px)");
 
 let sheet = null;
 

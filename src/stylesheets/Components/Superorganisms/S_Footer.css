@@ -7,7 +7,10 @@
   padding: 0 5rem;
 
   @media (max-width: 768px) {
-    padding: 0rem;
+    /* Полоса под плавающими кнопками кейса («На главную», «наверх») и под
+       жестом «домой»: высота кнопки 40px + её отступ снизу 1.5rem + такой же
+       зазор над ней. Без неё кнопки ложатся на копирайт. */
+    padding: 0 0 calc(40px + 1.5rem * 2 + env(safe-area-inset-bottom));
     flex-direction: column;
     gap: 1rem;
     height: auto;

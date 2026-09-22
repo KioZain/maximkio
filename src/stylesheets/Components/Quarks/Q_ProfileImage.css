@@ -12,8 +12,8 @@
     box-shadow: none;
     border-radius: var(--radius-16);
     position: absolute;
-    top: 7rem;
-    left: 2rem;
+    top: 0.5rem;
+    left: 0.75rem;
     z-index: 2;
   }
 }
