@@ -7,6 +7,10 @@
     "cases/artovoe": {
       "title": "Artovoe — Maxim Kirillov",
       "description": "Case study: a media catalogue of contemporary art. UX/UI and development."
+    },
+    "cases/webposter": {
+      "title": "Web poster — Maxim Kirillov",
+      "description": "Case study: an interactive primer on web layout for designers. UX/UI and development."
     }
   },
   "langSwitch": {
@@ -31,7 +35,7 @@
       {
         "cover": "webposter_cover_2x.webp",
         "coverAlt": "",
-        "href": "",
+        "href": "pages/cases/webposter.html",
         "tags": [
           {
             "label": "WEB"
@@ -178,6 +182,73 @@
       "tasks": {
         "title": "Tasks",
         "body": "Fart and eat well"
+      }
+    },
+    "cases/webposter": {
+      "webposter": {
+        "title": "Web poster",
+        "lead": "An interactive primer on web layout for designers: how seven years at HSE Art and Design School turned into an open course on the web poster.",
+        "coverAlt": "",
+        "tags": [
+          {
+            "label": "WEB"
+          },
+          {
+            "label": "Diploma"
+          }
+        ],
+        "facts": [
+          {
+            "label": "Period",
+            "value": "2025-2026"
+          },
+          {
+            "label": "Project",
+            "value": "Diploma"
+          },
+          {
+            "label": "My role",
+            "value": "UX-UI, Development"
+          },
+          {
+            "label": "Team",
+            "value": "1 designer"
+          }
+        ]
+      },
+      "context": {
+        "title": "Context",
+        "body": "This block is not written yet. It will tell where the project came from and why it is being made now."
+      },
+      "problem": {
+        "title": "Problem",
+        "body": "This block is not written yet. It will describe what a designer runs into when sitting down to write layout for the first time."
+      },
+      "goals": {
+        "title": "Goals",
+        "items": [
+          {
+            "line": "First goal — placeholder."
+          },
+          {
+            "line": "Second goal — placeholder."
+          },
+          {
+            "line": "Third goal — placeholder."
+          }
+        ]
+      },
+      "example": {
+        "caption": "Image caption",
+        "alt": ""
+      },
+      "process": {
+        "title": "Process",
+        "body": "This block is not written yet. It will cover the work itself: from first sketches to finished lessons."
+      },
+      "result": {
+        "title": "Result",
+        "body": "This block is not written yet. It will cover what came out of it and how that is measured."
       }
     }
   }

@@ -115,6 +115,23 @@ const PAGES = [
       "contents",
     ],
   },
+  {
+    id: "cases/webposter",
+    template: "./src/pages/cases/webposter.html",
+    out: "pages/cases/webposter.html",
+    data: "src/content/cases/webposter.json",
+    i18n: true,
+    chunks: [
+      "index",
+      "click",
+      "magnetic",
+      "langSwitch",
+      "lightbox",
+      "scrollUp",
+      "navSpy",
+      "contents",
+    ],
+  },
 ];
 
 /* --------------------------------------------------------------------------

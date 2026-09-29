@@ -1,0 +1,36 @@
+{
+  "blocks": [
+    {
+      "type": "intro",
+      "id": "webposter",
+      "cover": "webposter_cover_2x.webp"
+    },
+    {
+      "type": "text",
+      "id": "context"
+    },
+    {
+      "type": "text",
+      "id": "problem"
+    },
+    {
+      "type": "list",
+      "id": "goals"
+    },
+    {
+      "type": "image",
+      "id": "example",
+      "image": "webposter.png",
+      "width": 1164,
+      "height": 655
+    },
+    {
+      "type": "text",
+      "id": "process"
+    },
+    {
+      "type": "text",
+      "id": "result"
+    }
+  ]
+}
