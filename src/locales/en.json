@@ -9,8 +9,12 @@
       "description": "Case study: a media catalogue of contemporary art. UX/UI and development."
     },
     "cases/webposter": {
-      "title": "Web poster — Maxim Kirillov",
-      "description": "Case study: an interactive primer on web layout for designers. UX/UI and development."
+      "title": "[не переведено]",
+      "description": "[не переведено]"
+    },
+    "cases/veranda": {
+      "title": "Veranda — Maxim Kirillov",
+      "description": "Case: a media site about modern country living. UX/UI and development."
     }
   },
   "langSwitch": {
@@ -33,7 +37,7 @@
   "projects": {
     "items": [
       {
-        "cover": "webposter_cover_2x.webp",
+        "cover": "webposter/webposter_cover_en",
         "coverAlt": "",
         "href": "pages/cases/webposter.html",
         "tags": [
@@ -49,7 +53,7 @@
         "description": "A short and vibrant website where code becomes a expressive tool for designers."
       },
       {
-        "cover": "coverPreview.png",
+        "cover": "coverPreview",
         "coverAlt": "",
         "href": "pages/cases/artovoe.html",
         "tags": [
@@ -62,9 +66,9 @@
         "description": "ARTOVOE is a media catalogue of contemporary art that makes art visible."
       },
       {
-        "cover": "veranda.png",
+        "cover": "veranda",
         "coverAlt": "",
-        "href": "pages/cases/artovoe.html",
+        "href": "pages/cases/veranda.html",
         "tags": [
           {
             "label": "WEB"
@@ -72,7 +76,7 @@
         ],
         "date": "окт—дек 2026",
         "title": "A media site about modern country living",
-        "description": "ARTOVOE is a media catalogue of contemporary art that makes art visible."
+        "description": "The project description is not written yet."
       }
     ]
   },
@@ -118,6 +122,7 @@
   "content": {
     "cases/artovoe": {
       "artovoe": {
+        "cover": "coverPreview",
         "title": "Artovoe",
         "lead": "A media catalogue of contemporary art that makes art visible. Artists publish their work on the platform, while viewers find inspiration and discover unique objects. It is a space for an attentive look at creative work — one that becomes accessible and lives on “outside museum walls”.",
         "coverAlt": "",
@@ -170,12 +175,14 @@
         ]
       },
       "teacher": {
+        "portrait": "me",
         "quote": "You are doing something genuinely important for our whole design-and-code crowd",
         "name": "Anna Komkova",
         "role": "Tutor at HSE ART AND DESIGN",
         "portraitAlt": ""
       },
       "example": {
+        "image": "artovoe/image-example",
         "caption": "Image caption",
         "alt": ""
       },
@@ -186,29 +193,395 @@
     },
     "cases/webposter": {
       "webposter": {
-        "title": "Web poster",
-        "lead": "An interactive primer on web layout for designers: how seven years at HSE Art and Design School turned into an open course on the web poster.",
+        "cover": "webposter/webposter_cover_en",
+        "title": "[не переведено]",
+        "navTitle": "[не переведено]",
+        "lead": "[не переведено]",
+        "coverAlt": "",
+        "tags": [
+          {
+            "label": "[не переведено]"
+          },
+          {
+            "label": "[не переведено]"
+          }
+        ],
+        "facts": [
+          {
+            "label": "[не переведено]",
+            "value": "[не переведено]"
+          },
+          {
+            "label": "[не переведено]",
+            "value": "[не переведено]"
+          },
+          {
+            "label": "[не переведено]",
+            "value": "[не переведено]"
+          }
+        ]
+      },
+      "site": {
+        "label": "[не переведено]"
+      },
+      "context": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "zakhar": {
+        "portrait": "placeholders/placeholder-1-1",
+        "quote": "[не переведено]",
+        "name": "[не переведено]",
+        "role": "[не переведено]",
+        "portraitAlt": ""
+      },
+      "examples": {
+        "video": "webposter/webposter_screencast",
+        "caption": "[не переведено]",
+        "label": "[не переведено]"
+      },
+      "task": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "research": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "book": {
+        "label": "[не переведено]"
+      },
+      "bookCover": {
+        "image": "webposter/research_book_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "bookPhoto": {
+        "video": "webposter/shuffle",
+        "caption": "",
+        "label": "[не переведено]"
+      },
+      "idea": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "problems": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "problemsList": {
+        "items": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "solution": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "audience": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "audienceGroups": {
+        "image": "webposter/target_audience_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "notCodeCourse": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "awareness": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "wordOfMouth": {
+        "image": "webposter/strategy_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "product": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "lesson": {
+        "image": "webposter/classrom_teacher_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "catalog": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "filters": {
+        "image": "webposter/catalog_filters_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "filtersNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "posterCard": {
+        "image": "webposter/webposter_page_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "posterCardNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "modules": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "modulesLibrary": {
+        "image": "webposter/modules_page_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "modulesNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "interactiveExamples": {
+        "image": "webposter/code_example_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "desk": {
+        "image": "webposter/screen_context_study_un",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "share": {
+        "image": "webposter/girl_scenario_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "shareNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "textbook": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "articlePreviews": {
+        "image": "webposter/article_page_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "textbookNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "tablet": {
+        "image": "webposter/article_tablet_un",
+        "caption": "",
+        "alt": ""
+      },
+      "textbookNav": {
+        "image": "webposter/animations_en",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "navNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "studentDesk": {
+        "image": "webposter/guy_chatting_en",
+        "caption": "",
+        "alt": ""
+      },
+      "returnNote": {
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "result": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          },
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "metrics": {
+        "items": [
+          {
+            "value": "[не переведено]",
+            "label": "[не переведено]"
+          },
+          {
+            "value": "[не переведено]",
+            "label": "[не переведено]"
+          },
+          {
+            "value": "[не переведено]",
+            "label": "[не переведено]"
+          }
+        ]
+      },
+      "covers": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "coversSeries": {
+        "image": "webposter/covers_un",
+        "caption": "[не переведено]",
+        "alt": ""
+      },
+      "anna": {
+        "portrait": "placeholders/placeholder-1-1",
+        "quote": "[не переведено]",
+        "name": "[не переведено]",
+        "role": "[не переведено]",
+        "portraitAlt": ""
+      },
+      "talk": {
+        "title": "[не переведено]",
+        "paragraphs": [
+          {
+            "line": "[не переведено]"
+          }
+        ]
+      },
+      "talkPhotos": {
+        "image": "webposter/svetlovka_un",
+        "caption": "[не переведено]",
+        "alt": ""
+      }
+    },
+    "cases/veranda": {
+      "veranda": {
+        "cover": "veranda",
+        "title": "Veranda",
+        "lead": "A media site about modern country living. The lead text is not written yet.",
         "coverAlt": "",
         "tags": [
           {
             "label": "WEB"
-          },
-          {
-            "label": "Diploma"
           }
         ],
         "facts": [
           {
             "label": "Period",
-            "value": "2025-2026"
+            "value": "2026"
           },
           {
             "label": "Project",
-            "value": "Diploma"
+            "value": "Placeholder"
           },
           {
             "label": "My role",
-            "value": "UX-UI, Development"
+            "value": "UX-UI"
           },
           {
             "label": "Team",
@@ -222,7 +595,7 @@
       },
       "problem": {
         "title": "Problem",
-        "body": "This block is not written yet. It will describe what a designer runs into when sitting down to write layout for the first time."
+        "body": "This block is not written yet. It will describe the task the project started from."
       },
       "goals": {
         "title": "Goals",
@@ -239,16 +612,17 @@
         ]
       },
       "example": {
+        "image": "veranda",
         "caption": "Image caption",
         "alt": ""
       },
       "process": {
         "title": "Process",
-        "body": "This block is not written yet. It will cover the work itself: from first sketches to finished lessons."
+        "body": "This block is not written yet. It will show the work from first sketches to the finished site."
       },
       "result": {
         "title": "Result",
-        "body": "This block is not written yet. It will cover what came out of it and how that is measured."
+        "body": "This block is not written yet. It will show what came out of it and how that is measured."
       }
     }
   }

@@ -1,0 +1,50 @@
+<!-- Кнопка-ссылка на внешний ресурс: сайт проекта, книга исследования.
+
+     Данные:  url — адрес, он не переводится и потому лежит в JSON
+     Тексты:  label
+
+     Атом A_Button рассчитан и на <a>, и на <button> — см. A_Button.css,
+     поэтому своего класса у блока нет. Заголовка нет, в оглавление
+     кейса блок не попадает. -->
+<div class="M_ArticleBlock">
+  <a
+    class="A_Button E_Click"
+    href="{{ url }}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg
+      class="Q_Icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M14 4H20V10"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M19.5 4.5L11 13"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M18 14.5V18C18 19.1046 17.1046 20 16 20H6C4.89543 20 4 19.1046 4 18V8C4 6.89543 4.89543 6 6 6H9.5"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    {{ text.label }}
+  </a>
+</div>

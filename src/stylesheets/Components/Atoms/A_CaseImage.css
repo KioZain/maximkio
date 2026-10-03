@@ -31,14 +31,13 @@
 .A_CaseImage {
   overflow: hidden;
   max-width: 756px;
-  margin-top: 1rem;
 
   .Q_CaseImageCover {
     display: flex;
     border-radius: var(--radius-24);
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--border-opacity);
+    /* border: 1px solid var(--border-opacity); */
     overflow: hidden;
 
     /* Без этого рамка получается 756 + 4px рамки = 760 и на 4px уезжает под
@@ -59,6 +58,8 @@
     width: fit-content;
     display: block;
     font-size: 15px;
+    line-height: 135%;
+    text-align: center;
   }
 }
 

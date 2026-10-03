@@ -22,6 +22,7 @@ module.exports = {
     navSpy: "./src/javascripts/navSpy.js",
     contents: "./src/javascripts/contents.js",
     clock: "./src/javascripts/clock.js",
+    caseVideo: "./src/javascripts/caseVideo.js",
   },
   output: {
     filename: "[name].js",
@@ -52,10 +53,23 @@ module.exports = {
         use: ["html-loader", path.resolve(__dirname, "i18n/loader.js")],
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        // webp и avif сюда добавлены не для красоты: без них webpack брал
+        // такой файл правилом по умолчанию и складывал в корень docs/, а не
+        // в docs/images/. Производные из src/images/derived — как раз они,
+        // см. scripts/images.mjs.
+        test: /\.(png|jpg|jpeg|gif|svg|webp|avif)$/i,
         type: "asset/resource",
         generator: {
           filename: "images/[hash][ext][query]",
+        },
+      },
+      {
+        // Видео отдельной папкой: файлы тяжёлые, и при разборе сборки их
+        // удобно видеть кучей, а не вперемешку с картинками.
+        test: /\.(mp4|webm|ogv)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "media/[hash][ext][query]",
         },
       },
       {

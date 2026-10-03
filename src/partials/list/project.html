@@ -7,9 +7,12 @@
      Писать в комментариях фигурные скобки движка нельзя: он не отличает
      их от разметки и честно попробует выполнить.
 
-     Путь к обложке пишется от src/images/ — префикс знает кусок разметки, и
-     только он. В src картинки никогда не ставится site.root: адрес считает
-     html-loader от файла шаблона, а не от готовой страницы (см. i18n/README).
+     Путь к обложке пишется от src/images/ и БЕЗ расширения — и префикс, и
+     формат знает кусок разметки, и только он. Из одного cover собираются все
+     четыре адреса; производные делает npm run images, см. scripts/images.mjs.
+
+     В src картинки никогда не ставится site.root: адрес считает html-loader
+     от файла шаблона, а не от готовой страницы (см. i18n/README).
 
      Ссылка на кейс — обычный относительный путь, тоже без site.root: дерево
      /en/ зеркалит корень, поэтому с английской главной она ведёт на
@@ -24,7 +27,25 @@
 
 <a href="{{ href }}" class="O_ProjectCard E_Click">
   <div class="Q_ProjectCover">
-    <img src="./images/{{ cover }}" alt="{{ coverAlt }}" />
+    <picture>
+      <source
+        type="image/avif"
+        srcset="
+          ./images/derived/{{ cover }}@1x.avif 1x,
+          ./images/derived/{{ cover }}@2x.avif 2x
+        "
+      />
+      <img
+        src="./images/derived/{{ cover }}@2x.webp"
+        srcset="
+          ./images/derived/{{ cover }}@1x.webp 1x,
+          ./images/derived/{{ cover }}@2x.webp 2x
+        "
+        alt="{{ coverAlt }}"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
   </div>
 
   <div class="M_AboutProject">

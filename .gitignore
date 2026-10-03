@@ -6,3 +6,7 @@ yarn-error.log
 /dev_build
 # Выгрузка настроек из лаборатории (npm start → /lab/…), см. config/webpack.dev.js
 /.lab
+
+# Производные картинок: собираются npm run images, см. scripts/images.mjs
+/src/images/derived
+/src/media/derived

@@ -1,0 +1,53 @@
+<!-- Картинка в трёх форматах: avif, webp и мастер запасным вариантом.
+     Отличается от case/image.html только подачей файла — вид, подпись и
+     раскрытие в лайтбокс те же.
+
+     Данные:  image — путь мастера БЕЗ расширения, от src/images/
+              width, height — размер слота, 1x
+     Тексты:  caption, alt
+
+     Путь без расширения, потому что из одного image получаются все четыре
+     адреса ниже, а отрезать ".png" движок не умеет — он только подставляет.
+
+     Производные делает npm run images, он же решает, какой размер считать
+     1x. Руками в src/images/derived ничего не лежит — см. scripts/images.mjs.
+
+     Запасной вариант — webp, а не мастер: вёрстка держится на aspect-ratio
+     (Safari 15), webp появился раньше (Safari 14), поэтому браузера, который
+     нарисует страницу верно, но не покажет webp, не бывает. avif моложе,
+     отсюда и <source> перед ним.
+
+     width и height обязательны и указываются в размере 1x: по ним браузер
+     держит место под картинку до загрузки, иначе страница дёргается. Они же
+     делают возможной ленивую загрузку: без размеров браузер не знал бы, где
+     кончается одна картинка и начинается следующая.
+
+     loading="lazy" — потому что картинок в кейсе под два десятка, а дочитает
+     до конца не каждый. Обложка кейса грузится обычным порядком: она на
+     первом экране, и откладывать её нечего (см. case/intro.html). -->
+<figure class="A_CaseImage" data-zoomable>
+  <div class="Q_CaseImageCover">
+    <picture>
+      <source
+        type="image/avif"
+        srcset="
+          ../../images/derived/{{ text.image }}@1x.avif 1x,
+          ../../images/derived/{{ text.image }}@2x.avif 2x
+        "
+      />
+      <img
+        src="../../images/derived/{{ text.image }}@2x.webp"
+        srcset="
+          ../../images/derived/{{ text.image }}@1x.webp 1x,
+          ../../images/derived/{{ text.image }}@2x.webp 2x
+        "
+        width="{{ width }}"
+        height="{{ height }}"
+        alt="{{ text.alt }}"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  </div>
+  <figcaption>{{ text.caption }}</figcaption>
+</figure>

@@ -1,8 +1,24 @@
-<img
-  src="../../images/{{ cover }}"
-  alt="{{ text.coverAlt }}"
-  class="A_CoverProject"
-/>
+<!-- Обложка кейса. Путь приходит без расширения: из одного cover движок
+     собирает все четыре адреса ниже. См. case/picture.html. -->
+<picture>
+  <source
+    type="image/avif"
+    srcset="
+      ../../images/derived/{{ text.cover }}@1x.avif 1x,
+      ../../images/derived/{{ text.cover }}@2x.avif 2x
+    "
+  />
+  <img
+    src="../../images/derived/{{ text.cover }}@2x.webp"
+    srcset="
+      ../../images/derived/{{ text.cover }}@1x.webp 1x,
+      ../../images/derived/{{ text.cover }}@2x.webp 2x
+    "
+    alt="{{ text.coverAlt }}"
+    class="A_CoverProject"
+    fetchpriority="high"
+  />
+</picture>
 
 <div class="S_ProjectAbout">
   <div class="M_HeadTagsAbout">

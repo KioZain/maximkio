@@ -22,7 +22,18 @@
 
         <div class="O_Head">
           <div class="M_ProfileBanner">
-            <img class="Q_ProfileImage" src="./images/me.png" alt="" />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="./images/derived/me@1x.avif 1x, ./images/derived/me@2x.avif 2x"
+              />
+              <img
+                class="Q_ProfileImage"
+                src="./images/derived/me@2x.webp"
+                srcset="./images/derived/me@1x.webp 1x, ./images/derived/me@2x.webp 2x"
+                alt=""
+              />
+            </picture>
             <div class="A_CanvasBeautiful" id="home-canvas">
               <!-- Часы города: время и смещение пишет чанк clock,
                    пояс задаётся в data-timezone, см. src/javascripts/clock.js -->
@@ -178,10 +189,39 @@
 
             <div class="O_ImagesAbout">
               <div class="C_ImagesAbout E_Reveal">
-                <img src="images/me-about-1.png" alt="" /><img
-                  src="images/me-about-2.png"
-                  alt=""
-                /><img src="images/me-about-3.png" alt="" />
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcset="images/derived/me-about-1@1x.avif 1x, images/derived/me-about-1@2x.avif 2x"
+                  />
+                  <img
+                    src="images/derived/me-about-1@2x.webp"
+                    srcset="images/derived/me-about-1@1x.webp 1x, images/derived/me-about-1@2x.webp 2x"
+                    alt=""
+                  />
+                </picture>
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcset="images/derived/me-about-2@1x.avif 1x, images/derived/me-about-2@2x.avif 2x"
+                  />
+                  <img
+                    src="images/derived/me-about-2@2x.webp"
+                    srcset="images/derived/me-about-2@1x.webp 1x, images/derived/me-about-2@2x.webp 2x"
+                    alt=""
+                  />
+                </picture>
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcset="images/derived/me-about-3@1x.avif 1x, images/derived/me-about-3@2x.avif 2x"
+                  />
+                  <img
+                    src="images/derived/me-about-3@2x.webp"
+                    srcset="images/derived/me-about-3@1x.webp 1x, images/derived/me-about-3@2x.webp 2x"
+                    alt=""
+                  />
+                </picture>
               </div>
             </div>
 

@@ -1,0 +1,54 @@
+<!-- Короткий ролик вместо гифки: играется сам, без звука, по кругу.
+
+     Данные:  width, height — размер слота, 1x
+     Тексты:  video — путь БЕЗ расширения, от src/media/
+              caption, label
+
+     Путь один на все три файла: mp4, webm и кадр-заглушку собирает
+     npm run media из мастера в src/media/**, см. scripts/media.mjs. Мастером
+     может быть и гифка — наружу она всё равно уедет роликом и похудеет
+     в несколько раз.
+
+     Путь лежит в словаре, а не в данных: у русской и английской версии
+     ролики разные, а data-файл один на оба языка.
+
+     Порядок источников важен: браузер берёт первый, который умеет, поэтому
+     webm (он легче) стоит раньше mp4.
+
+     autoplay в разметке нет намеренно. Он сильнее preload="none": браузер
+     скачал бы ролик целиком сразу, даже если тот лежит на седьмом экране.
+     Вместо него — preload="none" и чанк «caseVideo», который зовёт play(),
+     когда до ролика доскроллили. Он же отвечает за prefers-reduced-motion.
+     Без JS остаётся кадр-заглушка.
+
+     Адреса стоят обычными src, а не в data-: адреса картинок и медиа считает
+     html-loader на сборке, и в data-атрибуты он не заглядывает — файл просто
+     не попал бы в сборку.
+
+     muted и playsinline нужны в разметке: без них iOS и браузеры с политикой
+     автозапуска не дадут play() сработать, когда чанк его вызовет.
+
+     В лайтбокс блок не раскрывается — у figure нет data-zoomable: лайтбокс
+     умеет картинки, а остановить и открыть ролик он не умеет.
+
+     label — что на ролике, для тех, кто его не видит: у video нет alt. -->
+<figure class="A_CaseImage">
+  <div class="Q_CaseImageCover">
+    <video
+      class="A_CaseVideo"
+      data-case-video
+      width="{{ width }}"
+      height="{{ height }}"
+      poster="../../media/derived/{{ text.video }}-poster.webp"
+      preload="none"
+      muted
+      loop
+      playsinline
+      aria-label="{{ text.label }}"
+    >
+      <source src="../../media/derived/{{ text.video }}.webm" type="video/webm" />
+      <source src="../../media/derived/{{ text.video }}.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <figcaption>{{ text.caption }}</figcaption>
+</figure>

@@ -1,0 +1,70 @@
+/* ==========================================================================
+ * C_CasePoints — нумерованные карточки внутри кейса.
+ * См. src/partials/case/points.html.
+ *
+ *     <ol class="C_CasePoints">
+ *       <li class="M_CasePoint">Текст пункта</li>
+ *     </ol>
+ *
+ * Остаётся настоящим <ol>: для читателя это нумерованный список, а
+ * карточки и кружки — только его вид.
+ *
+ * Номер рисует ::before через счётчик списка, поэтому в разметке и в
+ * словаре цифр нет. Маркер самого списка при этом не используется —
+ * reset.css гасит его у всех списков, и здесь это как раз к месту.
+ * ========================================================================== */
+
+.C_CasePoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  max-width: var(--article-text-width);
+  margin: -1rem auto 1rem;
+  /* Счётчик списка ведёт браузер сам, но у него общее имя на всю страницу.
+     Свой счётчик не сбивается, если рядом окажется другой список. */
+  counter-reset: case-point;
+}
+
+.M_CasePoint {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border-radius: var(--radius-20);
+  background: var(--background-minor);
+  font-size: 1.125rem;
+  line-height: 25px;
+  color: var(--text-icon-gray-primary);
+  counter-increment: case-point;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.875rem;
+    font-size: 17px;
+  }
+}
+
+/* Кружок с номером. Размер фиксированный: цифра не должна растягивать
+   кружок в овал, когда пунктов станет больше девяти. */
+.M_CasePoint::before {
+  content: counter(case-point);
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--text-icon-gray-primary);
+  color: var(--text-icon-inverse-primary);
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: 1.3px;
+  /* Цифра в кружке стоит чуть ниже верха карточки — по первой строке
+     текста, а не по её коробке. 4px — разница между интерлиньяжем
+     строки (25px) и высотой кружка (20px). */
+  margin-top: 4px;
+  /* letter-spacing добавляет отступ справа от последнего знака и сдвигает
+     цифру влево от центра. */
+  text-indent: 1.3px;
+}

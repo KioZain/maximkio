@@ -2,8 +2,7 @@
   "blocks": [
     {
       "type": "intro",
-      "id": "artovoe",
-      "cover": "coverPreview.png"
+      "id": "artovoe"
     },
     {
       "type": "text",
@@ -15,13 +14,11 @@
     },
     {
       "type": "quote",
-      "id": "teacher",
-      "portrait": "me.png"
+      "id": "teacher"
     },
     {
-      "type": "image",
+      "type": "picture",
       "id": "example",
-      "image": "artovoe/image-example.png",
       "width": 756,
       "height": 429
     },

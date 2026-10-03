@@ -2,35 +2,233 @@
   "blocks": [
     {
       "type": "intro",
-      "id": "webposter",
-      "cover": "webposter_cover_2x.webp"
+      "id": "webposter"
     },
     {
-      "type": "text",
+      "type": "link",
+      "id": "site",
+      "url": "https://webposter.adc.ac"
+    },
+    {
+      "type": "prose",
       "id": "context"
     },
     {
-      "type": "text",
-      "id": "problem"
+      "type": "quote",
+      "id": "zakhar"
     },
     {
-      "type": "list",
-      "id": "goals"
+      "type": "video",
+      "id": "examples",
+      "width": 756,
+      "height": 567
     },
     {
-      "type": "image",
-      "id": "example",
-      "image": "webposter.png",
-      "width": 1164,
-      "height": 655
+      "type": "prose",
+      "id": "task"
     },
     {
-      "type": "text",
-      "id": "process"
+      "type": "prose",
+      "id": "research"
     },
     {
-      "type": "text",
+      "type": "link",
+      "id": "book",
+      "url": "https://www.calameo.com/books/007407927929d9c1231f7"
+    },
+    {
+      "type": "picture",
+      "id": "bookCover",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "video",
+      "id": "bookPhoto",
+      "width": 756,
+      "height": 425
+    },
+    {
+      "type": "prose",
+      "id": "idea"
+    },
+    {
+      "type": "prose",
+      "id": "problems"
+    },
+    {
+      "type": "points",
+      "id": "problemsList"
+    },
+    {
+      "type": "prose",
+      "id": "solution"
+    },
+    {
+      "type": "prose",
+      "id": "audience"
+    },
+    {
+      "type": "picture",
+      "id": "audienceGroups",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "notCodeCourse"
+    },
+    {
+      "type": "prose",
+      "id": "awareness"
+    },
+    {
+      "type": "picture",
+      "id": "wordOfMouth",
+      "width": 756,
+      "height": 456
+    },
+    {
+      "type": "prose",
+      "id": "product"
+    },
+    {
+      "type": "picture",
+      "id": "lesson",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "catalog"
+    },
+    {
+      "type": "picture",
+      "id": "filters",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "filtersNote"
+    },
+    {
+      "type": "picture",
+      "id": "posterCard",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "posterCardNote"
+    },
+    {
+      "type": "prose",
+      "id": "modules"
+    },
+    {
+      "type": "picture",
+      "id": "modulesLibrary",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "modulesNote"
+    },
+    {
+      "type": "picture",
+      "id": "interactiveExamples",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "picture",
+      "id": "desk",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "picture",
+      "id": "share",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "shareNote"
+    },
+    {
+      "type": "prose",
+      "id": "textbook"
+    },
+    {
+      "type": "picture",
+      "id": "articlePreviews",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "textbookNote"
+    },
+    {
+      "type": "picture",
+      "id": "tablet",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "picture",
+      "id": "textbookNav",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "navNote"
+    },
+    {
+      "type": "picture",
+      "id": "studentDesk",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "returnNote"
+    },
+    {
+      "type": "prose",
       "id": "result"
+    },
+    {
+      "type": "stats",
+      "id": "metrics"
+    },
+    {
+      "type": "prose",
+      "id": "covers"
+    },
+    {
+      "type": "picture",
+      "id": "coversSeries",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "quote",
+      "id": "anna"
+    },
+    {
+      "type": "prose",
+      "id": "talk"
+    },
+    {
+      "type": "picture",
+      "id": "talkPhotos",
+      "width": 756,
+      "height": 472
     }
   ]
 }

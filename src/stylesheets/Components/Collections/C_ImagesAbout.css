@@ -20,6 +20,39 @@
   width: 100%;
   height: 100%;
 
+  /* Раскладка веера считается по порядковому номеру кадра, а <picture> этот
+     номер сбивает: внутри неё <img> всегда первый и единственный. Поэтому
+     позиционные правила висят на picture, а всё остальное — на самой
+     картинке. На раскладку это не влияет: picture у нас display: contents,
+     см. reset.css. */
+  picture:nth-child(1) img {
+    --angle: 7deg;
+    --parallax: 8px;
+    left: 3%;
+    z-index: 1;
+    top: 15%;
+  }
+
+  picture:nth-child(2) img {
+    /* -7deg, а не 353deg: угол участвует в анимации, и от 0deg браузер
+       доехал бы до 353deg длинным путём — почти полный оборот вместо
+       небольшого доворота. Визуально значения одинаковые. */
+    --angle: -7deg;
+    /* Верхний кадр — самый «близкий», у него самый длинный ход. */
+    --parallax: 14px;
+    left: 31%;
+    z-index: 2;
+    top: 10%;
+  }
+
+  picture:nth-child(3) img {
+    --angle: 3deg;
+    --parallax: 6px;
+    left: 62%;
+    z-index: 1;
+    top: 12%;
+  }
+
   img {
     /* Конечный угол. Он же — цель появления, поэтому вынесен в переменную:
        иначе одно и то же число пришлось бы держать в двух местах. */
@@ -47,34 +80,6 @@
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
 
     transform: rotate(var(--angle));
-
-    &:nth-child(1) {
-      --angle: 7deg;
-      --parallax: 8px;
-      left: 3%;
-      z-index: 1;
-      top: 15%;
-    }
-
-    &:nth-child(2) {
-      /* -7deg, а не 353deg: угол участвует в анимации, и от 0deg браузер
-         доехал бы до 353deg длинным путём — почти полный оборот вместо
-         небольшого доворота. Визуально значения одинаковые. */
-      --angle: -7deg;
-      /* Верхний кадр — самый «близкий», у него самый длинный ход. */
-      --parallax: 14px;
-      left: 31%;
-      z-index: 2;
-      top: 10%;
-    }
-
-    &:nth-child(3) {
-      --angle: 3deg;
-      --parallax: 6px;
-      left: 62%;
-      z-index: 1;
-      top: 12%;
-    }
   }
 }
 
@@ -108,12 +113,12 @@
 /* Задержки идут от центра: сначала верхний кадр, за ним боковые. Веер
    раскрывается от середины наружу, а не слева направо — так же, как его
    разложили бы руками. */
-.C_ImagesAbout.E_Reveal img:nth-child(2) {
+.C_ImagesAbout.E_Reveal picture:nth-child(2) img {
   transition-delay: 0ms;
 }
 
-.C_ImagesAbout.E_Reveal img:nth-child(1),
-.C_ImagesAbout.E_Reveal img:nth-child(3) {
+.C_ImagesAbout.E_Reveal picture:nth-child(1) img,
+.C_ImagesAbout.E_Reveal picture:nth-child(3) img {
   transition-delay: var(--stagger-step);
 }
 

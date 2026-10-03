@@ -1,0 +1,34 @@
+{
+  "blocks": [
+    {
+      "type": "intro",
+      "id": "veranda"
+    },
+    {
+      "type": "text",
+      "id": "context"
+    },
+    {
+      "type": "text",
+      "id": "problem"
+    },
+    {
+      "type": "list",
+      "id": "goals"
+    },
+    {
+      "type": "picture",
+      "id": "example",
+      "width": 1164,
+      "height": 655
+    },
+    {
+      "type": "text",
+      "id": "process"
+    },
+    {
+      "type": "text",
+      "id": "result"
+    }
+  ]
+}

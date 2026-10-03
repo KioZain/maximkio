@@ -1,0 +1,37 @@
+/* Ряд плиток с цифрами внутри кейса — см. src/partials/case/stats.html.
+
+   Ширина та же, что у текста статьи: плитки должны попадать в общую
+   колонку, а не разъезжаться по всей странице.
+
+   Колонки равной ширины через auto-fit: сколько плиток в блоке, столько
+   и колонок, пока каждой хватает минимума. На узком экране минимум не
+   помещается и ряд сам собой становится столбцом — без медиазапроса. */
+.C_CaseStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  max-width: var(--article-text-width);
+  margin: 0 auto;
+}
+
+.A_CaseStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 1rem;
+  border-radius: var(--radius-12);
+  background: var(--background-minor);
+}
+
+.A_CaseStatValue {
+  font-size: 1.25rem;
+  line-height: 130%;
+  color: var(--text-icon-black-primary);
+}
+
+.A_CaseStatLabel {
+  font-size: 0.9375rem;
+  line-height: 135%;
+  color: var(--text-icon-gray-secondary);
+}

@@ -167,14 +167,23 @@ function blockTextReader(dictionary, page, language) {
    сами собой, без списка исключений. Заводя новый тип блока, помните: назвал
    заголовок title — блок появится в меню.
 
+   Подпись пункта можно задать отдельно — ключом navTitle рядом с title.
+   Нужно это там, где заголовок на странице длинный: в кейсе про веб-плакат
+   первый блок несёт целое название проекта, а в меню ему место под коротким
+   «О проекте». На попадание в меню navTitle не влияет: блок без title в
+   навигацию не идёт, сколько бы подписей ему ни завели.
+
    Первый пункт помечен активным прямо в разметке. Так меню осмысленно и без
    JS, и в те миллисекунды, пока чанк ещё не выполнился. */
 function collectHeadings(data, blockText) {
   if (!data || !Array.isArray(data.blocks)) return [];
 
   return data.blocks
-    .map((block) => ({ id: block.id, title: blockText(block.id).value.title }))
-    .filter((item) => item.title)
+    .map((block) => {
+      const text = blockText(block.id).value;
+      return { id: block.id, heading: text.title, title: text.navTitle || text.title };
+    })
+    .filter((item) => item.heading)
     .map((item, index) => ({
       ...item,
       // Строками, а не булевым: значения уходят прямо в атрибуты.

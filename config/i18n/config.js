@@ -113,6 +113,7 @@ const PAGES = [
       "scrollUp",
       "navSpy",
       "contents",
+      "caseVideo",
     ],
   },
   {
@@ -130,6 +131,25 @@ const PAGES = [
       "scrollUp",
       "navSpy",
       "contents",
+      "caseVideo",
+    ],
+  },
+  {
+    id: "cases/veranda",
+    template: "./src/pages/cases/veranda.html",
+    out: "pages/cases/veranda.html",
+    data: "src/content/cases/veranda.json",
+    i18n: true,
+    chunks: [
+      "index",
+      "click",
+      "magnetic",
+      "langSwitch",
+      "lightbox",
+      "scrollUp",
+      "navSpy",
+      "contents",
+      "caseVideo",
     ],
   },
 ];

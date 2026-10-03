@@ -10,7 +10,9 @@
  *
  *   1) элемент с data-zoomable содержит ровно одну <img>;
  *   2) родитель этой <img> — рамка: то, что человек видит как «картинку»,
- *      и то, из чего и во что летит анимация;
+ *      и то, из чего и во что летит анимация. Исключение одно — <picture>:
+ *      у неё display: contents (см. reset.css), своей коробки нет, лететь
+ *      из неё некуда, поэтому рамкой считается её родитель;
  *   3) пропорция берётся из width/height в разметке.
  *
  * Как выглядят фон, крест и скрытая рамка — решает CSS, см. O_Lightbox.css.
@@ -177,11 +179,20 @@ export function createImageLightbox(defaults) {
   // Разметка обещает ровно то, что модуль умеет выполнить прямо сейчас: если
   // лайтбокс выключен (узкий экран, грубый указатель), обещания нет вовсе —
   // ни курсора, ни просадки под пальцем, ни кнопки для скринридера.
+  /* Рамка картинки — её родитель, но <picture> рамкой быть не может: она
+     обёртка для выбора формата, у неё display: contents и нулевая коробка.
+     FLIP из такой коробки считал бы перелёт от схлопнутого прямоугольника. */
+  function frameOf(img) {
+    const parent = img && img.parentElement;
+    if (!parent) return null;
+    return parent.tagName === "PICTURE" ? parent.parentElement : parent;
+  }
+
   function prepare(zoomable) {
     const img = zoomable.querySelector("img");
     if (!img) return;
 
-    const frame = img.parentElement;
+    const frame = frameOf(img);
     if (!frame || frame.hasAttribute(FRAME)) return;
 
     frame.setAttribute(FRAME, "");
@@ -264,7 +275,7 @@ export function createImageLightbox(defaults) {
     if (source || closing) return;
 
     const img = zoomable.querySelector("img");
-    const frame = img && img.parentElement;
+    const frame = frameOf(img);
     if (!frame) return;
 
     // Показывать нечего — значит и раскрывать нечего. Без этой проверки
