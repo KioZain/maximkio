@@ -50,7 +50,8 @@
     },
     {
       "type": "prose",
-      "id": "idea"
+      "id": "idea",
+      "nav": false
     },
     {
       "type": "prose",
@@ -76,11 +77,13 @@
     },
     {
       "type": "prose",
-      "id": "notCodeCourse"
+      "id": "notCodeCourse",
+      "nav": false
     },
     {
       "type": "prose",
-      "id": "awareness"
+      "id": "awareness",
+      "nav": false
     },
     {
       "type": "picture",
@@ -100,7 +103,8 @@
     },
     {
       "type": "prose",
-      "id": "catalog"
+      "id": "catalog",
+      "nav": false
     },
     {
       "type": "picture",
@@ -124,7 +128,8 @@
     },
     {
       "type": "prose",
-      "id": "modules"
+      "id": "modules",
+      "nav": false
     },
     {
       "type": "picture",
@@ -160,7 +165,8 @@
     },
     {
       "type": "prose",
-      "id": "textbook"
+      "id": "textbook",
+      "nav": false
     },
     {
       "type": "picture",
@@ -208,7 +214,8 @@
     },
     {
       "type": "prose",
-      "id": "covers"
+      "id": "covers",
+      "nav": false
     },
     {
       "type": "picture",

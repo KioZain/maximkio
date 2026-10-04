@@ -24,7 +24,7 @@
   <div class="M_HeadTagsAbout">
     <div class="C_Tags">
       {{#each text.tags}}
-      <div class="A_Tag">{{ label }}</div>
+      <div class="A_Tag" data-kind="{{ kind }}">{{ label }}</div>
       {{/each}}
     </div>
     <h3 id="{{ id }}">{{ text.title }}</h3>

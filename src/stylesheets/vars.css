@@ -78,6 +78,15 @@
     var(--colors-blue-light-1000) 100%
   );
 
+  /* Tag — цвет по категории (data-kind у .A_Tag, см. A_Tag.css).
+     Новая категория: пара токенов здесь, блок [data-kind] в A_Tag.css
+     и kind у тега в locales/*.json. */
+  --tag-web-bg: var(--colors-blue-1000);
+  --tag-web-text: var(--text-icon-inverse-primary);
+
+  --tag-diploma-bg: #66d1f2;
+  --tag-diploma-text: var(--text-icon-inverse-primary);
+
   /* Background */
   --background-body: var(--colors-white-1000);
 

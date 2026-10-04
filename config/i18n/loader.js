@@ -173,12 +173,22 @@ function blockTextReader(dictionary, page, language) {
    «О проекте». На попадание в меню navTitle не влияет: блок без title в
    навигацию не идёт, сколько бы подписей ему ни завели.
 
+   Обратное — "nav": false в структуре кейса: заголовок на странице есть,
+   пункта в меню нет. Нужно для ремарок и приложений, по которым никто не
+   прыгает: в длинном кейсе меню иначе занимает полэкрана. Решение живёт
+   в JSON, а не в словаре, — на обоих языках оглавление должно быть одним
+   и тем же.
+
    Первый пункт помечен активным прямо в разметке. Так меню осмысленно и без
    JS, и в те миллисекунды, пока чанк ещё не выполнился. */
 function collectHeadings(data, blockText) {
   if (!data || !Array.isArray(data.blocks)) return [];
 
   return data.blocks
+    // Блок с "nav": false в структуре кейса из меню выпадает. Заголовок на
+    // странице при этом остаётся: ссылка на него по якорю продолжает
+    // работать, просто пункта в оглавлении нет.
+    .filter((block) => block.nav !== false)
     .map((block) => {
       const text = blockText(block.id).value;
       return { id: block.id, heading: text.title, title: text.navTitle || text.title };

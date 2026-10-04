@@ -42,15 +42,17 @@
         "href": "pages/cases/webposter.html",
         "tags": [
           {
+            "kind": "web",
             "label": "WEB"
           },
           {
+            "kind": "diploma",
             "label": "Diploma"
           }
         ],
         "date": "окт—дек 2026",
-        "title": "An interactive textbook on creating the web posters",
-        "description": "A short and vibrant website where code becomes a expressive tool for designers."
+        "title": "An interactive handbook for designers learning the basics of web technologies",
+        "description": "How seven years of experience at the HSE Art and Design School turned into an open web poster handbook"
       },
       {
         "cover": "coverPreview",
@@ -58,6 +60,7 @@
         "href": "pages/cases/artovoe.html",
         "tags": [
           {
+            "kind": "web",
             "label": "WEB"
           }
         ],
@@ -71,6 +74,7 @@
         "href": "pages/cases/veranda.html",
         "tags": [
           {
+            "kind": "web",
             "label": "WEB"
           }
         ],
@@ -128,6 +132,7 @@
         "coverAlt": "",
         "tags": [
           {
+            "kind": "web",
             "label": "WEB"
           }
         ],
@@ -194,278 +199,280 @@
     "cases/webposter": {
       "webposter": {
         "cover": "webposter/webposter_cover_en",
-        "title": "[не переведено]",
-        "navTitle": "[не переведено]",
-        "lead": "[не переведено]",
+        "title": "An interactive handbook for designers learning the basics of web technologies",
+        "navTitle": "About the project",
+        "lead": "How seven years of experience at the HSE Art and Design School turned into an open web poster handbook that helps designers learn the basics of web layout",
         "coverAlt": "",
         "tags": [
           {
-            "label": "[не переведено]"
+            "kind": "web",
+            "label": "WEB"
           },
           {
-            "label": "[не переведено]"
+            "kind": "diploma",
+            "label": "Diploma"
           }
         ],
         "facts": [
           {
-            "label": "[не переведено]",
-            "value": "[не переведено]"
+            "label": "Timeline",
+            "value": "October 2024 – July 2025"
           },
           {
-            "label": "[не переведено]",
-            "value": "[не переведено]"
+            "label": "My role",
+            "value": "UX/UI, Development"
           },
           {
-            "label": "[не переведено]",
-            "value": "[не переведено]"
+            "label": "Project",
+            "value": "Diploma"
           }
         ]
       },
       "site": {
-        "label": "[не переведено]"
+        "label": "Visit website"
       },
       "context": {
-        "title": "[не переведено]",
+        "title": "Context",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "At the HSE Art and Design School, a web poster is a single-page website that first-year students of the Design and Programming track use to learn HTML, CSS and JavaScript. In essence, it’s the same poster, only moved into the browser, so it can entertain, tell a story or deliver a message while still being a fully working page on the internet."
           },
           {
-            "line": "[не переведено]"
+            "line": "Over eight years, the format has grown from an experimental exercise into an established teaching practice. Students have already made more than 500 works, and every year over 11 groups from different tracks go through the web poster. I went through it myself at one point, so when choosing a diploma topic, I decided to return to the format and look at it from a different angle."
           }
         ]
       },
       "zakhar": {
-        "portrait": "placeholders/placeholder-1-1",
-        "quote": "[не переведено]",
-        "name": "[не переведено]",
-        "role": "[не переведено]",
+        "portrait": "webposter/zakhar_un",
+        "quote": "Web posters are a way for designers to get into code without it feeling like a chore",
+        "name": "Zakhar Day",
+        "role": "Head of the Design and Programming track",
         "portraitAlt": ""
       },
       "examples": {
         "video": "webposter/webposter_screencast",
-        "caption": "[не переведено]",
-        "label": "[не переведено]"
+        "caption": "Examples of student web posters",
+        "label": "Screen recording: catalogue of student web posters"
       },
       "task": {
-        "title": "[не переведено]",
+        "title": "Task",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "For all the polish of the programme, knowledge about the format is still passed on orally, and in some places it doesn’t exist at all. Web posters rely on tutors, their reviews, consultations and advice in the group chat. Tellingly, when I asked teachers ‘what is a web poster?’, they answered after a long pause, and some never found an answer."
           },
           {
-            "line": "[не переведено]"
+            "line": "So the goal was to move this oral knowledge into a resource that works even without a teacher nearby. At the same time, I didn’t want it to become yet another front-end course, since the internet has plenty of those already. Otherwise the things the format was invented for would get lost, namely freedom, play, the right to make mistakes and the author’s own idea."
           }
         ]
       },
       "research": {
-        "title": "[не переведено]",
+        "title": "Research",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Before writing the handbook, I had to understand what kind of format this is and define its boundaries. To do that, I talked to four teachers connected to the web poster in one way or another and surveyed 25 students about their questions and difficulties. In parallel, I went through the works from 2019–2025 by hand and gathered all the findings in a 148-page research book."
           }
         ]
       },
       "book": {
-        "label": "[не переведено]"
+        "label": "Read the book"
       },
       "bookCover": {
         "image": "webposter/research_book_en",
-        "caption": "[не переведено]",
+        "caption": "Research book on the web poster format",
         "alt": ""
       },
       "bookPhoto": {
         "video": "webposter/shuffle",
         "caption": "",
-        "label": "[не переведено]"
+        "label": "Flipping through the printed research book"
       },
       "idea": {
-        "title": "[не переведено]",
+        "title": "Idea",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Look closely, and you’ll see that every poster is built from recurring techniques, which means the archive of student work is already teaching material in itself. All that was left was to take the posters apart, show what they’re made of and give the code for each piece."
           },
           {
-            "line": "[не переведено]"
+            "line": "That’s how the handbook came about. It talks about the philosophy and features of the format, and the code shows up right when a student gets stuck trying to bring their own idea to life."
           }
         ]
       },
       "problems": {
-        "title": "[не переведено]",
+        "title": "Problems",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Look closely, and you’ll see that every poster is built from recurring techniques, which means the archive of student work is already teaching material in itself. All that was left was to take the posters apart, show what they’re made of and give the code for each piece."
           }
         ]
       },
       "problemsList": {
         "items": [
           {
-            "line": "[не переведено]"
+            "line": "Knowledge about the format is only available when a teacher is around, so students can hardly get ahead or figure something out on their own"
           },
           {
-            "line": "[не переведено]"
+            "line": "Time goes into reinventing techniques that hundreds of people have already done before you, which leaves noticeably less of it for experimenting"
           },
           {
-            "line": "[не переведено]"
+            "line": "Strong works from previous years gradually get lost, since people usually look only at posters from the last couple of years"
           }
         ]
       },
       "solution": {
-        "title": "[не переведено]",
+        "title": "Solution",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "In response to these problems, I built a static website with three sections. Handbook articles bring together the theory of the format and make it available at any moment, the module library stores ready-made techniques with code, and the catalogue brings works from 2019–2025 back into view. The sections are linked to each other, so from any poster it’s easy to jump to the techniques it’s built from."
           }
         ]
       },
       "audience": {
-        "title": "[не переведено]",
+        "title": "Target audience",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Primarily, the website is made for students of the Design School and solves their local tasks. At the same time, it’s designed so that anyone who comes across it can find their way around and get to know the basics of web technologies through an experimental format."
           }
         ]
       },
       "audienceGroups": {
         "image": "webposter/target_audience_en",
-        "caption": "[не переведено]",
+        "caption": "Two audience segments of the project",
         "alt": ""
       },
       "notCodeCourse": {
-        "title": "[не переведено]",
+        "title": "‘Not a coding handbook’",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The project sits among educational resources but doesn’t compete with them directly. It’s free, non-commercial and solves a fairly narrow task, which is gathering and passing on the experience of one particular format."
           },
           {
-            "line": "[не переведено]"
+            "line": "Layout courses teach the technology itself, while this website shows how to use it to come up with and build your own poster."
           }
         ]
       },
       "awareness": {
-        "title": "[не переведено]",
+        "title": "How do people find out about the project?",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Promotion relies on word of mouth within the school. At the start of the year, a teacher tells first-year students about the website, students pass it on to each other, prospective students learn about it at the exhibition of printed web posters, and from there it gradually reaches outside users."
           },
           {
-            "line": "[не переведено]"
+            "line": "This model costs nothing, needs no separate upkeep and relies on people who already know the format."
           }
         ]
       },
       "wordOfMouth": {
         "image": "webposter/strategy_en",
-        "caption": "[не переведено]",
+        "caption": "Word of mouth at the Design School",
         "alt": ""
       },
       "product": {
-        "title": "[не переведено]",
+        "title": "Digital product",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The website consists of three interlinked sections that follow a student’s path while working on a poster. Usually it all starts with looking for references in the catalogue, then the student figures out a technique they liked through the module library, and when they want to understand the format more deeply, they open the handbook. That’s why the story of the product follows the same order."
           }
         ]
       },
       "lesson": {
         "image": "webposter/classrom_teacher_en",
-        "caption": "[не переведено]",
+        "caption": "A teacher shares the link to the website right during class",
         "alt": ""
       },
       "catalog": {
-        "title": "[не переведено]",
+        "title": "Catalogue",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The catalogue brings together student works from 2019–2026 and most often becomes the first entry point to the website. As a rule, a teacher asks students to collect references before class, and they open the website via a link from the chat or a QR code on the screen."
           }
         ]
       },
       "filters": {
         "image": "webposter/catalog_filters_en",
-        "caption": "[не переведено]",
+        "caption": "Filters help you quickly find references for your idea",
         "alt": ""
       },
       "filtersNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "To avoid scrolling through hundreds of posters in a row, works can be filtered by type, layout, year and technical details."
           }
         ]
       },
       "posterCard": {
         "image": "webposter/webposter_page_en",
-        "caption": "[не переведено]",
+        "caption": "The poster page links the work to the modules it’s built on",
         "alt": ""
       },
       "posterCardNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Each work has its own page with a cover, author, year, a description of its features and a link to the source code. Below are the modules the poster is built on, and this is essentially where the move from inspiration to practice begins. If an animation or an unusual click response catches your eye, you can open the relevant module right away and see how it works."
           }
         ]
       },
       "modules": {
-        "title": "[не переведено]",
+        "title": "Modules",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The module library stores the recurring techniques that web posters are built from. Modules are divided into static and dynamic ones, and each contains several solutions around movement, rotation, transformations or working with text. Every solution comes with a short explanation, an interactive example and code you can copy in one click."
           }
         ]
       },
       "modulesLibrary": {
         "image": "webposter/modules_page_en",
-        "caption": "[не переведено]",
+        "caption": "The module library, divided into static and dynamic techniques",
         "alt": ""
       },
       "modulesNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The interactive example lets students play with a technique first and only then dig into the code. After that, they move the snippet into their editor and adapt it to their own poster."
           }
         ]
       },
       "interactiveExamples": {
         "image": "webposter/code_example_en",
-        "caption": "[не переведено]",
+        "caption": "Interactive examples in the handbook",
         "alt": ""
       },
       "desk": {
         "image": "webposter/screen_context_study_un",
-        "caption": "[не переведено]",
+        "caption": "How the product is used, shown on a student’s desk",
         "alt": ""
       },
       "share": {
         "image": "webposter/girl_scenario_en",
-        "caption": "[не переведено]",
+        "caption": "A link to a specific solution can be shared with a classmate",
         "alt": ""
       },
       "shareNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "And if a find turns out well, it’s easy to share a link to a specific solution with a classmate, so word of mouth keeps working between students too."
           }
         ]
       },
       "textbook": {
-        "title": "[не переведено]",
+        "title": "Handbook",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The handbook covers the theory of the format and is structured as a sequential path in two parts. The first explains what a web poster is and why you’d make one, while the second describes the whole working process, from the idea and mockup through to animation, interactivity and publishing. Each article shows its reading time, and the side navigation helps you not get lost among the chapters."
           }
         ]
       },
       "articlePreviews": {
         "image": "webposter/article_page_en",
-        "caption": "[не переведено]",
+        "caption": "Interactive poster previews open right inside the article",
         "alt": ""
       },
       "textbookNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "That said, theory in the handbook always relies on live examples. Previews of student posters are embedded in the articles and open right on the page, so you can see the described technique in action straight away."
           },
           {
-            "line": "[не переведено]"
+            "line": "This way the handbook closes the loop with the catalogue and modules, and students gradually build a complete picture of the format, coming back to the website of their own accord."
           }
         ]
       },
@@ -476,13 +483,13 @@
       },
       "textbookNav": {
         "image": "webposter/animations_en",
-        "caption": "[не переведено]",
+        "caption": "Navigation helps you find your way around the parts and chapters of the handbook",
         "alt": ""
       },
       "navNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "There’s a lot of material in the handbook, so the navigation mirrors its nested structure. Articles are grouped into chapters, chapters into two parts, and the side menu expands to the level you need, always showing where the reader is at the moment."
           }
         ]
       },
@@ -494,68 +501,68 @@
       "returnNote": {
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Students can come back to the handbook whenever they want to dig deeper into the format or get ahead of the programme."
           }
         ]
       },
       "result": {
-        "title": "[не переведено]",
+        "title": "Results",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "The website launched without a separate ad campaign or social media promotion, so the first numbers came almost entirely from word of mouth within the school."
           },
           {
-            "line": "[не переведено]"
+            "line": "According to Yandex Metrica, 458 people visited the website over two months, viewing its pages 4,800 times. The average time on site was over five minutes, which suggests that people really do read the articles and explore the modules."
           }
         ]
       },
       "metrics": {
         "items": [
           {
-            "value": "[не переведено]",
-            "label": "[не переведено]"
+            "value": "5 min 21 sec",
+            "label": "Average time on site"
           },
           {
-            "value": "[не переведено]",
-            "label": "[не переведено]"
+            "value": "4.8K",
+            "label": "Page views"
           },
           {
-            "value": "[не переведено]",
-            "label": "[не переведено]"
+            "value": "458",
+            "label": "Unique visitors"
           }
         ]
       },
       "covers": {
-        "title": "[не переведено]",
+        "title": "Cover series",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "Alongside the handbook texts, I made a series of more than 40 article covers. They all belong to the project’s shared graphic system with gradients and soft shapes, and each illustration shows the article’s topic in a simple way, be it animation, responsive design or grids. Thanks to this, the handbook is easier to browse, and the website itself feels like a coherent piece of authored work."
           }
         ]
       },
       "coversSeries": {
         "image": "webposter/covers_un",
-        "caption": "[не переведено]",
+        "caption": "More than 40 article covers",
         "alt": ""
       },
       "anna": {
-        "portrait": "placeholders/placeholder-1-1",
-        "quote": "[не переведено]",
-        "name": "[не переведено]",
-        "role": "[не переведено]",
+        "portrait": "webposter/anna_un",
+        "quote": "You’ve made a genuinely meaningful project for our community and for design education as a whole",
+        "name": "Anna Komkova",
+        "role": "Instructor at HSE Art and Design School",
         "portraitAlt": ""
       },
       "talk": {
-        "title": "[не переведено]",
+        "title": "Live talk",
         "paragraphs": [
           {
-            "line": "[не переведено]"
+            "line": "On top of that, the project stepped outside the school for the first time. At the Svetlovka Library, I gave a talk about web posters and how the website works, and the format reached an audience that hadn’t come across it before. For the project, this was the first step towards outside users, whom word of mouth reaches last according to the marketing model."
           }
         ]
       },
       "talkPhotos": {
         "image": "webposter/svetlovka_un",
-        "caption": "[не переведено]",
+        "caption": "Exhibition of printed web posters. Svetlovka Library, Moscow, 2025",
         "alt": ""
       }
     },
@@ -567,6 +574,7 @@
         "coverAlt": "",
         "tags": [
           {
+            "kind": "web",
             "label": "WEB"
           }
         ],

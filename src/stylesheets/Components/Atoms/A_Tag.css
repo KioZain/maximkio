@@ -6,8 +6,10 @@
   align-items: center;
   justify-content: center;
   padding: 0 12px;
-  background: #6bb5ff;
-  color: white;
+  /* Цвета берутся из --tag-bg / --tag-text. Без data-kind или с неизвестным
+     остаётся вид web. Категории задаются ниже, токены — в vars.css. */
+  background: var(--tag-bg, var(--tag-web-bg));
+  color: var(--tag-text, var(--tag-web-text));
   font-size: 14px;
   font-weight: 500;
   border-radius: 10px;
@@ -15,5 +17,28 @@
 
   @media (max-width: 768px) {
     font-size: 13px;
+  }
+}
+
+.A_Tag[data-kind="web"] {
+  --tag-bg: var(--tag-web-bg);
+  --tag-text: var(--tag-web-text);
+}
+
+.A_Tag[data-kind="diploma"] {
+  --tag-bg: var(--tag-diploma-bg);
+  --tag-text: var(--tag-diploma-text);
+  position: relative;
+  padding-left: 0.5rem;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    background-image: url("../images/icons/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
