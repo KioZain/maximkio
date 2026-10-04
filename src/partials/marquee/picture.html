@@ -1,0 +1,36 @@
+<!-- Обычная картинка бегущей строки.
+
+     Данные:  id — имя файла в src/images/marquee, без расширения
+              width, height — размер на экране в 1x
+
+     Имя стоит в одном месте — в id. Все четыре адреса ниже собираются из
+     него, поэтому заменить картинку значит поменять одну строку в
+     src/content/marquee.json.
+
+     width и height обязательны: картинки грузятся лениво, а у незагруженной
+     нет своей ширины. Без атрибутов строка посчитала бы ширины по пустым
+     коробкам и поехала. Высота у всех одна (280px, см. C_RunningImages.css),
+     ширина у каждой своя — пропорция не навязывается, ничего не обрезается. -->
+<div class="A_MaqueItem">
+  <picture>
+    <source
+      type="image/avif"
+      srcset="
+        images/derived/marquee/{{ id }}@1x.avif 1x,
+        images/derived/marquee/{{ id }}@2x.avif 2x
+      "
+    />
+    <img
+      src="images/derived/marquee/{{ id }}@2x.webp"
+      srcset="
+        images/derived/marquee/{{ id }}@1x.webp 1x,
+        images/derived/marquee/{{ id }}@2x.webp 2x
+      "
+      width="{{ width }}"
+      height="{{ height }}"
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
+</div>

@@ -1,0 +1,21 @@
+{
+  "top": [
+    { "type": "picture", "id": "joy-book", "width": 280, "height": 280 },
+    { "type": "picture", "id": "my-dear-ghost", "width": 420, "height": 280 },
+    { "type": "picture", "id": "art-clock", "width": 280, "height": 280 },
+    {
+      "type": "animated",
+      "id": "over-the-clover",
+      "width": 498,
+      "height": 280
+    },
+    { "type": "picture", "id": "fun-stickers", "width": 280, "height": 280 }
+  ],
+  "bottom": [
+    { "type": "picture", "id": "cupsy", "width": 280, "height": 280 },
+    { "type": "animated", "id": "aphex", "width": 610, "height": 280 },
+    { "type": "picture", "id": "aum-aura", "width": 280, "height": 280 },
+    { "type": "picture", "id": "artovoe-poster", "width": 420, "height": 280 },
+    { "type": "picture", "id": "random-widget", "width": 280, "height": 280 }
+  ]
+}

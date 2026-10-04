@@ -59,8 +59,12 @@ const DERIVED = path.join(MASTERS, "derived");
    webp здесь тоже мастер — не потому, что это хороший исходник (из уже
    пожатого webp получится avif похуже, чем из png), а потому, что один
    такой файл в проекте уже лежит. Появится png-оригинал — webp-мастер
-   можно убрать. */
-const RASTER = /\.(png|jpe?g|webp)$/i;
+   можно убрать.
+
+   gif — ради бегущей строки на главной. Он уедет анимированным webp:
+   тот же <img>, никакого JS, но в разы легче. Подробности ниже, в
+   ЕСЛИ МАСТЕР АНИМИРОВАННЫЙ. */
+const RASTER = /\.(png|jpe?g|webp|gif)$/i;
 
 /* Папки, которые мастерами не являются.
 
@@ -70,11 +74,16 @@ const RASTER = /\.(png|jpe?g|webp)$/i;
              изменение размера сдвинет кадры. */
 const SKIP = new Set(["derived", "icons", "sprites"]);
 
-/* Ширина слота в вёрстке, 1x. Правила проверяются по порядку, первое
-   совпадение по началу пути (относительно src/images) побеждает. */
+/* Размер слота в вёрстке, 1x. Правила проверяются по порядку, первое
+   совпадение по началу пути (относительно src/images) побеждает.
+
+   Обычно слот задаётся шириной, но не всегда: бегущая строка на главной
+   выравнивает картинки по ВЫСОТЕ (280px, см. C_RunningImages.css), а ширина
+   у них своя у каждой. Поэтому правило может задать height вместо width —
+   тогда и ужимается по высоте. */
 const SLOTS = [
   // Портрет в цитате: 40px кругом, см. M_Cite.css.
-  { match: /(^|\/)(zakhar|anna)\.(png|jpe?g)$/i, width: 40 },
+  { match: /(^|\/)(zakhar|anna)/i, width: 40 },
   // me.png стоит в двух местах сразу — в цитате (40px) и в профиле на
   // главной (100px, Q_ProfileImage.css). Берём больший слот: одна картинка,
   // один файл, и лишнего веса тут всё равно пара килобайт.
@@ -83,6 +92,8 @@ const SLOTS = [
   { match: /^coverPreview|^veranda|^webposter(_cover)?/i, width: 756 },
   // Фотографии в блоке «о себе»: 684px по макету.
   { match: /^me-about-/i, width: 684 },
+  // Бегущая строка: высота 280px, ширина у каждой своя.
+  { match: /^marquee\//i, height: 280 },
 ];
 const DEFAULT_SLOT = 756;
 
@@ -96,9 +107,10 @@ const ENCODERS = {
 };
 
 
-function slotWidth(relative) {
+function slotOf(relative) {
   const rule = SLOTS.find((s) => s.match.test(relative));
-  return rule ? rule.width : DEFAULT_SLOT;
+  if (!rule) return { width: DEFAULT_SLOT };
+  return rule.height ? { height: rule.height } : { width: rule.width };
 }
 
 async function walk(dir) {
@@ -174,6 +186,40 @@ async function removeOrphans(expected) {
   if (removed > 0) console.log(`Удалено производных без мастера: ${removed}\n`);
 }
 
+/* Анимированный мастер — отдельный случай, и в двух отношениях.
+ *
+   Формат: avif анимацию не держит (libheif отказывается), поэтому у таких
+   мастеров только webp. В разметке это значит, что <source type="image/avif">
+   им не ставится — см. src/images/README.md.
+
+   Плотность: только одинарная. Кадров в гифке под сотню, и ретина-вариант
+   выходит в семь раз тяжелее одинарного — 2,8 МБ против 414 КБ на самой
+   большой. Для картинки, которая едет по экрану, это непосильная цена:
+   мягкость в движении не читается, а мегабайты читаются сразу. */
+function plan(animated) {
+  return animated
+    ? {
+        /* Качество ниже обычного: кадров под сотню, и каждый лишний процент
+           множится на их число. */
+        formats: { webp: (img) => img.webp({ quality: 70, effort: 5 }) },
+        densities: [1],
+        /* Файл один, но пикселей в нём в 1.25 раза больше слота.
+         *
+           Полноценная ретина для анимации неподъёмна: на самой тяжёлой гифке
+           это 2,8 МБ против 400 КБ. Но и ровно по слоту она на ретине заметно
+           мылит. Полуторный запас — компромисс: вес вырастает вдвое, и весь
+           прирост уходит в разрешение, а оно на глаз читается сильнее, чем
+           прибавка качества при том же размере.
+
+           В имени файла всё равно «@1x»: суффикс здесь — не про пиксели, а
+           про то, что вариант один и он используется при любой плотности
+           экрана. Размер на странице задаёт вёрстка, лишние пиксели просто
+           делают картинку резче. */
+        oversample: 1.25,
+      }
+    : { formats: ENCODERS, densities: DENSITIES, oversample: 1 };
+}
+
 async function main() {
   const masters = await walk(MASTERS);
   const report = [];
@@ -184,18 +230,24 @@ async function main() {
   for (const master of masters) {
     const relative = path.relative(MASTERS, master);
     const base = relative.replace(RASTER, "");
-    const slot = slotWidth(relative);
-    const source = sharp(master);
-    const { width: naturalWidth } = await source.metadata();
+    const slot = slotOf(relative);
+    const meta = await sharp(master, { animated: true }).metadata();
+    // pageHeight — высота одного кадра; у статичных её нет, там обычная height.
+    const natural = { width: meta.width, height: meta.pageHeight || meta.height };
+    const animated = (meta.pages || 1) > 1;
+    const { formats, densities, oversample } = plan(animated);
     const masterBytes = (await stat(master)).size;
     let derivedBytes = 0;
     let variants = 0;
 
-    for (const density of DENSITIES) {
+    for (const density of densities) {
       // Апскейла нет: если мастер уже меньше нужного, берём как есть.
-      const target = Math.min(slot * density, naturalWidth);
+      const scale = density * oversample;
+      const target = slot.height
+        ? { height: Math.round(Math.min(slot.height * scale, natural.height)) }
+        : { width: Math.round(Math.min(slot.width * scale, natural.width)) };
 
-      for (const [format, encode] of Object.entries(ENCODERS)) {
+      for (const [format, encode] of Object.entries(formats)) {
         const out = path.join(DERIVED, `${base}@${density}x.${format}`);
         expected.push(out);
 
@@ -208,7 +260,7 @@ async function main() {
 
         await mkdir(path.dirname(out), { recursive: true });
         const info = await encode(
-          sharp(master).resize({ width: target, withoutEnlargement: true }),
+          sharp(master, { animated }).resize({ ...target, withoutEnlargement: true }),
         ).toFile(out);
         derivedBytes += info.size;
         variants += 1;
@@ -216,7 +268,15 @@ async function main() {
       }
     }
 
-    report.push({ relative, slot, naturalWidth, masterBytes, derivedBytes, variants });
+    report.push({
+      relative,
+      slot: slot.height ? `${slot.height}px по высоте` : `${slot.width}px`,
+      naturalWidth: natural.width,
+      animated,
+      masterBytes,
+      derivedBytes,
+      variants,
+    });
   }
 
   await removeOrphans(expected);
@@ -246,7 +306,8 @@ async function main() {
     const perVariant = Math.round(r.derivedBytes / r.variants);
     console.log(
       `  ${r.relative.padEnd(34)} ${String(r.naturalWidth).padStart(5)}px  ` +
-        `мастер ${kb(r.masterBytes).padStart(8)}  →  ~${kb(perVariant)} на вариант (слот ${r.slot}px)`,
+        `мастер ${kb(r.masterBytes).padStart(8)}  →  ~${kb(perVariant)} на вариант ` +
+        `(слот ${r.slot})${r.animated ? ", анимация: только webp, 1x" : ""}`,
     );
   }
   console.log(

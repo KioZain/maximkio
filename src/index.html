@@ -93,21 +93,7 @@
             data-marquee-direction="left"
             data-marquee-speed="48"
           >
-            <div class="A_MaqueItem">
-              <img src="images/joy-book.png" alt="" class="square" />
-            </div>
-            <div class="A_MaqueItem">
-              <img src="images/my-dear-ghost.png" alt="" class="landscape" />
-            </div>
-            <div class="A_MaqueItem">
-              <img src="images/package.png" alt="" class="square" />
-            </div>
-            <div class="A_MaqueItem">
-              <img src="images/over-the-clover.gif" alt="" class="landscape" />
-            </div>
-            <div class="A_MaqueItem">
-              <img src="images/chudo-divnoe.png" alt="" class="square" />
-            </div>
+            {{#blocks data.top from marquee}}
           </div>
           <div
             class="C_RunningImages"
@@ -115,27 +101,7 @@
             data-marquee-direction="right"
             data-marquee-speed="48"
           >
-            <div class="A_MaqueItem">
-              <img src="images/cupsy.png" alt="" class="landscape" />
-            </div>
-            <div class="A_MaqueItem">
-              <img
-                src="images/placeholders/placeholder-3-2.png"
-                alt=""
-                class="landscape"
-              />
-            </div>
-            <div class="A_MaqueItem">
-              <img src="images/aum-aura.png" alt="" class="square" />
-            </div>
-
-            <div class="A_MaqueItem">
-              <img src="images/artovoe-poster.png" alt="" class="landscape" />
-            </div>
-
-            <div class="A_MaqueItem">
-              <img src="images/random-widget.png" alt="" class="square" />
-            </div>
+            {{#blocks data.bottom from marquee}}
           </div>
         </div>
       </section>

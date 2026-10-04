@@ -68,6 +68,9 @@ const PAGES = [
     id: "index",
     template: "./src/index.html",
     out: "index.html",
+    // Бегущая строка собирается из списка: картинки не переводятся, поэтому
+    // список лежит в JSON, а не в словаре.
+    data: "src/content/marquee.json",
     chunks: [
       "index",
       "rough",
