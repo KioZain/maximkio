@@ -26,6 +26,7 @@
     height: 280px;
     pointer-events: none;
     -webkit-user-drag: none;
+    object-fit: cover;
 
     &.square {
       aspect-ratio: 1/1;
