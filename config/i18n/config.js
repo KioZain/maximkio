@@ -21,11 +21,25 @@ const path = require("path");
  *   dir    подпапка в docs/ ("" — корень)
  *   label  как язык называется в выпадашке (на самом языке — так принято)
  *   short  подпись на кнопке переключателя
+ *   locale код для og:locale: там свой формат, с подчёркиванием и страной
  * -------------------------------------------------------------------------- */
 
+/* --------------------------------------------------------------------------
+ * АДРЕС САЙТА
+ *
+ * Нужен там, где относительной ссылки недостаточно, а таких мест три:
+ * canonical, hreflang и og:image. Все они читаются не браузером, а краулером
+ * — поисковика или мессенджера, — и он разворачивает их вне контекста
+ * страницы. Относительный путь ему разворачивать не от чего.
+ *
+ * Со слэшем на конце: к нему приклеивается путь внутри сайта.
+ * -------------------------------------------------------------------------- */
+
+const ORIGIN = "https://kiozain.github.io/maximkio/";
+
 const LANGUAGES = [
-  { code: "ru", dir: "", label: "Рус", short: "Рус" },
-  { code: "en", dir: "en", label: "Eng", short: "Eng" },
+  { code: "ru", dir: "", label: "Рус", short: "Рус", locale: "ru_RU" },
+  { code: "en", dir: "en", label: "Eng", short: "Eng", locale: "en_US" },
 ];
 
 const DEFAULT_LANGUAGE = LANGUAGES[0];
@@ -163,6 +177,17 @@ function outputPath(page, language) {
   return language.dir ? `${language.dir}/${page.out}` : page.out;
 }
 
+// Полный адрес страницы — для canonical, hreflang и og:url.
+function absoluteUrl(page, language) {
+  return ORIGIN + outputPath(page, language);
+}
+
+// Полный адрес файла из src/og — для og:image. Эти файлы копируются в сборку
+// под своими именами, без хэша, поэтому адрес известен заранее.
+function ogUrl(file) {
+  return `${ORIGIN}og/${file}`;
+}
+
 // Ссылка со страницы «откуда» на страницу «куда», относительная.
 // Относительная, а не корневая: сайт живёт на подпути /maximkio/, и корневой
 // путь вида /index.html увёл бы на чужую страницу.
@@ -182,10 +207,13 @@ function dictionaryPath(language) {
 }
 
 module.exports = {
+  ORIGIN,
   LANGUAGES,
   DEFAULT_LANGUAGE,
   PAGES,
   outputPath,
+  absoluteUrl,
+  ogUrl,
   relativeUrl,
   languagesFor,
   dictionaryPath,

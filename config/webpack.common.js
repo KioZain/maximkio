@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const htmlPages = require("./webpack.pages.js");
 
 const webpack = require("webpack");
@@ -83,6 +84,23 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin(),
+
+    /* Картинки превью копируются как есть, под своими именами.
+     *
+       Хэш в имени им противопоказан: адрес уходит наружу, в мессенджеры и
+       соцсети, которые его кэшируют на своей стороне. Поэтому и обычным
+       правилом ассетов они не идут — там имя хэшируется.
+       Адрес складывается в config/i18n/config.js, функция ogUrl. */
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(".", "src/og"),
+          to: "og",
+          // Памятка для людей, в сборке ей делать нечего.
+          globOptions: { ignore: ["**/README.md"] },
+        },
+      ],
+    }),
 
     ...htmlPages,
   ],

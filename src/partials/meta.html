@@ -1,0 +1,47 @@
+<!-- Служебная часть <head>: заголовок, описание, языковые версии и карточка
+     для превью ссылки. Один кусок на все переводимые страницы — иначе набор
+     тегов расходится от страницы к странице, а заметно это становится только
+     когда ссылку уже куда-то отправили.
+
+     Иконка сайта сюда не входит намеренно: путь к ней относительный, а
+     страницы лежат на разной глубине. Всё, что здесь, от глубины не зависит —
+     адреса либо абсолютные, либо их нет вовсе.
+
+     Тексты не дублируются: og:title и og:description берут те же page.title
+     и page.description, что и обычные теги. Разводить их по разным ключам
+     нужно редко, а расходятся они всегда. -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}" />
+
+<!-- Канонический адрес: у страницы два языковых адреса, и поисковику надо
+     сказать, что это не дубль, а разные версии. -->
+<link rel="canonical" href="{{ site.url }}" />
+
+<!-- Языковые версии. Адреса абсолютные: hreflang читает краулер вне контекста
+     страницы, относительный путь ему разворачивать не от чего. -->
+{{#each site.languages}}
+<link rel="alternate" hreflang="{{ code }}" href="{{ absolute }}" />
+{{/each}}
+<link rel="alternate" hreflang="x-default" href="{{ site.default.absolute }}" />
+
+<!-- Карточка превью. Её читают мессенджеры и соцсети, когда разворачивают
+     ссылку. Размер картинки указан тегами, чтобы превью нарисовалось до
+     того, как она догрузится. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+<meta property="og:locale:alternate" content="{{ site.other.locale }}" />
+<meta property="og:url" content="{{ site.url }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+<meta property="og:image" content="{{ page.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- У твиттера своя карточка, но тексты и картинку он берёт из og:*.
+     Нужен только тип: без него превью будет маленьким квадратом сбоку,
+     а не широкой картинкой. -->
+<meta name="twitter:card" content="summary_large_image" />

@@ -2,19 +2,23 @@
   "pages": {
     "index": {
       "title": "Maxim Kirillov",
-      "description": "UX/UI designer portfolio: interfaces, product and web design."
+      "description": "UX/UI designer portfolio: interfaces, product and web design.",
+      "image": "index_en.jpg"
     },
     "cases/artovoe": {
       "title": "Artovoe — Maxim Kirillov",
-      "description": "Case study: a media catalogue of contemporary art. UX/UI and development."
+      "description": "Case study: a media catalogue of contemporary art. UX/UI and development.",
+      "image": "cases-artovoe.jpg"
     },
     "cases/webposter": {
-      "title": "[не переведено]",
-      "description": "[не переведено]"
+      "title": "An interactive handbook for designers learning the basics of web technologies — Maxim Kirillov",
+      "description": "Case study: how seven years of experience at the HSE Art and Design School turned into an open web poster handbook. Research, UX/UI and development.",
+      "image": "cases-webposter_en.jpg"
     },
     "cases/veranda": {
       "title": "Veranda — Maxim Kirillov",
-      "description": "Case: a media site about modern country living. UX/UI and development."
+      "description": "Case: a media site about modern country living. UX/UI and development.",
+      "image": "cases-veranda.jpg"
     }
   },
   "langSwitch": {

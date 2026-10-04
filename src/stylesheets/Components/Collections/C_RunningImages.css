@@ -18,19 +18,12 @@
   }
 
   .A_MaqueItem {
-    /* Items must never shrink — the loop measures their real widths. */
     flex: 0 0 auto;
-    /* No will-change here: promoting every cloned image to its own
-       compositor layer costs a visible hitch on load, and GSAP already
-       promotes what it animates. */
   }
 
   img {
     border-radius: var(--radius-24);
     height: 280px;
-    /* Images must not swallow the drag: pointer-events makes them invisible
-       to hit-testing (drop this line if the items ever become links) and
-       user-drag kills the native "ghost image" drag. */
     pointer-events: none;
     -webkit-user-drag: none;
 
@@ -38,7 +31,7 @@
       aspect-ratio: 1/1;
     }
     &.landscape {
-      aspect-ratio: 16/9;
+      aspect-ratio: 3/2;
     }
   }
 }

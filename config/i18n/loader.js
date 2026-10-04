@@ -37,6 +37,9 @@ const fs = require("fs");
 const path = require("path");
 
 const {
+  ORIGIN,
+  absoluteUrl,
+  ogUrl,
   LANGUAGES,
   DEFAULT_LANGUAGE,
   PAGES,
@@ -65,6 +68,11 @@ function buildSite(page, language) {
     label: item.label,
     short: item.short,
     url: relativeUrl(self, outputPath(page, item)),
+    // Относительный адрес — для переключателя языков в шапке, абсолютный —
+    // для hreflang: его читает краулер, вне страницы, и относительный путь
+    // ему разворачивать не от чего.
+    absolute: absoluteUrl(page, item),
+    locale: item.locale,
     isCurrent: item.code === language.code,
     // Строкой, а не булевым: значение уходит прямо в атрибут aria-current,
     // по нему же выпадашка подсвечивает текущий язык — без единой строчки JS.
@@ -79,6 +87,9 @@ function buildSite(page, language) {
 
   return {
     lang: language.code,
+    locale: language.locale,
+    origin: ORIGIN,
+    url: absoluteUrl(page, language),
     root: toRoot ? `${toRoot}/` : "",
     languages,
     current,
@@ -271,10 +282,21 @@ module.exports = function i18nLoader(source) {
 
   const scope = {
     ...dictionary,
-    site: buildSite(page, language),
+    site: {
+      ...buildSite(page, language),
+      /* Имя сайта для og:site_name. Берётся из заголовка главной: это
+         единственное место, где имя уже записано на каждом языке, —
+         заводить под него отдельный ключ значило бы держать один и тот же
+         текст в двух местах. */
+      name: (dictionary.pages && dictionary.pages.index && dictionary.pages.index.title) || "",
+    },
     page: {
       id: page.id,
       ...pageMeta,
+      // Картинка превью: в словаре лежит имя файла из src/og, наружу уходит
+      // полный адрес. Ключ не подставляется, если его нет, — тогда шаблон
+      // честно падает на {{ page.image }}, а не отдаёт ссылку в никуда.
+      ...(pageMeta.image ? { image: ogUrl(pageMeta.image) } : {}),
       headings: collectHeadings(data, context.blockText),
     },
     data,
