@@ -206,7 +206,7 @@
         ]
       },
       "matrix": {
-        "image": "artovoe/matrix_ru",
+        "image": "artovoe/matrix_en",
         "caption": "Positioning matrix",
         "alt": ""
       },
@@ -218,7 +218,7 @@
         ]
       },
       "telegram": {
-        "image": "artovoe/tg_ru",
+        "image": "artovoe/tg_en",
         "caption": "",
         "alt": ""
       },
@@ -231,7 +231,7 @@
         ]
       },
       "audiences": {
-        "image": "artovoe/audience_ru",
+        "image": "artovoe/audience_en",
         "caption": "",
         "alt": ""
       },
@@ -268,7 +268,7 @@
         ]
       },
       "mission": {
-        "image": "artovoe/mission_ru",
+        "image": "artovoe/mission_en",
         "caption": "Brand mission",
         "alt": ""
       },
@@ -281,7 +281,7 @@
         ]
       },
       "home": {
-        "image": "artovoe/home_ru",
+        "image": "artovoe/home_en",
         "caption": "Home page of the media service",
         "alt": ""
       },
@@ -294,7 +294,7 @@
         ]
       },
       "modelMap": {
-        "image": "artovoe/model_ru",
+        "image": "artovoe/model_en",
         "caption": "",
         "alt": ""
       },
@@ -320,7 +320,7 @@
         ]
       },
       "collectionPage": {
-        "image": "artovoe/collection_ru",
+        "image": "artovoe/collection_en",
         "caption": "Collection page features",
         "alt": ""
       },
@@ -333,7 +333,7 @@
         ]
       },
       "profilePage": {
-        "image": "artovoe/artist_profile_ru",
+        "image": "artovoe/artist_profile_en",
         "caption": "The author’s works, collections and exhibitions on a single page",
         "alt": ""
       },
