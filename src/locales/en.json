@@ -36,7 +36,7 @@
     "name": "Maxim Kirillov",
     "status": "Open to work",
     "leadIn": "UX/UI designer with 3+ years of experience.",
-    "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
+    "bio": "I design interfaces that feel easy and calm to navigate. I shape each product into a coherent statement, from the first user scenario to the final screen. I understand how a design will behave in the browser, and I speak the same language as developers."
   },
   "projects": {
     "cursor": {
@@ -103,18 +103,29 @@
       }
     ]
   },
+  "about": {
+    "title": "Living my life",
+    "subtitle": "Well, trying to",
+    "caption": "About me",
+    "text": "I'm Maxim. I believe the most interesting things happen at the edges. Chaos and harmony, melancholy and irony, a strict rule and chance. I like looking for the places where they meet, and that's usually where I find ideas. That's why silence and noise often sit side by side in my work."
+  },
   "work": {
-    "title": "Experience",
+    "title": "Job experience",
     "items": [
+      {
+        "company": "Art. Lebedev Studio",
+        "period": "June 2025 — Present",
+        "description": "Designed multi-page websites for UGC media and e-commerce clients. Ran research, mapped user flows and customer journeys, and built documented design systems with tokens for developer handoff."
+      },
       {
         "company": "Professions of the Future",
         "period": "September — December 2025",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+        "description": "Mentored undergraduate design students through individual projects and added new structured materials to the web design curriculum."
       },
       {
-        "company": "Art. Lebedev Studio",
-        "period": "June — August 2025",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam culpa deleniti eveniet repellat delectus ratione ipsa quas modi quaerat alias sit commodi temporibus explicabo, sapiente harum, labore cupiditate perferendis libero."
+        "company": "Freelance",
+        "period": "2023 — 2025",
+        "description": "Created brand identities for clients across industries, from cafés and restaurants to logistics companies and theatre troupes."
       }
     ]
   },
