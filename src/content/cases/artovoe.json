@@ -5,26 +5,165 @@
       "id": "artovoe"
     },
     {
-      "type": "text",
+      "type": "prose",
       "id": "context"
     },
     {
-      "type": "list",
-      "id": "somelist"
+      "type": "quote",
+      "id": "eva"
     },
     {
-      "type": "quote",
-      "id": "teacher"
+      "type": "prose",
+      "id": "research"
     },
     {
       "type": "picture",
-      "id": "example",
+      "id": "matrix",
       "width": 756,
-      "height": 429
+      "height": 504
     },
     {
-      "type": "text",
-      "id": "tasks"
+      "type": "para",
+      "id": "demand"
+    },
+    {
+      "type": "picture",
+      "id": "telegram",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "audience"
+    },
+    {
+      "type": "picture",
+      "id": "audiences",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "problems"
+    },
+    {
+      "type": "points",
+      "id": "problemsList"
+    },
+    {
+      "type": "prose",
+      "id": "idea"
+    },
+    {
+      "type": "picture",
+      "id": "mission",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "product"
+    },
+    {
+      "type": "picture",
+      "id": "home",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "model"
+    },
+    {
+      "type": "picture",
+      "id": "modelMap",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "artwork",
+      "nav": false
+    },
+    {
+      "type": "picture",
+      "id": "artworkPage",
+      "width": 756,
+      "height": 763
+    },
+    {
+      "type": "prose",
+      "id": "collection",
+      "nav": false
+    },
+    {
+      "type": "picture",
+      "id": "collectionPage",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "profile",
+      "nav": false
+    },
+    {
+      "type": "picture",
+      "id": "profilePage",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "profileNote"
+    },
+    {
+      "type": "picture",
+      "id": "artists",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "sections",
+      "nav": false
+    },
+    {
+      "type": "picture",
+      "id": "sectionsNav",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "para",
+      "id": "navigation"
+    },
+    {
+      "type": "picture",
+      "id": "menu",
+      "width": 756,
+      "height": 504
+    },
+    {
+      "type": "prose",
+      "id": "results"
+    },
+    {
+      "type": "stats",
+      "id": "metrics"
+    },
+    {
+      "type": "embed",
+      "id": "screencast",
+      "url": "https://kinescope.io/embed/dhsr1ugGAL7n2s3HfVxhnt",
+      "width": 16,
+      "height": 9
+    },
+    {
+      "type": "picture",
+      "id": "ceremony",
+      "width": 756,
+      "height": 504
     }
   ]
 }

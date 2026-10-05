@@ -4,3 +4,11 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* Сторонний плеер в iframe (case/embed.html). Высоту держит aspect-ratio
+   из разметки, поэтому height: 100% от .A_CaseVideo здесь снимается —
+   иначе iframe взял бы высоту по умолчанию, 150px. */
+.A_CaseEmbed {
+  height: auto;
+  border: 0;
+}

@@ -23,5 +23,24 @@
   td:last-child {
     color: var(--text-icon-black-primary);
     text-align: right;
+    /* Значение переносится, подпись — нет: длинный факт вроде награды
+       иначе выдавливает таблицу за край экрана на телефонах уже 375px. */
+    white-space: normal;
+    padding-left: 1rem;
+  }
+
+  /* Ссылка в значении — как ссылка в абзаце (см. p a в layout.css). Размер
+     наследуется от ячейки: у глобального a свой, и он разошёлся бы с
+     соседними строками на мобиле. */
+  td a {
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    color: var(--link);
+    transition: opacity var(--duration-hover) var(--ease-out);
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

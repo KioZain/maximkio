@@ -332,7 +332,7 @@ avif и webp, каждый в двух плотностях. Эти файлы �
 
 | Тип | Что рисует | Тексты |
 | --- | --- | --- |
-| `intro` | обложка, теги, заголовок, лид, таблица фактов | `cover`, `title`, `navTitle`, `lead`, `coverAlt`, `tags[]`, `facts[]` |
+| `intro` | обложка, теги, заголовок, лид, таблица фактов (значение факта вставляется как есть — в нём может быть ссылка) | `cover`, `title`, `navTitle`, `lead`, `coverAlt`, `tags[]`, `facts[]` |
 | `text` | заголовок и один абзац | `title`, `body` |
 | `prose` | заголовок и несколько абзацев | `title`, `paragraphs[].line` |
 | `para` | абзацы без заголовка | `paragraphs[].line` |
@@ -341,6 +341,7 @@ avif и webp, каждый в двух плотностях. Эти файлы �
 | `quote` | цитата с портретом автора | `portrait`, `quote`, `name`, `role`, `portraitAlt` |
 | `picture` | картинка с подписью, раскрывается в лайтбокс | `image`, `caption`, `alt` |
 | `video` | короткий ролик вместо гифки, играется сам | `video`, `caption`, `label` |
+| `embed` | ролик со стороннего плеера (Kinescope) в той же рамке; в JSON `url`, `width`, `height` — пропорция | `caption`, `label` |
 | `stats` | плитки с цифрами | `items[].value`, `items[].label` |
 | `link` | кнопка-ссылка на внешний ресурс | `label` |
 

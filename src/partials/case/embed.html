@@ -1,0 +1,28 @@
+<!-- Ролик со стороннего плеера (Kinescope и подобные) — в той же рамке
+     и с той же подписью, что case/video.html. Это не новый вид блока, а
+     другая подача: свой ролик лежит файлом, этот приходит iframe-ом.
+
+     Данные:  url — адрес embed-плеера, не переводится
+              width, height — пропорция ролика, например 16 и 9
+     Тексты:  caption, label
+
+     Высота считается из ширины колонки через aspect-ratio: у iframe,
+     в отличие от img и video, атрибуты width и height пропорцию не задают,
+     поэтому она стоит в style. На любой ширине экрана рамка остаётся по
+     размеру ролика, без полос и обрезки.
+
+     loading="lazy" — плеер тяжёлый, а стоит в конце кейса. -->
+<figure class="A_CaseImage">
+  <div class="Q_CaseImageCover">
+    <iframe
+      class="A_CaseVideo A_CaseEmbed"
+      src="{{ url }}"
+      style="aspect-ratio: {{ width }} / {{ height }}"
+      title="{{ text.label }}"
+      loading="lazy"
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <figcaption>{{ text.caption }}</figcaption>
+</figure>
