@@ -80,6 +80,7 @@ const PAGES = [
       "homeCanvas",
       "clock",
       "click",
+      "caseCursor",
       "reveal",
       "disclose",
     ],

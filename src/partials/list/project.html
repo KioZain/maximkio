@@ -23,9 +23,35 @@
      всегда: у проекта без тегов массив просто пустой.
 
      Нажатием занимается эффект E_Click: класс на корне — больше от разметки
-     ничего не требуется, см. E_Click.css и чанк «click». -->
+     ничего не требуется, см. E_Click.css и чанк «click».
 
-<a href="{{ href }}" class="O_ProjectCard E_Click">
+     Готов ли кейс, решает поле available у проекта: true или false. Условий
+     в движке нет, поэтому ссылка рисуется всегда, а значение уходит строкой
+     в data-available. Дальше его читают двое: CSS выбирает, какое лицо
+     показать у плашки вместо курсора (глаз или замок), а чанк «caseCursor»
+     не пускает по ссылке недоступного кейса. См. A_CaseCursor.css.
+
+     Плашка лежит в каждой карточке, а не одна на страницу: так она едет
+     вместе с карточкой при нажатии и не требует знать, над чем курсор. Обе
+     подписи и все три иконки на месте — лишнее прячет CSS. -->
+
+<a
+  href="{{ href }}"
+  class="O_ProjectCard E_Click"
+  data-available="{{ available }}"
+>
+  <span class="A_CaseCursor" aria-hidden="true">
+    <span data-cursor-pill>
+      <span data-cursor-icon>
+        <img data-icon="view" src="./images/icons/Q-view.svg" alt="" />
+        <img data-icon="blink" src="./images/icons/Q-eye-closed.svg" alt="" />
+        <img data-icon="lock" src="./images/icons/Q_lock-keyhole.svg" alt="" />
+      </span>
+      <span data-label="view">{{ projects.cursor.view }}</span>
+      <span data-label="locked">{{ projects.cursor.locked }}</span>
+    </span>
+  </span>
+
   <div class="Q_ProjectCover">
     <picture>
       <source

@@ -1,0 +1,275 @@
+/* ==========================================================================
+ * A_CaseCursor — плашка вместо курсора над карточкой кейса.
+ *
+ * Как пользоваться: положить внутрь карточки (у неё должен быть
+ * position: relative) и подключить чанк «caseCursor»:
+ *
+ *     <a class="O_ProjectCard" data-available="true" href="">
+ *       <span class="A_CaseCursor" aria-hidden="true">…</span>
+ *       …
+ *     </a>
+ *
+ * Разметку целиком см. в partials/list/project.html.
+ *
+ * Лицо плашки выбирает ближайший предок с data-available:
+ *   "true"   — глаз и «Посмотреть»; по клику глаз моргает;
+ *   "false"  — замок и «Кейс в процессе»; по клику плашка трясётся.
+ *
+ * Чанк ставит атрибуты, CSS по ним играет:
+ *   data-visible            — плашка показана (курсор над карточкой);
+ *   data-play="blink"       — моргнуть один раз;
+ *   data-play="shake"       — встряхнуться один раз.
+ *
+ * Свойства разведены по слоям, чтобы движения не спорили друг с другом:
+ *   корень   translate — следует за курсором (пишет чанк, без перехода),
+ *            scale + opacity — появление;
+ *   пилюля   scale — нажатие, как у E_Click,
+ *            translate — встряхивание;
+ *   иконки   transform + opacity — моргание.
+ *
+ * translate на корне применяется после scale, поэтому плашка растёт вокруг
+ * курсора, а не уезжает к углу карточки, как было бы с одним transform.
+ * ========================================================================== */
+
+.A_CaseCursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  /* Плашка изображает курсор, а не перекрывает карточку: клик должен
+     доставаться ссылке под ней. */
+  pointer-events: none;
+
+  opacity: 0;
+  /* Не из нуля: плашка проявляется на месте курсора, а не вырастает из
+     точки. 0.9 — намёк на приближение, без прыжка. */
+  scale: 0.9;
+  transition:
+    opacity var(--duration-hover) var(--ease-out),
+    scale var(--duration-hover) var(--ease-out);
+
+  &[data-visible] {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* --- Пилюля ------------------------------------------------------------- */
+
+.A_CaseCursor [data-cursor-pill] {
+  /* Плашка размером с кнопку, а не с карточку, поэтому и просадка кнопочная —
+     дефолт E_Click, а не 0.98 карточки, которые иначе унаследовались бы. */
+  --press-scale: 0.95;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+  padding: 8px;
+  border-radius: var(--radius-12);
+  background: #ffffff;
+  border: 1px solid var(--border-opacity);
+  /* Плашка висит над пёстрой обложкой, и одной рамки мало, чтобы отделить
+     её от картинки. Тень та же, что у плавающих кнопок поверх контента
+     (A_ButtonUp, A_ButtonHome), — один почерк для всего, что парит. */
+  box-shadow: 0 1px 7.1px 0 rgba(0, 0, 0, 0.15);
+  color: var(--text-icon-gray-primary);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
+  white-space: nowrap;
+
+  scale: 1;
+  transition: var(--transition-press);
+}
+
+/* Нажатие повторяет E_Click один в один: тот же атрибут, та же кривая.
+   Атрибут ставит чанк «click» на саму карточку — плашка внутри неё
+   просто читает его. У недоступного кейса нажатия нет: на клик он
+   отвечает встряхиванием, а не «принял». */
+[data-available="true"]:is(:active, [data-click-pressed])
+  .A_CaseCursor
+  [data-cursor-pill] {
+  scale: var(--press-scale);
+}
+
+/* --- Лицо: иконка и подпись --------------------------------------------- */
+
+.A_CaseCursor [data-cursor-icon] {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Открытый и закрытый глаз лежат друг на друге: моргание — это подмена
+   одного другим посередине, см. keyframes ниже. */
+.A_CaseCursor [data-icon="blink"] {
+  opacity: 0;
+}
+
+.A_CaseCursor [data-icon="lock"],
+.A_CaseCursor [data-label="locked"] {
+  display: none;
+}
+
+[data-available="false"] .A_CaseCursor {
+  [data-icon="view"],
+  [data-icon="blink"],
+  [data-label="view"] {
+    display: none;
+  }
+
+  [data-icon="lock"],
+  [data-label="locked"] {
+    display: block;
+  }
+}
+
+/* --- Моргание ----------------------------------------------------------- */
+
+/* Веко закрывается к середине глаза, на закрытом отрезке открытый глаз
+   подменяется ресницами, потом веко поднимается обратно. Подмена идёт
+   ступенькой в 1%: плавная перекрёстная прозрачность читалась бы как
+   «иконка сменилась», а не как моргание. */
+.A_CaseCursor[data-play="blink"] {
+  [data-icon="view"] {
+    animation: case-cursor-eye-open var(--duration-blink) var(--ease-in-out);
+  }
+
+  [data-icon="blink"] {
+    animation: case-cursor-eye-closed var(--duration-blink) var(--ease-in-out);
+  }
+}
+
+@keyframes case-cursor-eye-open {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scaleY(0.2);
+  }
+  31%,
+  59% {
+    opacity: 0;
+    transform: scaleY(0.2);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes case-cursor-eye-closed {
+  0%,
+  30% {
+    opacity: 0;
+  }
+  31%,
+  59% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* --- Встряхивание ------------------------------------------------------- */
+
+/* Пять затухающих качаний — «нет», а не «сломалось». Амплитуда в пару
+   пикселей: плашка маленькая, размах больше 6px превращает жест в рывок.
+   Keyframes, а не transition, тут уместны: каждый клик — отдельный отказ,
+   и встряхивание честно начинается заново. */
+.A_CaseCursor[data-play="shake"] [data-cursor-pill] {
+  animation: case-cursor-shake var(--duration-shake) var(--ease-in-out);
+}
+
+@keyframes case-cursor-shake {
+  0%,
+  100% {
+    translate: 0;
+  }
+  15% {
+    translate: -5px 0;
+  }
+  30% {
+    translate: 4px 0;
+  }
+  45% {
+    translate: -3px 0;
+  }
+  60% {
+    translate: 2px 0;
+  }
+  75% {
+    translate: -1px 0;
+  }
+}
+
+/* --- Reduced motion ----------------------------------------------------- */
+
+/* Плашка остаётся: она и есть курсор. Уходит всё, что двигается, — рост на
+   появлении, просадка, сжатие века и качание. Смысл каждого жеста держится
+   на прозрачности: глаз всё так же подменяется ресницами, а замок вместо
+   качания коротко гаснет. */
+@media (prefers-reduced-motion: reduce) {
+  .A_CaseCursor,
+  .A_CaseCursor[data-visible],
+  .A_CaseCursor [data-cursor-pill],
+  [data-available="true"]:is(:active, [data-click-pressed])
+    .A_CaseCursor
+    [data-cursor-pill] {
+    scale: 1;
+  }
+
+  .A_CaseCursor[data-play="blink"] [data-icon="view"] {
+    animation-name: case-cursor-eye-open-still;
+  }
+
+  .A_CaseCursor[data-play="shake"] [data-cursor-pill] {
+    animation: none;
+  }
+
+  .A_CaseCursor[data-play="shake"] [data-icon="lock"] {
+    animation: case-cursor-dim var(--duration-shake) var(--ease-in-out);
+  }
+}
+
+@keyframes case-cursor-eye-open-still {
+  0%,
+  30% {
+    opacity: 1;
+  }
+  31%,
+  59% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes case-cursor-dim {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -42,3 +42,78 @@
     background-position: center;
   }
 }
+.A_Tag[data-kind="place"] {
+  background: linear-gradient(90deg, #93b0bd 0%, #a3bcc7 40.12%, #c6d5dc 100%);
+  --tag-text: var(--text-icon-inverse-primary);
+  padding-left: 0.25rem;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    opacity: 0;
+    transition:
+      opacity 200ms var(--ease-out),
+      transform 0s 200ms;
+  }
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    background-image: url("../images/icons/medal-second-place.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .O_ProjectCard:hover .A_Tag[data-kind="place"]::after {
+    transform: translateX(100%);
+    opacity: 1;
+    transition:
+      transform var(--duration-sheen) linear,
+      opacity 120ms var(--ease-out);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .A_Tag[data-kind="place"]::after {
+    transform: none;
+    transition: opacity 600ms ease;
+  }
+
+  .O_ProjectCard:hover .A_Tag[data-kind="place"]::after {
+    transform: none;
+    opacity: 0.6;
+    transition: opacity 600ms ease;
+  }
+}
+.A_Tag[data-kind="personal"] {
+  background: #5dd878;
+  --tag-text: var(--text-icon-inverse-primary);
+  padding-left: 0.25rem;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 0.25rem;
+    background-image: url("../images/icons/Q_shrub.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

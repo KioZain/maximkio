@@ -181,19 +181,16 @@
             </div>
           </section>
           <!-- Work -->
-
-          <section class="S_Work">
-            <div class="M_TitleCaption">
-              <p class="caption">{{ work.title }}</p>
-              <div class="C_Jobs">
-                {{#each work.items}} {{> list/job }} {{/each}}
-              </div>
+          <div class="M_TitleCaption">
+            <p class="caption">{{ work.title }}</p>
+            <div class="C_Jobs">
+              {{#each work.items}} {{> list/job }} {{/each}}
             </div>
-          </section>
-          {{> contact }}
+          </div>
+          <!-- <section class="S_Work"></section> -->
         </div>
       </div>
-      {{> footerbar }}
+      {{> contact }} {{> footerbar }}
     </div>
   </body>
 </html>

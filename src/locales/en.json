@@ -39,11 +39,16 @@
     "bio": "I take part in every stage of building a product: from discovery and prototype testing to development review. Graduate of HSE Art & Design School, Design and Programming programme."
   },
   "projects": {
+    "cursor": {
+      "view": "View case",
+      "locked": "In process"
+    },
     "items": [
       {
         "cover": "webposter/webposter_cover_en",
         "coverAlt": "",
         "href": "pages/cases/webposter.html",
+        "available": true,
         "tags": [
           {
             "kind": "web",
@@ -54,37 +59,47 @@
             "label": "Diploma"
           }
         ],
-        "date": "окт—дек 2026",
+        "date": "oct—july 2026",
         "title": "An interactive handbook for designers learning the basics of web technologies",
         "description": "How seven years of experience at the HSE Art and Design School turned into an open web poster handbook"
       },
       {
-        "cover": "coverPreview",
+        "cover": "artovoe/cases-artovoe-en",
         "coverAlt": "",
         "href": "pages/cases/artovoe.html",
+        "available": true,
         "tags": [
           {
             "kind": "web",
             "label": "WEB"
+          },
+          {
+            "kind": "place",
+            "label": "Silver at DAFES"
           }
         ],
-        "date": "окт—дек 2026",
-        "title": "A digital media catalogue of contemporary art",
-        "description": "ARTOVOE is a media catalogue of contemporary art that makes art visible."
+        "date": "dec—july 2025",
+        "title": "A digital catalog of emerging art beyond the algorithmic feed",
+        "description": "How to make an artist visible without turning their work into algorithmic content"
       },
       {
         "cover": "veranda",
         "coverAlt": "",
         "href": "pages/cases/veranda.html",
+        "available": false,
         "tags": [
           {
             "kind": "web",
             "label": "WEB"
+          },
+          {
+            "kind": "personal",
+            "label": "Close to one's heart"
           }
         ],
-        "date": "окт—дек 2026",
-        "title": "A media site about modern country living",
-        "description": "The project description is not written yet."
+        "date": "dec—july 2024",
+        "title": "A media service about modern Russian rural life",
+        "description": "How we reimagined babushka's dacha and turned it into a media platform about modern rural living"
       }
     ]
   },
@@ -130,7 +145,7 @@
   "content": {
     "cases/artovoe": {
       "artovoe": {
-        "cover": "coverPreview",
+        "cover": "artovoe/cases-artovoe-en",
         "title": "Artovoe",
         "lead": "A media catalogue of contemporary art that makes art visible. Artists publish their work on the platform, while viewers find inspiration and discover unique objects. It is a space for an attentive look at creative work — one that becomes accessible and lives on “outside museum walls”.",
         "coverAlt": "",
@@ -138,6 +153,10 @@
           {
             "kind": "web",
             "label": "WEB"
+          },
+          {
+            "kind": "place",
+            "label": "Silver at DAFES"
           }
         ],
         "facts": [

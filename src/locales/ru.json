@@ -39,11 +39,16 @@
     "bio": "Участвую во всех этапах создания продукта: от discovery этапа и тестирования прототипов до review разработки. Выпускник HSE Art & Design School по направлению «Дизайн и программирование»"
   },
   "projects": {
+    "cursor": {
+      "view": "Посмотреть",
+      "locked": "Кейс в процессе"
+    },
     "items": [
       {
         "cover": "webposter/webposter_cover_ru",
         "coverAlt": "",
         "href": "pages/cases/webposter.html",
+        "available": true,
         "tags": [
           {
             "kind": "web",
@@ -59,32 +64,42 @@
         "description": "Как семь лет опыта Школы дизайна ВШЭ стали открытым учебником по веб-плакату"
       },
       {
-        "cover": "coverPreview",
+        "cover": "artovoe/cases-artovoe-ru",
         "coverAlt": "",
         "href": "pages/cases/artovoe.html",
+        "available": true,
         "tags": [
           {
             "kind": "web",
             "label": "WEB"
+          },
+          {
+            "kind": "place",
+            "label": "Серебро на DAFES"
           }
         ],
         "date": "окт—дек 2026",
-        "title": "Цифровой медиакаталог современного искусства",
-        "description": "ARTOVOE — это медиакаталог работ современного искусства, где арт становится видимым."
+        "title": "Цифровой каталог молодого искусства вне алгоритмической ленты",
+        "description": "Как сделать художника видимым и не превратить его работу в единицу алгоритмического   контента"
       },
       {
         "cover": "veranda",
         "coverAlt": "",
         "href": "pages/cases/veranda.html",
+        "available": false,
         "tags": [
           {
             "kind": "web",
             "label": "WEB"
+          },
+          {
+            "kind": "personal",
+            "label": "Родное"
           }
         ],
         "date": "окт—дек 2026",
-        "title": "Cайт-медиа о современной загородной жизни",
-        "description": "Описание проекта пока не написано."
+        "title": "Медиа сервис о современной загородной жизни",
+        "description": "Как переосмылили бабушкину дачу и сделали из этого медиа о современной загородной жизни"
       }
     ]
   },
@@ -130,7 +145,7 @@
   "content": {
     "cases/artovoe": {
       "artovoe": {
-        "cover": "coverPreview",
+        "cover": "artovoe/cases-artovoe-ru",
         "title": "Artovoe",
         "lead": "Медиакаталог работ современного искусства, где арт становится видимым. На платформе художники публикуют произведения, тогда как зрители получают вдохновение и находят уникальные объекты. Это пространство для чуткого взгляда на творчество, которое обретает доступность и жизнь «вне музейных стен».",
         "coverAlt": "",
@@ -138,6 +153,11 @@
           {
             "kind": "web",
             "label": "WEB"
+          },
+
+          {
+            "kind": "place",
+            "label": "Серебро на DAFES"
           }
         ],
         "facts": [

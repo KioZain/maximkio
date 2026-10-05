@@ -24,6 +24,7 @@ module.exports = {
     contents: "./src/javascripts/contents.js",
     clock: "./src/javascripts/clock.js",
     caseVideo: "./src/javascripts/caseVideo.js",
+    caseCursor: "./src/javascripts/caseCursor.js",
   },
   output: {
     filename: "[name].js",
